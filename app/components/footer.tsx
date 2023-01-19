@@ -1,5 +1,6 @@
 import React from 'react';
 import { GoogleAnalytics } from "nextjs-google-analytics";
+import { Analytics } from '@vercel/analytics/react';
 // import styles from '../page.module.css';
 
 export default function Footer() {
@@ -87,6 +88,7 @@ export default function Footer() {
     </svg>
     </div> */}
     <GoogleAnalytics trackPageViews />
+    <Analytics />
 </footer>
 
   
