@@ -1,0 +1,140 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Its a great day!</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="body-background"></div>
+        <div class="loader-container">
+        <div class="loader"></div>
+        </div>
+        <div id="main">
+        <div class="main">
+            <img src="img/calendar.svg"><br/>
+            <span style="display: block;height: 30px;"></span>
+            It’s April Fools!<br/>
+            But you’re not a fool!<br/>
+            <span class="pre-text">You’re amazing, </span><span class="name">Stupid</span>!
+        </div>
+        <div class="content">
+        <span class="question">
+        Have you ever wondered about the history of <b>April Fools</b>?
+        </span>
+        <span class="answer">
+        <p>
+        April Fools' Day, sometimes called All Fools' Day, is one of the most light-hearted days of the year. Its origins are uncertain. Some see it as a celebration related to the turn of the seasons, while others believe it stems from the adoption of a new calendar.
+        </p>
+
+<p>
+New Year's Day Moves
+Ancient cultures, including those of the Romans and Hindus, celebrated New Year's Day on or around April 1. It closely follows the vernal equinox (March 20th or March 21st.) In medieval times, much of Europe celebrated March 25, the Feast of Annunciation, as the beginning of the new year.
+</p>
+
+<p>
+In 1582, Pope Gregory XIII ordered a new calendar (the Gregorian Calendar) to replace the old Julian Calendar. The new calendar called for New Year's Day to be celebrated Jan. 1. That year, France adopted the reformed calendar and shifted New Year's day to Jan. 1. According to a popular explanation, many people either refused to accept the new date, or did not learn about it, and continued to celebrate New Year's Day on April 1. Other people began to make fun of these traditionalists, sending them on "fool's errands" or trying to trick them into believing something false. Eventually, the practice spread throughout Europe.
+</p>
+<div class="more-text">
+<p>
+<b>Problems With This Explanation</b><br/>
+<p>
+There are at least two difficulties with this explanation. The first is that it doesn't fully account for the spread of April Fools' Day to other European countries. The Gregorian calendar was not adopted by England until 1752, for example, but April Fools' Day was already well established there by that point. The second is that we have no direct historical evidence for this explanation, only conjecture, and that conjecture appears to have been made more recently.
+</p>
+
+<b>Constantine and Kugel</b><br/>
+<p>
+Another explanation of the origins of April Fools' Day was provided by Joseph Boskin, a professor of history at Boston University. He explained that the practice began during the reign of Constantine, when a group of court jesters and fools told the Roman emperor that they could do a better job of running the empire. Constantine, amused, allowed a jester named Kugel to be king for one day. Kugel passed an edict calling for absurdity on that day, and the custom became an annual event.
+</p>
+<p>
+"In a way," explained Prof. Boskin, "it was a very serious day. In those times fools were really wise men. It was the role of jesters to put things in perspective with humor."
+</p>
+<p>
+This explanation was brought to the public's attention in an Associated Press article printed by many newspapers in 1983. There was only one catch: Boskin made the whole thing up. It took a couple of weeks for the AP to realize that they'd been victims of an April Fools' joke themselves.
+</p>
+
+<b>Spring Fever</b><br/>
+<p>It is worth noting that many different cultures have had days of foolishness around the start of April, give or take a couple of weeks. The Romans had a festival named Hilaria on March 25, rejoicing in the resurrection of Attis. The Hindu calendar has Holi, and the Jewish calendar has Purim. Perhaps there's something about the time of year, with its turn from winter to spring, that lends itself to lighthearted celebrations.
+</p>
+
+<b>Observances Around the World</b><br/>
+<p>
+April Fools' Day is observed throughout the Western world. Practices include sending someone on a "fool's errand," looking for things that don't exist; playing pranks; and trying to get people to believe ridiculous things.
+</p>
+<p>
+The French call April 1 Poisson d'Avril, or "April Fish." French children sometimes tape a picture of a fish on the back of their schoolmates, crying "Poisson d'Avril" when the prank is discovered.
+</p>
+</div>
+<div class="more-button"></div>
+        </span>
+        <div class="thank-you">
+        Hope you’ll remember that next time!
+        </div>
+        <div class="share">
+        <span style="font-size: 25px;">You can share this to your friends!</span>
+        <span style="margin:5px 0;">Heres how…</span>
+        <input type="text" id="url-generator" name="url-generator" placeholder="Type your friends name">
+        <span class="copy">
+        <span class="url-gen" style="margin: 10px 0 0;">Copy the link below and send it!</span>
+        <a href="http://afd.annu.co/#Stupid" class="url-href"><span id="actual-url" class="url-gen" style="margin: 0px 0;">http://afd.annu.co/#<span class="url-change" style="display: inline-block;">Stupid</span></span></a>
+        </span>
+        </div>
+        <div class="footer">
+        Made with <span style="color:#F92700;">❤</span> in India by <a href="http://annu.co">Annu</a>
+        </div>
+        </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $('.loader-container').fadeOut(200);
+            $('#main').fadeIn(500);
+            var hash = location.hash.substr(1);
+            var spaceRemovedFromUrl = hash.replace(/_/g, ' ');
+            if(hash){
+                $('.name').text(spaceRemovedFromUrl);
+            }
+            // if(hash == "Seena" || hash == "seena"){
+            //     $('.pre-text').text("You're a Mandathi, ");
+            // }
+            // if(hash == "Adhyuth" || hash == "adhyuth" || hash == "munnu" || hash == "Munnu"){
+            //     $('.pre-text').text("You're a Mandan, ");
+            // }
+            $(".more-button").click(function(){
+                $(".more-text").slideToggle(1000);
+            })
+            $('#url-generator').keyup(function () {
+                if($(this).val() == ''){
+                    $('.url-href').attr('href', "http://afd.annu.co/#Stupid");
+                    $('.url-change').text("Stupid");
+                }
+                else{
+                var urlFormatted = $(this).val().replace(/ /g, '_');
+                $('.url-change').text(urlFormatted);
+                var newUrl = "http://afd.annu.co/#"+urlFormatted;
+                $('.url-href').attr('href', newUrl);
+                }
+            });
+
+        });
+        </script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script type="text/javascript">
+    window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+      heap.load("3770717624");
+</script>
+    </body>
+</html>
