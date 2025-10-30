@@ -85,7 +85,7 @@ const Home = () => {
     initial="hidden" // Set the initial state to variants.hidden
     animate="enter" // Animated state to variants.enter
     exit="exit" // Exit state (used later) to variants.exit
-    transition={{ type: 'linear' }} // Set the transition to linear
+    transition={{ type: 'tween', ease: 'linear', duration: 0.3 }}
     className="shadow-xl overflow-hidden max-w-screen-lg w-full h:80 md:h-96 relative"
 >
       <div className="max-w-screen-lg w-full h:80 md:h-96 relative rounded-lg text-white hero-animator">
