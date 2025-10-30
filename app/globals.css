@@ -1,15 +1,24 @@
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 @import url('https://fonts.cdnfonts.com/css/karla');
 @import url('https://fonts.cdnfonts.com/css/switzer');
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam&display=swap");
+/* @import url('/fonts/Switzer/css/switzer.css'); */
 
-@import url('/fonts/Switzer/css/switzer.css');
+@import "tailwindcss";
+
+@theme {
+  --color-mainred: #FF6767;
+  --color-mainyellow: #FFF4E3;
+  --color-accentyellow: #fffdfb;
+  
+  --font-poppins: 'Poppins', sans-serif;
+  --font-inter: 'Inter', 'Helvetica', sans-serif;
+  --font-Inter: 'Inter', 'Helvetica', sans-serif;
+  --font-karla: 'Karla', 'Helvetica', sans-serif;
+  --font-swizert: 'Switzer', 'Helvetica', sans-serif;
+  --font-noto-malayalam: 'Noto Sans Malayalam', 'Helvetica', sans-serif;
+}
 
 
 @font-face {
@@ -28,23 +37,10 @@
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
-/* 
+
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  ); */
 
   --tile-start-rgb: 239, 245, 249;
   --tile-end-rgb: 228, 232, 233;
