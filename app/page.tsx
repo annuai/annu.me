@@ -122,7 +122,7 @@ const Home = () => {
         </div>
         </Link>
 
-        <Link href="/work/ism">
+{/*        <Link href="/work/ism">
           <div className={styles.card}>
           <p className={inter.className+"text-3xl"}>
           Industrial Design + Product Experience
@@ -131,7 +131,7 @@ const Home = () => {
           Various projects at Instillmotion Labs: An innovative product development and prototyping lab <span>-&gt;</span>
           </h2>
           </div>
-        </Link>
+        </Link> */}
 
         <Link href="/projects/bhashavan">
           <div className={styles.card}>
