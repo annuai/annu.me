@@ -1,0 +1,13 @@
+[build]
+  # Vite build command
+  command = "npm run build"
+  # Vite outputs to dist by default
+  publish = "dist"
+
+# Single Page Application (SPA) Routing Rule
+# This guarantees that URLs like /about or /blog/article-name 
+# are correctly handled by React Router rather than returning a 404
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
