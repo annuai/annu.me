@@ -6,10 +6,7 @@ export const projects = [
     category: "Industrial Design / Product",
     year: "2025",
     thumbnail: "/projects/cable-organizer/cable-org.png",
-    images: [
-      "/projects/lumina.jpg",
-      "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?q=80&w=1200&auto=format&fit=crop",
-    ],
+    images: ["/projects/cable-organizer/cable-org.png"],
     description:
       "A minimalist desk lamp designed for maximum flexibility and minimal footprint. Crafted from machined aluminum with a custom LED array that provides true-color illumination for creatives and makers.",
   },

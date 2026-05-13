@@ -20,6 +20,7 @@ const Header = () => {
             <li><Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>Work</Link></li>
             <li><Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}>About</Link></li>
             <li><Link to="/blog" className={`nav-link ${location.pathname.startsWith('/blog') ? 'active' : ''}`}>Blog</Link></li>
+            <li><a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="nav-link resume-btn">Resume</a></li>
           </ul>
         </nav>
       </div>

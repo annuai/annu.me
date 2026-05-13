@@ -21,7 +21,8 @@ const BlogPost = () => {
   useSEO({
     title: post ? `Annuai | ${post.title}` : 'Annuai | Journal',
     description: post ? post.excerpt : 'A journal entry on industrial design.',
-    url: post ? `https://annu.me/blog/${id}` : 'https://annu.me/blog'
+    url: post ? `https://annu.me/blog/${id}` : 'https://annu.me/blog',
+    image: post?.image || post?.thumbnail // Check for both
   });
 
   useEffect(() => {

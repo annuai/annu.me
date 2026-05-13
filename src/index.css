@@ -46,6 +46,34 @@ h6 {
 a {
   color: inherit;
   text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Content Links Styling */
+p a, 
+.post-content a, 
+.about-text a:not(:has(.status-tag)), 
+.project-desc a,
+.blog-excerpt a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+p a:hover, 
+.post-content a:hover, 
+.about-text a:hover:not(:has(.status-tag)), 
+.project-desc a:hover,
+.blog-excerpt a:hover {
+  color: var(--accent-orange);
+  text-decoration-thickness: 2px;
+}
+
+/* Ensure images and tags inside links don't get underlines */
+a:has(img), a:has(.status-tag), a:has(.social-icon) {
+  text-decoration: none !important;
 }
 
 ul {

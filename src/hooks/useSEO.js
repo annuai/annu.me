@@ -16,11 +16,23 @@ export default function useSEO({ title, description, image, url }) {
       el.setAttribute(attribute, value);
     };
 
+    const finalImage = image || '/favicon.svg';
+
     setMetaTag('meta[name="description"]', 'content', description);
+    
+    // Open Graph
     setMetaTag('meta[property="og:title"]', 'content', title);
     setMetaTag('meta[property="og:description"]', 'content', description);
-    setMetaTag('meta[property="og:image"]', 'content', image || '/og-image.jpg');
+    setMetaTag('meta[property="og:image"]', 'content', finalImage);
     setMetaTag('meta[property="og:url"]', 'content', url || window.location.href);
     setMetaTag('meta[property="og:type"]', 'content', 'website');
+
+    // Twitter
+    setMetaTag('meta[name="twitter:card"]', 'content', 'summary_large_image');
+    setMetaTag('meta[name="twitter:title"]', 'content', title);
+    setMetaTag('meta[name="twitter:description"]', 'content', description);
+    setMetaTag('meta[name="twitter:image"]', 'content', finalImage);
+    setMetaTag('meta[name="twitter:url"]', 'content', url || window.location.href);
+
   }, [title, description, image, url]);
 }

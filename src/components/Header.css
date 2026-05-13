@@ -46,6 +46,7 @@
 .header-nav ul {
   display: flex;
   gap: 2rem;
+  align-items: center;
 }
 
 .nav-link {
@@ -70,8 +71,30 @@
   background: var(--accent-gradient);
 }
 
+.resume-btn {
+  padding: 0.4rem 1rem;
+  background-color: rgba(17, 17, 17, 0.05);
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease !important;
+}
+
+.resume-btn:hover {
+  background-color: var(--text-primary);
+  color: var(--bg-primary) !important;
+  border-color: var(--text-primary);
+}
+
+.resume-btn::after {
+  display: none !important;
+}
+
 @media (max-width: 768px) {
   .logo-subtitle {
     display: none;
+  }
+  
+  .header-nav ul {
+    gap: 1rem;
   }
 }
