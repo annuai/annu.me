@@ -72,6 +72,9 @@
 }
 
 .resume-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   padding: 0.4rem 1rem;
   background-color: rgba(17, 17, 17, 0.05);
   border-radius: 20px;
@@ -83,6 +86,14 @@
   background-color: var(--text-primary);
   color: var(--bg-primary) !important;
   border-color: var(--text-primary);
+}
+
+.resume-icon {
+  transition: transform 0.3s ease;
+}
+
+.resume-btn:hover .resume-icon {
+  transform: translateY(2px);
 }
 
 .resume-btn::after {

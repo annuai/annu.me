@@ -1,5 +1,6 @@
 import React from 'react';
 import AboutSection from '../components/AboutSection';
+import ValuesSection from '../components/ValuesSection';
 import useSEO from '../hooks/useSEO';
 
 const About = () => {
@@ -11,6 +12,7 @@ const About = () => {
   return (
     <div className="page-wrapper">
       <AboutSection />
+      <ValuesSection />
     </div>
   );
 };

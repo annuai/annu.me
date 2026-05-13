@@ -10,7 +10,6 @@ headers = []
 publish = "/Users/annuai/Downloads/annu.me/dist"
 publishOrigin = "config"
 commandOrigin = "config"
-base = "/Users/annuai/Downloads/annu.me"
 command = "npm run build"
 
 [build.environment]
