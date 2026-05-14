@@ -96,8 +96,8 @@ export const projects = [
     title: "Clock",
     category: "Product Design",
     year: "2026",
-    thumbnail: "/projects/clock/clock.jpg",
-    images: ["/projects/clock/clock.jpg", "/projects/clock/clock-1.png"],
+    thumbnail: "/projects/clock/clock.png",
+    images: ["/projects/clock/clock.png", "/projects/clock/clock-1.png"],
     description:
       "A visualization exploring the intersection of brutalist architecture and soft interior furnishings to create a balanced living space.",
   },
