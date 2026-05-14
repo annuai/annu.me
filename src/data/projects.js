@@ -76,17 +76,28 @@ export const projects = [
     description:
       "A visualization exploring the intersection of brutalist architecture and soft interior furnishings to create a balanced living space.",
   },
+  // {
+  //   id: "7",
+  //   slug: "writing-board",
+  //   title: "Writing Board",
+  //   category: "Product Design",
+  //   year: "2025",
+  //   thumbnail: "/projects/writing-board/writing-board.png",
+  //   images: [
+  //     "/projects/writing-board/writing-board.png",
+  //     "/projects/writing-board/writing-board-1.jpeg",
+  //   ],
+  //   description:
+  //     "A visualization exploring the intersection of brutalist architecture and soft interior furnishings to create a balanced living space.",
+  // },
   {
-    id: "7",
-    slug: "writing-board",
-    title: "Writing Board",
+    id: "8",
+    slug: "clock",
+    title: "Clock",
     category: "Product Design",
-    year: "2025",
-    thumbnail: "/projects/writing-board/writing-board.png",
-    images: [
-      "/projects/writing-board/writing-board.png",
-      "/projects/writing-board/writing-board-1.jpeg",
-    ],
+    year: "2026",
+    thumbnail: "/projects/clock/clock.jpg",
+    images: ["/projects/clock/clock.jpg", "/projects/clock/clock-1.png"],
     description:
       "A visualization exploring the intersection of brutalist architecture and soft interior furnishings to create a balanced living space.",
   },
