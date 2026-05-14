@@ -8,7 +8,7 @@ export const projects = [
     thumbnail: "/projects/cable-organizer/cable-org.png",
     images: ["/projects/cable-organizer/cable-org.png"],
     description:
-      "A minimalist desk lamp designed for maximum flexibility and minimal footprint. Crafted from machined aluminum with a custom LED array that provides true-color illumination for creatives and makers.",
+      "Cable organizer designed to keep your workspace tidy and efficient. With a sleek, minimalist design, it provides a practical solution for managing cables while adding a touch of elegance to your desk.",
   },
   {
     id: "2",
@@ -19,7 +19,7 @@ export const projects = [
     thumbnail: "/projects/lego-board/lego-block.png",
     images: ["/projects/lego-board/lego-block.png"],
     description:
-      "Combining mid-century aesthetics with modern ergonomic research, the Aero Chair provides support without the visual bulk of traditional office seating.",
+      "Lego board designed to provide a sturdy and visually appealing base for building Lego creations. Crafted from high-quality wood, it offers a smooth surface for building while adding a touch of warmth and sophistication to playtime.",
   },
   {
     id: "3",
@@ -30,7 +30,7 @@ export const projects = [
     thumbnail: "/projects/printer-hero.png",
     images: ["/projects/printer-hero.png"],
     description:
-      "Portable, rugged, and elegant. Nomad brings high-fidelity sound to the outdoors, housed in a waterproof silicone and anodized aluminum shell.",
+      "A 3D printer design that combines functionality with cost-efficiency. With a sleek and compact form factor, it offers an intuitive user interface and high-quality printing capabilities, making it an ideal choice for both hobbyists and professionals in the world of 3D printing.",
   },
   {
     id: "4",
@@ -44,7 +44,7 @@ export const projects = [
       "/projects/coin-box/coin-box-1.jpeg",
     ],
     description:
-      "A study in organic forms and tactile finishes. This tableware set brings warmth to everyday dining rituals.",
+      "A coin box designed to provide a stylish and functional solution for storing and organizing coins. With its sleek design and durable construction, it offers a convenient way to keep your coins secure while adding a touch of elegance to your space.",
   },
   {
     id: "5",
@@ -59,7 +59,7 @@ export const projects = [
       "/projects/hornbill-lamp/hornbill-lamp-3.jpeg",
     ],
     description:
-      "Made for coffee enthusiasts, this grinder provides an unparalleled grind consistency with a satisfying, knurled grip and smooth bearings.",
+      "A lamp designed to provide both functional lighting and aesthetic appeal. With its unique and artistic design, it adds a touch of elegance and sophistication to any space while providing warm and inviting illumination.",
   },
   {
     id: "6",
@@ -74,7 +74,7 @@ export const projects = [
       "/projects/organizer/organizer-2.jpeg",
     ],
     description:
-      "A visualization exploring the intersection of brutalist architecture and soft interior furnishings to create a balanced living space.",
+      "An organizer designed to help you keep your belongings tidy and easily accessible. With its sleek and functional design, it offers a practical solution for organizing your space while adding a touch of style and sophistication.",
   },
   // {
   //   id: "7",
@@ -99,7 +99,7 @@ export const projects = [
     thumbnail: "/projects/clock/clock.png",
     images: ["/projects/clock/clock.png", "/projects/clock/clock-1.png"],
     description:
-      "A visualization exploring the intersection of brutalist architecture and soft interior furnishings to create a balanced living space.",
+      "A clock designed to provide both functionality and aesthetic appeal. With its sleek and minimalist design, it adds a touch of elegance and sophistication to any space while providing accurate timekeeping.",
   },
 ];
 
