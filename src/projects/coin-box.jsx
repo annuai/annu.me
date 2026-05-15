@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export const metadata = {
   id: "4",
@@ -11,13 +11,10 @@ export const metadata = {
     "/projects/coin-box/coin-box.png",
     "/projects/coin-box/coin-box-1.jpeg",
   ],
-  description: "A coin box designed to provide a stylish and functional solution for storing and organizing coins. With its sleek design and durable construction, it offers a convenient way to keep your coins secure while adding a touch of elegance to your space."
+  description:
+    "A coin box designed to provide a stylish and functional solution for storing and organizing coins. With its sleek design and durable construction, it offers a convenient way to keep your coins secure while adding a touch of elegance to your space.",
 };
 
 export default function CoinBox() {
-  return (
-    <>
-      <p>{metadata.description}</p>
-    </>
-  );
+  return <>{/* <p>{metadata.description}</p> */}</>;
 }
