@@ -15,7 +15,7 @@ const projects = Object.keys(modules).map(path => {
 
 const ProjectDetail = () => {
   const { slug } = useParams();
-  
+
   const path = Object.keys(modules).find(p => {
     const mod = modules[p];
     const projectSlug = mod.metadata?.slug || p.split('/').pop().replace('.jsx', '');
@@ -55,17 +55,17 @@ const ProjectDetail = () => {
             <p className="project-desc">{project.description}</p>
           </div>
         </div>
-        
+
         <div className="project-detail-right">
-          <div className="project-content">
-            <ProjectContent />
-          </div>
           {project.images && project.images.map((img, idx) => (
             <img key={idx} src={img} alt={`${project.title} - view ${idx + 1}`} className="detail-img" />
           ))}
+          <div className="project-content">
+            <ProjectContent />
+          </div>
         </div>
       </div>
-      
+
       <div className="related-projects-section">
         <h2>More Projects</h2>
         <div className="grid-container">

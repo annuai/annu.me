@@ -3,8 +3,14 @@ import ProjectModal from './ProjectModal';
 import './ProjectGrid.css';
 
 // Load all JSX files in the projects directory at build time
-const modules = import.meta.glob('../projects/*.jsx', { eager: true });
-
+const modules = Object.fromEntries(
+  Object.entries(
+    import.meta.glob('../projects/*.jsx', { eager: true })
+  ).filter(([path]) => {
+    const fileName = path.split('/').pop();
+    return !fileName.startsWith('_');
+  })
+);
 const projects = Object.keys(modules).map(path => {
   const mod = modules[path];
   const project = mod.metadata || {};
@@ -27,11 +33,11 @@ const ProjectGrid = () => {
 
   return (
     <>
-      <section className="portfolio-section fade-in" id="work" style={{animationDelay: '0.2s'}}>
+      <section className="portfolio-section fade-in" id="work" style={{ animationDelay: '0.2s' }}>
         <div className="grid-container">
           {projects.map((project) => (
-            <div 
-              key={project.id} 
+            <div
+              key={project.id}
               className="project-card"
               onClick={() => openModal(project)}
             >
