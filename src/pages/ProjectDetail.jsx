@@ -1,12 +1,30 @@
 import React, { useEffect } from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
-import projects from '../data/projects';
 import useSEO from '../hooks/useSEO';
 import './ProjectDetail.css';
 
+// Load all JSX files in the projects directory at build time
+const modules = import.meta.glob('../projects/*.jsx', { eager: true });
+
+const projects = Object.keys(modules).map(path => {
+  const mod = modules[path];
+  const project = mod.metadata || {};
+  project.slug = project.slug || path.split('/').pop().replace('.jsx', '');
+  return project;
+});
+
 const ProjectDetail = () => {
   const { slug } = useParams();
-  const project = projects.find(p => p.slug === slug);
+  
+  const path = Object.keys(modules).find(p => {
+    const mod = modules[p];
+    const projectSlug = mod.metadata?.slug || p.split('/').pop().replace('.jsx', '');
+    return projectSlug === slug;
+  });
+
+  const projectModule = path ? modules[path] : null;
+  const project = projectModule?.metadata;
+  const ProjectContent = projectModule?.default;
 
   useSEO({
     title: project ? `Annuai | ${project.title}` : 'Annuai | Work',
@@ -19,7 +37,7 @@ const ProjectDetail = () => {
     window.scrollTo(0, 0);
   }, [slug]);
 
-  if (!project) {
+  if (!projectModule || !project) {
     return <Navigate to="/" />;
   }
 
@@ -39,7 +57,10 @@ const ProjectDetail = () => {
         </div>
         
         <div className="project-detail-right">
-          {project.images.map((img, idx) => (
+          <div className="project-content">
+            <ProjectContent />
+          </div>
+          {project.images && project.images.map((img, idx) => (
             <img key={idx} src={img} alt={`${project.title} - view ${idx + 1}`} className="detail-img" />
           ))}
         </div>

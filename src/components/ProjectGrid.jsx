@@ -1,7 +1,16 @@
 import React, { useState } from 'react';
-import projects from '../data/projects';
 import ProjectModal from './ProjectModal';
 import './ProjectGrid.css';
+
+// Load all JSX files in the projects directory at build time
+const modules = import.meta.glob('../projects/*.jsx', { eager: true });
+
+const projects = Object.keys(modules).map(path => {
+  const mod = modules[path];
+  const project = mod.metadata || {};
+  project.slug = project.slug || path.split('/').pop().replace('.jsx', '');
+  return project;
+}).sort((a, b) => b.id - a.id); // Sorting by ID descending
 
 const ProjectGrid = () => {
   const [selectedProject, setSelectedProject] = useState(null);
