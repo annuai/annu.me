@@ -1,7 +1,7 @@
 import React from "react";
 
 export const metadata = {
-    id: "7",
+    id: "8",
     slug: "maruti",
     title: "Indian Car Maker",
     category: "UI/UX Design",

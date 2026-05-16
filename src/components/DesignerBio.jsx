@@ -15,11 +15,11 @@ const DesignerBio = () => {
             {/* With a background in product development and a passion for finding the right details, his work spans from consumer electronics to lifestyle goods, always prioritizing the user experience and the physical presence of the object. */}
           </p>
         </div>
-        <div className="bio-links">
-          <a href="mailto:hi.annuai@gmail.com" className="bio-link">Say Hi 👋</a>
-          {/* <a href="https://www.linkedin.com/in/annuai/" target="_blank" rel="noopener noreferrer" className="bio-link">LinkedIn</a> */}
-          {/* <a href="https://instagram.com/annuai" target="_blank" rel="noopener noreferrer" className="bio-link">Instagram</a> */}
-        </div>
+        {/* {/* <div className="bio-links"> */}
+        {/* <a href="mailto:hi.annuai@gmail.com" className="bio-link">Say Hi 👋</a> */}
+        {/* <a href="https://www.linkedin.com/in/annuai/" target="_blank" rel="noopener noreferrer" className="bio-link">LinkedIn</a> */}
+        {/* <a href="https://instagram.com/annuai" target="_blank" rel="noopener noreferrer" className="bio-link">Instagram</a> */}
+        {/* </div> */}
       </div>
     </section>
   );

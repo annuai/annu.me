@@ -16,10 +16,11 @@ const projects = Object.keys(modules).map(path => {
   const project = mod.metadata || {};
   project.slug = project.slug || path.split('/').pop().replace('.jsx', '');
   return project;
-}).sort((a, b) => Number(a.id) - Number(b.id)); // Sorting by ID ascending (1 shows first)
+}).sort((a, b) => Number(a.id) - Number(b.id)); // Sorting by ID ascending
 
 const ProjectGrid = () => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [tileHeight, setTileHeight] = useState(300); // State for tile height
 
   const openModal = (project) => {
     setSelectedProject(project);
@@ -31,10 +32,30 @@ const ProjectGrid = () => {
     document.body.style.overflow = 'auto';
   };
 
+  const handleHeightChange = (e) => {
+    setTileHeight(parseInt(e.target.value, 10));
+  };
+
   return (
     <>
       <section className="portfolio-section fade-in" id="work" style={{ animationDelay: '0.2s' }}>
-        <div className="grid-container">
+        <div className="grid-controls">
+          <div className="height-control">
+            <span>Tile Height</span>
+            <input 
+              type="range" 
+              min="200" 
+              max="600" 
+              step="10"
+              value={tileHeight} 
+              onChange={handleHeightChange} 
+              aria-label="Adjust Tile Height"
+            />
+            <span>{tileHeight}px</span>
+          </div>
+        </div>
+
+        <div className="grid-container" style={{ '--tile-height': `${tileHeight}px` }}>
           {projects.map((project) => (
             <div
               key={project.id}

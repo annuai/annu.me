@@ -1,7 +1,7 @@
 import React from "react";
 
 export const metadata = {
-  id: "8",
+  id: "7",
   slug: "clock",
   title: "Clock",
   category: "Product Design",

@@ -8,7 +8,7 @@ const ContactSection = () => {
         <div className="contact-info">
           <h2>Let's build something together.</h2>
           <a href="mailto:hi.annuai@gmail.com" className="email-link">
-            hi[dot]annuai[at]gmail[dot]com
+            hi.annuai@gmail.com
           </a>
         </div>
         <div className="contact-social">

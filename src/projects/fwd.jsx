@@ -1,7 +1,7 @@
 import React from "react";
 
 export const metadata = {
-    id: "8",
+    id: "9",
     slug: "fwd",
     title: "Chinese Insurance",
     category: "UI/UX Design",
@@ -11,7 +11,7 @@ export const metadata = {
     thumbnail: "/projects/fwd+maruti_fwd.svg",
     images: ["/projects/fwd+maruti_fwd.svg"],
     description:
-        "Work done for a chinese Insurance Giant",
+        "Work done for a chinese Insurance giant",
 };
 
 export default function FWD() {
