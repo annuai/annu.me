@@ -1,6 +1,7 @@
 import React from 'react';
 import Hero from '../components/Hero';
 import ProjectGrid from '../components/ProjectGrid';
+import DesignerBio from '../components/DesignerBio';
 import useSEO from '../hooks/useSEO';
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
     <div className="page-wrapper">
       <Hero />
       <ProjectGrid />
+      <DesignerBio />
     </div>
   );
 };

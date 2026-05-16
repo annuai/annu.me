@@ -16,7 +16,7 @@ const projects = Object.keys(modules).map(path => {
   const project = mod.metadata || {};
   project.slug = project.slug || path.split('/').pop().replace('.jsx', '');
   return project;
-}).sort((a, b) => b.id - a.id); // Sorting by ID descending
+}).sort((a, b) => Number(a.id) - Number(b.id)); // Sorting by ID ascending (1 shows first)
 
 const ProjectGrid = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -38,15 +38,19 @@ const ProjectGrid = () => {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="project-card"
+              className={`project-card ${project.gridSize || 'standard'}`}
               onClick={() => openModal(project)}
             >
               <div className="img-wrapper">
                 <img src={project.thumbnail} alt={project.title} />
                 <div className="overlay">
-                  <div className="overlay-content">
+                  <div className="overlay-tags">
+                    {project.tags && project.tags.map((tag, i) => (
+                      <span key={i} className="tag">{tag}</span>
+                    ))}
+                  </div>
+                  <div className="overlay-title">
                     <h3>{project.title}</h3>
-                    <p>{project.category}</p>
                   </div>
                 </div>
               </div>

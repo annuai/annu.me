@@ -2,15 +2,24 @@
 
 :root {
   font-family: 'Outfit', sans-serif;
-  --bg-primary: #ffffff;
-  --bg-secondary: #f9f9f9;
+  --bg-primary: #e9e2e1;
+  --bg-secondary: #efefef;
   --text-primary: #111111;
   --text-secondary: #5a5a5a;
-  --border-color: #ebebeb;
+  --border-color: #d1c9c8;
   --accent-orange: #f46036;
   --accent-red: #d7263d;
   --accent-color: var(--accent-orange);
   --accent-gradient: linear-gradient(135deg, var(--accent-orange), var(--accent-red));
+  --transition-speed: 0.3s;
+}
+
+[data-theme='dark'] {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #242424;
+  --text-primary: #e0e0e0;
+  --text-secondary: #a0a0a0;
+  --border-color: #333333;
 }
 
 * {
@@ -25,6 +34,7 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
 #root {
@@ -33,12 +43,7 @@ body {
   min-height: 100vh;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
   letter-spacing: -0.02em;
 }
@@ -50,11 +55,7 @@ a {
 }
 
 /* Content Links Styling */
-p a, 
-.post-content a, 
-.about-text a:not(:has(.status-tag)), 
-.project-desc a,
-.blog-excerpt a {
+p a, .post-content a, .about-text a:not(:has(.status-tag)), .project-desc a {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
@@ -62,16 +63,11 @@ p a,
   color: var(--text-primary);
 }
 
-p a:hover, 
-.post-content a:hover, 
-.about-text a:hover:not(:has(.status-tag)), 
-.project-desc a:hover,
-.blog-excerpt a:hover {
+p a:hover, .post-content a:hover, .about-text a:hover:not(:has(.status-tag)), .project-desc a:hover {
   color: var(--accent-orange);
   text-decoration-thickness: 2px;
 }
 
-/* Ensure images and tags inside links don't get underlines */
 a:has(img), a:has(.status-tag), a:has(.social-icon) {
   text-decoration: none !important;
 }
@@ -80,19 +76,15 @@ ul {
   list-style: none;
 }
 
-/* Base fade-in animation for page loads */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .fade-in {
   animation: fadeIn 0.6s ease-out forwards;
+}
+
+.page-wrapper {
+  flex: 1;
 }

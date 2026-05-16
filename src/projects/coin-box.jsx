@@ -5,10 +5,13 @@ export const metadata = {
   slug: "coin-box",
   title: "Coin Box",
   category: "Lifestyle / Product",
+  tags: ["Packaging Design", "Prototype", "Lifestyle"],
+  gridSize: "standard",
   year: "2025",
-  thumbnail: "/projects/coin-box/coin-box.png",
+  thumbnail: "/projects/coin-box/coin-box-2.png",
   images: [
     "/projects/coin-box/coin-box.png",
+    "/projects/coin-box/coin-box-2.png",
     "/projects/coin-box/coin-box-1.jpeg",
   ],
   description:

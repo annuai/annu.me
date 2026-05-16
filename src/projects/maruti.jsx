@@ -1,10 +1,11 @@
 import React from "react";
 
 export const metadata = {
-    id: "9",
+    id: "7",
     slug: "maruti",
     title: "Indian Car Maker",
     category: "UI/UX Design",
+    tags: ["Design Visualisation", "UI Design", "UX Research"],
     year: "2024",
     walthroughOnly: true,
     thumbnail: "/projects/fwd+maruti_maruti.svg",
@@ -13,6 +14,6 @@ export const metadata = {
         "Work done for an Indian Carmaker",
 };
 
-export default function FWD() {
+export default function Maruti() {
     return <>{/* <p>{metadata.description}</p> */}</>;
 }
