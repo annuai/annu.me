@@ -13,7 +13,28 @@ const AboutSection = () => {
           </div>
           </a>
           <p className="lead">Industrial Designer & Maker based in Kannur, Kerala, specializing in bringing tactile experiences to consumer goods, environments, and functional objects.</p>
-          <p>With an eye for detail and a passion for materials, my work spans from tabletop ceramics to robust consumer electronics. Every project is an opportunity to explore the relationship between the user and the object, creating moments of seamless interaction and enduring beauty.</p>
+
+          <p>
+            My work is driven less by aesthetics alone and more by curiosity:
+            how things feel in the hand, how materials behave, how objects
+            communicate intent, and how small details shape the experience
+            of using something every day.
+          </p>
+
+          <p>
+            I’m still learning. A lot of my process comes from experimentation,
+            prototyping, observing, rebuilding, and slowly refining my sense
+            of taste and judgment. I’m particularly interested in products
+            that sit at the intersection of design, engineering, and technology
+            — especially tools, interfaces, and objects that feel quietly useful
+            and emotionally considered.
+          </p>
+
+          <p>
+            Outside of client work, I spend time building personal projects,
+            improving my rendering and prototyping skills, and documenting
+            the process of becoming better at what I do.
+          </p>
         </div>
         <div className="about-image">
           <img src="/images/me.jpg" alt="Annuai riding a yulu" />
