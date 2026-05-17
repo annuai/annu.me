@@ -180,8 +180,6 @@ export default function IKnowImNotThereYetButImTrying() {
         But I’m trying.
       </p>
 
-      <hr />
-
       <p>
         Written by me & ChatGPT.
       </p>
