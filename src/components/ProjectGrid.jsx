@@ -13,9 +13,11 @@ const modules = Object.fromEntries(
 );
 const projects = Object.keys(modules).map(path => {
   const mod = modules[path];
-  const project = mod.metadata || {};
-  project.slug = project.slug || path.split('/').pop().replace('.jsx', '');
-  return project;
+  const metadata = mod.metadata || {};
+  return {
+    ...metadata,
+    slug: metadata.slug || path.split('/').pop().replace('.jsx', '')
+  };
 }).sort((a, b) => Number(a.id) - Number(b.id)); // Sorting by ID ascending
 
 const ProjectGrid = () => {

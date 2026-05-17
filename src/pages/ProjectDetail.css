@@ -43,7 +43,7 @@
 
 .related-projects-section .grid-container {
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: auto;
+  grid-auto-rows: 300px;
   gap: 1.5rem;
 }
 

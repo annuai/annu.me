@@ -1,16 +1,22 @@
 import React, { useEffect } from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import useSEO from '../hooks/useSEO';
+import '../components/ProjectGrid.css';
 import './ProjectDetail.css';
 
 // Load all JSX files in the projects directory at build time
-const modules = import.meta.glob('../projects/*.jsx', { eager: true });
+const modules = Object.fromEntries(
+  Object.entries(import.meta.glob('../projects/*.jsx', { eager: true }))
+    .filter(([path]) => !path.split('/').pop().startsWith('_'))
+);
 
 const projects = Object.keys(modules).map(path => {
   const mod = modules[path];
-  const project = mod.metadata || {};
-  project.slug = project.slug || path.split('/').pop().replace('.jsx', '');
-  return project;
+  const metadata = mod.metadata || {};
+  return {
+    ...metadata,
+    slug: metadata.slug || path.split('/').pop().replace('.jsx', '')
+  };
 });
 
 const ProjectDetail = () => {

@@ -8,9 +8,11 @@ const modules = import.meta.glob('../posts/*.jsx', { eager: true });
 
 const blogPosts = Object.keys(modules).map(path => {
   const mod = modules[path];
-  const post = mod.metadata || {};
-  post.slug = post.slug || path.split('/').pop().replace('.jsx', '');
-  return post;
+  const metadata = mod.metadata || {};
+  return {
+    ...metadata,
+    slug: metadata.slug || path.split('/').pop().replace('.jsx', '')
+  };
 }).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 const Blog = () => {
