@@ -44,7 +44,7 @@ const ProjectDetail = () => {
   // Get a few other projects to show at the bottom (excluding current and walkthroughOnly/mailto ones if necessary)
   const otherProjects = projects
     .filter(p => p.slug !== slug && !p.walthroughOnly)
-    .slice(0, 3);
+    .slice(0, 4);
 
   return (
     <div className="project-detail-page fade-in">
