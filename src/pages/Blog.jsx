@@ -17,7 +17,8 @@ const Blog = () => {
   useSEO({
     title: 'Annuai | Journal',
     description: 'Thoughts on industrial design, material exploration, and finding the right details.',
-    url: 'https://annu.me/blog'
+    url: 'https://annu.me/blog',
+    image: '/favicon.svg'
   });
 
   return (

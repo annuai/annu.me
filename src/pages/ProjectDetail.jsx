@@ -28,9 +28,9 @@ const ProjectDetail = () => {
 
   useSEO({
     title: project ? `Annuai | ${project.title}` : 'Annuai | Work',
-    description: project ? project.description : 'View my industrial design work.',
+    description: project ? (project.excerpt || project.description) : 'View my industrial design work.',
     url: project ? `https://annu.me/work/${slug}` : `https://annu.me/`,
-    image: project ? project.thumbnail : null
+    image: '/favicon.svg'
   });
 
   useEffect(() => {

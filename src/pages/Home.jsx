@@ -8,7 +8,8 @@ const Home = () => {
   useSEO({
     title: 'Annuai - Industrial Designer & Maker',
     description: 'Annuai is an Industrial Designer turning ideas into tangible experiences across domains.',
-    url: 'https://annu.me/'
+    url: 'https://annu.me/',
+    image: '/favicon.svg'
   });
   return (
     <div className="page-wrapper">
