@@ -1,0 +1,79 @@
+.default-project-layout {
+  display: flex;
+  gap: 6rem;
+  align-items: flex-start;
+  margin-bottom: 8rem;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.default-project-info {
+  flex: 1;
+  position: sticky;
+  top: 8rem; /* Offset for Header */
+  max-width: 450px;
+}
+
+.default-project-info h1 {
+  font-size: 3.5rem;
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.default-project-category {
+  display: block;
+  font-size: 1rem;
+  color: var(--accent-orange);
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  letter-spacing: 0.05em;
+}
+
+.default-project-desc {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.default-project-custom {
+  margin-top: 2rem;
+}
+
+.default-project-images {
+  flex: 1.8;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.default-detail-img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.default-detail-img:hover {
+  transform: translateY(-4px);
+}
+
+@media (max-width: 992px) {
+  .default-project-layout {
+    flex-direction: column;
+    gap: 4rem;
+  }
+  
+  .default-project-info {
+    position: relative;
+    top: 0;
+    max-width: 100%;
+  }
+  
+  .default-project-info h1 {
+    font-size: 2.5rem;
+  }
+}

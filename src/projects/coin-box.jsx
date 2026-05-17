@@ -1,4 +1,5 @@
 import React from "react";
+import ProjectLayout from '../components/ProjectLayout';
 
 export const metadata = {
   id: "4",
@@ -19,5 +20,5 @@ export const metadata = {
 };
 
 export default function CoinBox() {
-  return <>{/* <p>{metadata.description}</p> */}</>;
+  return <ProjectLayout metadata={metadata} />;
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import ProjectLayout from '../components/ProjectLayout';
 
 export const metadata = {
   id: "6",
@@ -17,9 +18,5 @@ export const metadata = {
 };
 
 export default function Organizer() {
-  return (
-    <>
-      <p>{metadata.description}</p>
-    </>
-  );
+  return <ProjectLayout metadata={metadata} />;
 }

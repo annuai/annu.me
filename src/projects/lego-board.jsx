@@ -1,4 +1,5 @@
 import React from "react";
+import ProjectLayout from '../components/ProjectLayout';
 
 export const metadata = {
   id: "5",
@@ -13,9 +14,5 @@ export const metadata = {
 };
 
 export default function WoodenLegoBoard() {
-  return (
-    <>
-      <p>{metadata.description}</p>
-    </>
-  );
+  return <ProjectLayout metadata={metadata} />;
 }

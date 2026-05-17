@@ -1,11 +1,13 @@
 import React from "react";
+import ProjectLayout from '../components/ProjectLayout';
 
 export const metadata = {
   id: "7",
   slug: "clock",
   title: "Clock",
   category: "Product Design",
-  year: "2026",
+  tags: ["Product Design", "Visualisation", "Prototype"],
+  year: "2025",
   thumbnail: "/projects/clock/clock.png",
   images: ["/projects/clock/clock.png", "/projects/clock/clock-1.png"],
   description:
@@ -13,5 +15,5 @@ export const metadata = {
 };
 
 export default function Clock() {
-  return <>{/* <p>{metadata.description}</p> */}</>;
+  return <ProjectLayout metadata={metadata} />;
 }

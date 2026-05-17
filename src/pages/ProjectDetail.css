@@ -1,77 +1,36 @@
 .project-detail-page {
   padding: 8rem 2rem 4rem;
-  max-width: 1400px;
+  max-width: 1600px;
   margin: 0 auto;
 }
 
-.project-detail-container {
-  display: flex;
-  gap: 6rem;
-  align-items: flex-start;
-  margin-bottom: 8rem;
-}
-
-.project-detail-left {
-  flex: 1;
-  position: sticky;
-  top: 8rem; /* sticky header offset */
-  max-width: 450px;
-}
-
-.project-detail-right {
-  flex: 1.8;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+.project-detail-header-wrapper {
+  margin-bottom: 2rem;
 }
 
 .back-link {
-  display: inline-block;
-  margin-bottom: 2rem;
+  display: inline-flex;
+  align-items: center;
   color: var(--text-secondary);
   font-weight: 500;
-  transition: color 0.3s ease;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color var(--transition-speed);
 }
 
 .back-link:hover {
-  color: var(--accent-orange);
-}
-
-.project-detail-left h1 {
-  font-size: 3.5rem;
-  font-weight: 600;
-  line-height: 1.1;
-  margin-bottom: 0.5rem;
   color: var(--text-primary);
-  letter-spacing: -0.02em;
 }
 
-.project-category {
-  display: block;
-  font-size: 1rem;
-  color: var(--accent-orange);
-  font-weight: 500;
-  text-transform: uppercase;
-  margin-bottom: 2rem;
-  letter-spacing: 0.05em;
-}
-
-.project-desc {
-  font-size: 1.1rem;
-  color: var(--text-secondary);
-  line-height: 1.8;
-}
-
-.detail-img {
+.project-detail-canvas {
   width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  margin-bottom: 8rem;
 }
 
+/* Related projects styles */
 .related-projects-section {
   border-top: 1px solid var(--border-color);
-  padding-top: 4rem;
+  padding-top: 5rem;
 }
 
 .related-projects-section h2 {
@@ -82,17 +41,13 @@
   letter-spacing: -0.02em;
 }
 
-@media (max-width: 992px) {
-  .project-detail-container {
-    flex-direction: column;
-    gap: 4rem;
+@media (max-width: 768px) {
+  .project-detail-page {
+    padding: 6rem 1.5rem 2rem;
   }
-  .project-detail-left {
-    position: relative;
-    top: 0;
-    max-width: 100%;
-  }
-  .project-detail-left h1 {
-    font-size: 2.5rem;
+  
+  .related-projects-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
   }
 }

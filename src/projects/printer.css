@@ -1,0 +1,507 @@
+.printer-case-study {
+  width: 100%;
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* Intro Section */
+.cs-intro-section {
+  margin-bottom: 5rem;
+}
+
+.cs-category {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--accent-orange);
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.cs-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: 3rem;
+  letter-spacing: -0.02em;
+  max-width: 1100px;
+}
+
+.cs-intro-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  gap: 6rem;
+  align-items: flex-start;
+}
+
+.cs-lead {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.cs-problem-statement h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.cs-problem-statement p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.cs-meta-box {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cs-meta-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cs-meta-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+.cs-meta-val {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+/* Base Case Study Sections */
+.cs-section {
+  margin-bottom: 6rem;
+  width: 100%;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  letter-spacing: -0.01em;
+}
+
+.cs-image-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.06);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-secondary);
+}
+
+.cs-image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cs-caption-box {
+  padding: 2rem 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  max-width: 900px;
+}
+
+.cs-caption-box p {
+  margin-bottom: 1rem;
+}
+
+.cs-caption-box p:last-child {
+  margin-bottom: 0;
+}
+
+/* Grids for Split Images */
+.cs-split-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.cs-image-column {
+  display: flex;
+  align-items: stretch;
+}
+
+.cs-image-column img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.cs-image-column.span-2 {
+  grid-column: span 2;
+}
+
+.cs-image-column.span-1 {
+  grid-column: span 1;
+}
+
+.cs-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.cs-grid-2col img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.rounded-img {
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+/* Specific background styles for block sections */
+.bg-teal-block {
+  background-color: #d3eaee;
+  padding: 3rem;
+  border-radius: 16px;
+  color: #1a1a1a;
+}
+
+.bg-teal-block .cs-caption-box {
+  color: #333333;
+}
+
+[data-theme='dark'] .bg-teal-block {
+  background-color: #1b2e31;
+  color: #e9e2e1;
+}
+
+[data-theme='dark'] .bg-teal-block .cs-caption-box {
+  color: #cccccc;
+}
+
+.bg-purple-block {
+  background-color: #e1e0ec;
+  padding: 3rem;
+  border-radius: 16px;
+  color: #1a1a1a;
+}
+
+.bg-purple-block .cs-caption-box {
+  color: #333333;
+}
+
+[data-theme='dark'] .bg-purple-block {
+  background-color: #212030;
+  color: #e9e2e1;
+}
+
+[data-theme='dark'] .bg-purple-block .cs-caption-box {
+  color: #cccccc;
+}
+
+.bg-orange-block {
+  background-color: #ffd1b0;
+  padding: 3rem;
+  border-radius: 16px;
+}
+
+[data-theme='dark'] .bg-orange-block {
+  background-color: #3f2a1b;
+}
+
+.pr-3-desktop {
+  padding-right: 1rem;
+}
+
+/* Brief Card & Objectives List */
+.brief-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+}
+
+.brief-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.brief-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--accent-orange);
+  letter-spacing: 0.08em;
+}
+
+.brief-highlight {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--text-primary);
+}
+
+.objectives-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.objectives-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: var(--text-primary);
+}
+
+.check-icon {
+  width: 20px;
+  height: 20px;
+  color: #10b981;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Deep Dive Cards */
+.deep-dive-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all var(--transition-speed);
+}
+
+.deep-dive-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.card-padding {
+  padding: 2rem;
+}
+
+.deep-dive-card h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.deep-dive-card p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.deep-dive-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Videos Section */
+.cs-videos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* CAD embed styling */
+.cad-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+  border: 1px solid var(--border-color);
+}
+
+.cad-wrapper iframe {
+  width: 100%;
+  display: block;
+}
+
+/* Learnings Grid */
+.learnings-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.learning-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  padding: 2.5rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.learning-card h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.learning-card p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Documentation Box */
+.doc-box {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  padding: 3rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.doc-box p {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  font-weight: 500;
+  margin: 0;
+}
+
+.doc-btn {
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all var(--transition-speed);
+}
+
+.doc-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  opacity: 0.95;
+}
+
+/* Responsive CSS */
+@media (max-width: 992px) {
+  .cs-title {
+    font-size: 2.5rem;
+  }
+  
+  .cs-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .brief-card {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 2.5rem;
+  }
+  
+  .cs-split-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .cs-grid-2col {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .cs-videos-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .learnings-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .pr-3-desktop {
+    padding-right: 0;
+  }
+  
+  .bg-teal-block,
+  .bg-purple-block,
+  .bg-orange-block {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .cs-title {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .cs-lead {
+    font-size: 1.25rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .hide-mobile {
+    display: none !important;
+  }
+  
+  .deep-dive-card img {
+    height: 240px;
+  }
+}

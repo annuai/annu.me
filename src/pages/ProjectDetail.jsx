@@ -41,49 +41,45 @@ const ProjectDetail = () => {
     return <Navigate to="/" />;
   }
 
-  // Get a few other projects to show at the bottom
-  const otherProjects = projects.filter(p => p.slug !== slug).slice(0, 3);
+  // Get a few other projects to show at the bottom (excluding current and walkthroughOnly/mailto ones if necessary)
+  const otherProjects = projects
+    .filter(p => p.slug !== slug && !p.walthroughOnly)
+    .slice(0, 3);
 
   return (
     <div className="project-detail-page fade-in">
-      <div className="project-detail-container">
-        <div className="project-detail-left">
-          <div className="sticky-info">
-            <Link to="/" className="back-link">&larr; Back to Portfolio</Link>
-            <h1>{project.title}</h1>
-            <span className="project-category">{project.category} &bull; {project.year}</span>
-            <p className="project-desc">{project.description}</p>
-          </div>
-        </div>
-
-        <div className="project-detail-right">
-          {project.images && project.images.map((img, idx) => (
-            <img key={idx} src={img} alt={`${project.title} - view ${idx + 1}`} className="detail-img" />
-          ))}
-          <div className="project-content">
-            <ProjectContent />
-          </div>
-        </div>
+      <div className="project-detail-header-wrapper">
+        <Link to="/" className="back-link">&larr; Back to Portfolio</Link>
       </div>
 
-      <div className="related-projects-section">
-        <h2>More Projects</h2>
-        <div className="grid-container">
-          {otherProjects.map(p => (
-            <Link to={`/work/${p.slug}`} key={p.id} className="project-card">
-              <div className="img-wrapper">
-                <img src={p.thumbnail} alt={p.title} />
-                <div className="overlay">
-                  <div className="overlay-content">
-                    <h3>{p.title}</h3>
-                    <p>{p.category}</p>
+      <div className="project-detail-canvas">
+        <ProjectContent />
+      </div>
+
+      {otherProjects.length > 0 && (
+        <div className="related-projects-section">
+          <h2>More Projects</h2>
+          <div className="grid-container">
+            {otherProjects.map(p => (
+              <Link to={`/work/${p.slug}`} key={p.id} className="project-card">
+                <div className="img-wrapper">
+                  <img src={p.thumbnail} alt={p.title} />
+                  <div className="overlay">
+                    <div className="overlay-tags">
+                      {p.tags && p.tags.map((tag, i) => (
+                        <span key={i} className="tag">{tag}</span>
+                      ))}
+                    </div>
+                    <div className="overlay-title">
+                      <h3>{p.title}</h3>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import ProjectLayout from '../components/ProjectLayout';
 
 export const metadata = {
   id: "2",
@@ -8,7 +9,7 @@ export const metadata = {
   tags: ["Lighting Design", "Visualisation", "Prototype"],
   gridSize: "large",
   year: "2025",
-  thumbnail: "/projects/hornbill-lamp/hornbill-lamp.png",
+  thumbnail: "/projects/hornbill-lamp/hornbill-lamp-wide.png",
   images: [
     "/projects/hornbill-lamp/hornbill-lamp-1.jpeg",
     "/projects/hornbill-lamp/hornbill-lamp-2.jpeg",
@@ -18,9 +19,5 @@ export const metadata = {
 };
 
 export default function HornbillLamp() {
-  return (
-    <>
-      <p>{metadata.description}</p>
-    </>
-  );
+  return <ProjectLayout metadata={metadata} />;
 }

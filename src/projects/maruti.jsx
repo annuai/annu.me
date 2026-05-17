@@ -1,4 +1,5 @@
 import React from "react";
+import ProjectLayout from '../components/ProjectLayout';
 
 export const metadata = {
     id: "8",
@@ -15,5 +16,5 @@ export const metadata = {
 };
 
 export default function Maruti() {
-    return <>{/* <p>{metadata.description}</p> */}</>;
+    return <ProjectLayout metadata={metadata} />;
 }
