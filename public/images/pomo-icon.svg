@@ -1,0 +1,16 @@
+<svg class="hero-icon" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg" style="pointer-events: auto;">
+      <circle cx="70" cy="76" r="52" fill="#D85A30" style="pointer-events: auto;"></circle>
+      <circle cx="70" cy="76" r="40" fill="#E07048" opacity="0.5" style="pointer-events: auto;"></circle>
+      <circle cx="55" cy="62" r="18" fill="#F0997B" opacity="0.25"></circle>
+      <ellipse cx="85" cy="90" rx="14" ry="18" fill="#993C1D" opacity="0.18"></ellipse>
+      <!-- Stem -->
+      <rect x="63" y="20" width="14" height="18" rx="7" fill="#3B6D11"></rect>
+      <!-- Leaf left -->
+      <ellipse cx="56" cy="28" rx="12" ry="6" fill="#3B6D11" transform="rotate(-40 56 28)"></ellipse>
+      <!-- Leaf right -->
+      <ellipse cx="84" cy="28" rx="12" ry="6" fill="#3B6D11" transform="rotate(40 84 28)"></ellipse>
+      <!-- Highlight -->
+      <circle cx="55" cy="60" r="10" fill="#fff" opacity="0.12"></circle>
+      <!-- Center shine -->
+      <ellipse cx="58" cy="64" rx="5" ry="7" fill="#fff" opacity="0.2" transform="rotate(-15 58 64)"></ellipse>
+    </svg>
