@@ -25,6 +25,10 @@ const ProjectGrid = () => {
   const [tileHeight, setTileHeight] = useState(300); // State for tile height
 
   const openModal = (project) => {
+    if (project.customUrl) {
+      window.location.href = project.customUrl;
+      return;
+    }
     setSelectedProject(project);
     document.body.style.overflow = 'hidden'; // Prevent scrolling
   };

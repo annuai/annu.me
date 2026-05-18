@@ -66,23 +66,30 @@ const ProjectDetail = () => {
         <div className="related-projects-section">
           <h2>More Projects</h2>
           <div className="grid-container">
-            {otherProjects.map(p => (
-              <Link to={`/work/${p.slug}`} key={p.id} className="project-card">
-                <div className="img-wrapper">
-                  <img src={p.thumbnail} alt={p.title} />
-                  <div className="overlay">
-                    <div className="overlay-tags">
-                      {p.tags && p.tags.map((tag, i) => (
-                        <span key={i} className="tag">{tag}</span>
-                      ))}
-                    </div>
-                    <div className="overlay-title">
-                      <h3>{p.title}</h3>
+            {otherProjects.map(p => {
+              const linkProps = p.customUrl
+                ? { href: p.customUrl, as: "a" }
+                : { to: `/work/${p.slug}`, as: Link };
+              const Component = linkProps.as;
+              
+              return (
+                <Component {...linkProps} key={p.id} className="project-card">
+                  <div className="img-wrapper">
+                    <img src={p.thumbnail} alt={p.title} />
+                    <div className="overlay">
+                      <div className="overlay-tags">
+                        {p.tags && p.tags.map((tag, i) => (
+                          <span key={i} className="tag">{tag}</span>
+                        ))}
+                      </div>
+                      <div className="overlay-title">
+                        <h3>{p.title}</h3>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Link>
-            ))}
+                </Component>
+              );
+            })}
           </div>
         </div>
       )}
