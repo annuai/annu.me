@@ -2,7 +2,7 @@ import React from "react";
 import ProjectLayout from "../components/ProjectLayout";
 
 export const metadata = {
-  id: "2",
+  id: "10",
   slug: "pomo",
   title: "Pomo: A Pomodoro Timer",
   category: "Software Development",

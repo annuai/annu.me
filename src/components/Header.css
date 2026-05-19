@@ -4,19 +4,22 @@
   left: 0;
   width: 100%;
   z-index: 100;
-  background: var(--bg-primary);
-  opacity: 0.98;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(237, 232, 227, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-color);
-  padding: 1rem 0;
+  padding: 1.1rem 0;
   transition: background-color var(--transition-speed), border-color var(--transition-speed);
 }
 
+[data-theme='dark'] .site-header {
+  background: rgba(26, 26, 26, 0.92);
+}
+
 .header-container {
-  max-width: 1600px;
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,16 +36,19 @@
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-family: var(--font-ui);
+  font-size: 1.2rem;
+  font-weight: 500;
   color: var(--text-primary);
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
 }
 
 .logo-subtitle {
-  font-size: 0.9rem;
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
   color: var(--text-secondary);
   font-weight: 300;
+  letter-spacing: 0.05em;
 }
 
 .header-right {
@@ -58,11 +64,13 @@
 }
 
 .nav-link {
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  font-weight: 400;
   color: var(--text-secondary);
   transition: color var(--transition-speed);
   position: relative;
+  letter-spacing: 0.02em;
 }
 
 .nav-link:hover, .nav-link.active {

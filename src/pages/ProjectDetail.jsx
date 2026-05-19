@@ -71,21 +71,19 @@ const ProjectDetail = () => {
                 ? { href: p.customUrl, as: "a" }
                 : { to: `/work/${p.slug}`, as: Link };
               const Component = linkProps.as;
-              
+
               return (
-                <Component {...linkProps} key={p.id} className="project-card">
+                <Component {...linkProps} key={p.id} className="project-card standard">
                   <div className="img-wrapper">
                     <img src={p.thumbnail} alt={p.title} />
-                    <div className="overlay">
-                      <div className="overlay-tags">
-                        {p.tags && p.tags.map((tag, i) => (
-                          <span key={i} className="tag">{tag}</span>
-                        ))}
-                      </div>
-                      <div className="overlay-title">
-                        <h3>{p.title}</h3>
-                      </div>
-                    </div>
+                    <div className="card-hover-overlay" />
+                  </div>
+                  <div className="card-meta">
+                    <span className="card-category">
+                      {p.category || (p.tags && p.tags[0])}
+                      {p.year && <span className="card-year"> · {p.year}</span>}
+                    </span>
+                    <h3 className="card-title">{p.title}</h3>
                   </div>
                 </Component>
               );

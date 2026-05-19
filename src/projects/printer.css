@@ -10,22 +10,25 @@
 
 .cs-category {
   display: block;
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 400;
   text-transform: uppercase;
-  color: var(--accent-orange);
-  letter-spacing: 0.1em;
-  margin-bottom: 1rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.18em;
+  margin-bottom: 1.5rem;
 }
 
 .cs-title {
-  font-size: 3.5rem;
-  font-weight: 700;
-  line-height: 1.1;
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.15;
   color: var(--text-primary);
   margin-bottom: 3rem;
-  letter-spacing: -0.02em;
-  max-width: 1100px;
+  letter-spacing: -0.01em;
+  max-width: 960px;
 }
 
 .cs-intro-grid {
@@ -36,20 +39,23 @@
 }
 
 .cs-lead {
-  font-size: 1.4rem;
-  line-height: 1.6;
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-style: italic;
+  line-height: 1.55;
   color: var(--text-primary);
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   font-weight: 400;
 }
 
 .cs-problem-statement h3 {
-  font-size: 1rem;
-  font-weight: 600;
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.18em;
   color: var(--text-secondary);
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .cs-problem-statement p {
@@ -75,16 +81,18 @@
 }
 
 .cs-meta-label {
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.14em;
   color: var(--text-secondary);
 }
 
 .cs-meta-val {
-  font-size: 1rem;
-  font-weight: 500;
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  font-weight: 400;
   color: var(--text-primary);
 }
 
@@ -95,8 +103,10 @@
 }
 
 .section-title {
-  font-size: 2.2rem;
-  font-weight: 600;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 400;
+  font-style: italic;
   color: var(--text-primary);
   margin-bottom: 2rem;
   letter-spacing: -0.01em;
@@ -254,16 +264,19 @@
 }
 
 .brief-label {
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  font-weight: 400;
   text-transform: uppercase;
-  color: var(--accent-orange);
-  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  letter-spacing: 0.16em;
 }
 
 .brief-highlight {
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 400;
+  font-style: italic;
   line-height: 1.4;
   color: var(--text-primary);
 }
@@ -312,9 +325,11 @@
 }
 
 .deep-dive-card h3 {
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: 0.75rem;
   color: var(--text-primary);
 }
 
@@ -325,8 +340,7 @@
 }
 
 .deep-dive-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 
 /* Videos Section */
@@ -384,8 +398,10 @@
 }
 
 .learning-card h4 {
+  font-family: var(--font-display);
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 400;
+  font-style: italic;
   color: var(--text-primary);
   margin: 0;
 }
@@ -412,33 +428,34 @@
 }
 
 .doc-box p {
-  font-size: 1.2rem;
-  color: var(--text-primary);
-  font-weight: 500;
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: 400;
   margin: 0;
 }
 
 .doc-btn {
-  font-size: 1rem;
-  padding: 1rem 2rem;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  padding: 0.85rem 2rem;
   background-color: var(--text-primary);
   color: var(--bg-primary);
   border-radius: 30px;
   text-decoration: none;
-  font-weight: 600;
-  transition: all var(--transition-speed);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  transition: opacity var(--transition-speed);
 }
 
 .doc-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  opacity: 0.95;
+  opacity: 0.8;
 }
 
 /* Responsive CSS */
 @media (max-width: 992px) {
   .cs-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
   
   .cs-intro-grid {
@@ -485,16 +502,16 @@
 
 @media (max-width: 768px) {
   .cs-title {
-    font-size: 2.2rem;
+    font-size: 1.9rem;
     margin-bottom: 2rem;
   }
-  
+
   .cs-lead {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
   }
-  
+
   .section-title {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
   
   .hide-mobile {

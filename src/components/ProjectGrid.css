@@ -1,66 +1,63 @@
 .portfolio-section {
-  padding: 4rem 2rem 2rem;
-  max-width: 1600px;
+  padding: 2rem 4rem 8rem;
+  max-width: var(--max-width);
   margin: 0 auto;
+  width: 100%;
 }
 
-.grid-controls {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 2rem;
-  padding: 0 1rem;
-}
-
-.height-control {
+.section-header {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  font-size: 0.8rem;
-  color: var(--text-secondary);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.section-header::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--text-secondary);
+  opacity: 0.5;
+}
+
+.section-label {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: var(--text-secondary);
 }
 
-.height-control input {
-  cursor: pointer;
-  accent-color: var(--text-primary);
-}
-
+/* ── Grid ─────────────────────────────────────────── */
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: minmax(var(--tile-height, 300px), auto); /* Using CSS variable for height */
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 300px;
   grid-auto-flow: dense;
-  gap: 0.75rem; /* Reduced from 1.5rem */
+  gap: 1.5rem 2rem;
 }
 
 .project-card {
-  position: relative;
-  overflow: hidden;
   cursor: pointer;
-  background-color: var(--bg-secondary);
-  transition: opacity 0.3s ease, background-color var(--transition-speed);
-  display: block;
+  display: grid;
+  grid-template-rows: 1fr auto;
   height: 100%;
-  width: 100%;
-  border-radius: 12px;
+  gap: 0;
 }
 
-/* Grid Size Definitions */
-.project-card.large {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-
+.project-card.large,
 .project-card.wide {
   grid-column: span 2;
-  grid-row: span 1;
+  grid-row: span 2;
 }
 
 .project-card.tall {
   grid-column: span 1;
-  grid-row: span 2;
+  grid-row: span 1;
 }
 
 .project-card.standard {
@@ -68,164 +65,136 @@
   grid-row: span 1;
 }
 
+/* ── Image wrapper ─────────────────────────────────── */
 .img-wrapper {
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 100%;
-  border-radius: 12px;
+  min-height: 0;
   overflow: hidden;
+  border-radius: 6px;
+  background-color: var(--bg-secondary);
 }
 
 .img-wrapper img {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.project-card:hover .img-wrapper img {
+  transform: scale(1.04);
+}
 
-/* Overlay Styling */
-.overlay {
+.card-hover-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.4s ease;
+  z-index: 1;
+  border-radius: 6px;
+}
+
+.project-card:hover .card-hover-overlay {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* ── Card meta (always visible below image) ───────── */
+.card-meta {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 2rem;
-  opacity: 0;
-  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  color: white;
-  z-index: 2;
+  gap: 0.35rem;
+  padding: 0.9rem 0.1rem 0;
 }
 
-.project-card:hover .overlay {
-  opacity: 1;
-}
-
-.overlay-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: flex-end;
-  transform: translateY(-10px);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.tag {
-  font-size: 0.75rem;
-  font-weight: 500;
+.card-category {
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(8px);
-  padding: 0.4rem 0.8rem;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
 }
 
-.overlay-title {
-  transform: translateY(10px);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+.card-year {
+  opacity: 0.7;
 }
 
-.project-card:hover .overlay-tags,
-.project-card:hover .overlay-title {
-  transform: translateY(0);
-}
-
-.overlay-title h3 {
-  font-size: 2rem;
-  font-weight: 600;
+.card-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
   margin: 0;
-  letter-spacing: -0.02em;
+  transition: opacity 0.3s ease;
 }
 
-.project-card.standard .overlay-title h3 {
-  font-size: 1.5rem;
+.project-card.large .card-title,
+.project-card.wide .card-title {
+  font-size: 1.55rem;
 }
 
-/* Mobile Version Styling */
+.project-card:hover .card-title {
+  opacity: 0.65;
+}
+
+/* ── Responsive ────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .portfolio-section {
+    padding: 2rem 2.5rem 6rem;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 260px;
+    gap: 1.25rem 1.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .portfolio-section {
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.5rem 5rem;
   }
-  
+
   .grid-container {
-    grid-template-columns: 1fr;
-    grid-auto-rows: auto;
-    gap: 1.5rem; /* Reduced from 3.5rem */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
-  
+
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    gap: 0;
+  }
+
   .project-card.large,
   .project-card.wide,
   .project-card.tall,
   .project-card.standard {
-    grid-column: span 1;
-    grid-row: span 1;
-  }
-
-  .overlay {
-    opacity: 1;
-    position: absolute;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 50%) !important;
-    padding: 1.5rem;
-    color: white !important;
-    flex-direction: column-reverse;
-    justify-content: flex-end;
-    align-items: flex-start;
-    gap: 0.5rem;
-    height: 100%;
-    z-index: 3;
-    pointer-events: none;
-  }
-
-  .overlay-tags {
-    justify-content: flex-start;
-    transform: none;
-    order: 2;
-  }
-
-  .overlay-title {
-    transform: none;
-    order: 1;
-  }
-
-  .tag {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 0.3rem 0.6rem;
-    font-size: 0.65rem;
-    backdrop-filter: blur(4px);
-  }
-
-  .overlay-title h3 {
-    font-size: 1.6rem;
-    color: white !important;
-    font-weight: 600;
-    line-height: 1.2;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-  }
-  
-  .project-card {
-    flex-direction: column;
-    background: transparent;
-    border-radius: 12px;
+    grid-column: unset;
+    grid-row: unset;
   }
 
   .img-wrapper {
     height: auto;
-    min-height: auto;
-    aspect-ratio: 4/3;
-    border-radius: 12px;
+    aspect-ratio: 4 / 3;
+    position: relative;
   }
 
-  .grid-controls {
-    display: none; /* Hide height control on mobile for simplicity or keep it? */
+  .card-title {
+    font-size: 1.4rem;
+  }
+
+  .project-card.large .card-title,
+  .project-card.wide .card-title {
+    font-size: 1.4rem;
   }
 }

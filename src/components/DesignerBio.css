@@ -1,25 +1,42 @@
 .designer-bio-section {
-  padding: 8rem 2rem;
+  padding: 8rem 4rem 10rem;
   background-color: var(--bg-primary);
   border-top: 1px solid var(--border-color);
   transition: background-color var(--transition-speed), border-color var(--transition-speed);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
 }
 
 .bio-container {
-  max-width: 1000px;
-  margin: 0 auto;
+  max-width: 780px;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .bio-text p {
-  font-size: 1.8rem;
-  line-height: 1.4;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+  font-style: italic;
+  line-height: 1.45;
   color: var(--text-primary);
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  margin-bottom: 1.5rem;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  margin-bottom: 1.8rem;
+  opacity: 0.85;
+}
+
+.bio-text p:last-child {
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  letter-spacing: 0;
+  opacity: 1;
+  margin-bottom: 0;
 }
 
 .bio-links {
@@ -28,8 +45,9 @@
 }
 
 .bio-link {
-  font-size: 1rem;
-  font-weight: 500;
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  font-weight: 400;
   color: var(--text-secondary);
   text-decoration: none;
   transition: color 0.3s ease;
@@ -58,15 +76,25 @@
   transform-origin: left;
 }
 
+@media (max-width: 1024px) {
+  .designer-bio-section {
+    padding: 6rem 2.5rem 8rem;
+  }
+}
+
 @media (max-width: 768px) {
   .designer-bio-section {
-    padding: 6rem 1.5rem;
+    padding: 5rem 1.5rem 6rem;
   }
-  
+
   .bio-text p {
     font-size: 1.4rem;
   }
-  
+
+  .bio-text p:last-child {
+    font-size: 0.95rem;
+  }
+
   .bio-links {
     flex-wrap: wrap;
     gap: 1.5rem;

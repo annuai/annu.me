@@ -2,20 +2,13 @@ import React from 'react';
 import './Hero.css';
 
 const WrenchIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="hero-icon icon-1">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
   </svg>
 );
 
-const PhoneIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="hero-icon icon-2">
-    <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
-    <line x1="12" y1="18" x2="12.01" y2="18" />
-  </svg>
-);
-
 const CircuitIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="hero-icon icon-3">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <rect x="4" y="4" width="16" height="16" rx="2" ry="2" />
     <rect x="9" y="9" width="6" height="6" />
     <line x1="9" y1="1" x2="9" y2="4" />
@@ -30,7 +23,7 @@ const CircuitIcon = () => (
 );
 
 const PenIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="hero-icon icon-4">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M12 19l7-7 3 3-7 7-3-3z" />
     <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
     <path d="M2 2l7.586 7.586" />
@@ -38,8 +31,61 @@ const PenIcon = () => (
   </svg>
 );
 
+const PhoneIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+    <line x1="12" y1="18" x2="12.01" y2="18" />
+  </svg>
+);
+
+const HammerIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="m15 12-8.373 8.373a1 1 0 1 1-3-3L12 9" />
+    <path d="m18 15 4-4" />
+    <path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172V7l-2.26-2.26a6 6 0 0 0-4.202-1.756L9 2.96l.92.82A6.18 6.18 0 0 1 12 8.4V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5" />
+  </svg>
+);
+
+const RulerIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21.3 8.7 8.7 21.3c-1 1-2.5 1-3.4 0l-2.6-2.6c-1-1-1-2.5 0-3.4L15.3 2.7c1-1 2.5-1 3.4 0l2.6 2.6c1 1 1 2.5 0 3.4Z" />
+    <path d="m7.5 10.5 2 2" />
+    <path d="m10.5 7.5 2 2" />
+    <path d="m13.5 4.5 2 2" />
+    <path d="m4.5 13.5 2 2" />
+  </svg>
+);
+
+const UIDesignIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="3" width="20" height="15" rx="2" />
+    <line x1="8" y1="21" x2="16" y2="21" />
+    <line x1="12" y1="18" x2="12" y2="21" />
+    <rect x="4" y="6" width="6" height="4" rx="1" />
+    <line x1="12" y1="7" x2="18" y2="7" />
+    <line x1="12" y1="10" x2="18" y2="10" />
+    <line x1="4" y1="13" x2="18" y2="13" />
+  </svg>
+);
+
+const UXResearchIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="10" cy="10" r="7" />
+    <line x1="21" y1="21" x2="15" y2="15" />
+    <circle cx="10" cy="8.5" r="2" />
+    <path d="M6.5 16c0-1.93 1.57-3.5 3.5-3.5s3.5 1.57 3.5 3.5" />
+  </svg>
+);
+
+const GearIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
+    <circle cx="12" cy="12" r="3" />
+  </svg>
+);
+
 const MotoIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="hero-icon icon-5">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <circle cx="5.5" cy="16.5" r="3.5" />
     <circle cx="18.5" cy="16.5" r="3.5" />
     <path d="M15 6h5v4h-5z" />
@@ -50,26 +96,52 @@ const MotoIcon = () => (
   </svg>
 );
 
+const ICONS = [
+  { id: 'wrench', Icon: WrenchIcon, top: '10%', right: '6%', size: 46, rotate: -15, delay: 0.45 },
+  { id: 'circuit', Icon: CircuitIcon, top: '11%', right: '28%', size: 44, rotate: 5, delay: 0.50 },
+  { id: 'pen', Icon: PenIcon, top: '25%', right: '17%', size: 44, rotate: -10, delay: 0.55 },
+  { id: 'phone', Icon: PhoneIcon, top: '36%', right: '5%', size: 44, rotate: -4, delay: 0.55 },
+  { id: 'hammer', Icon: HammerIcon, top: '33%', right: '28%', size: 44, rotate: 20, delay: 0.60 },
+  { id: 'ruler', Icon: RulerIcon, top: '50%', right: '16%', size: 48, rotate: -5, delay: 0.63 },
+  { id: 'ui', Icon: UIDesignIcon, top: '54%', right: '32%', size: 44, rotate: 4, delay: 0.67 },
+  { id: 'ux', Icon: UXResearchIcon, top: '65%', right: '5%', size: 44, rotate: 0, delay: 0.70 },
+  { id: 'gear', Icon: GearIcon, top: '72%', right: '24%', size: 46, rotate: 12, delay: 0.75 },
+  { id: 'moto', Icon: MotoIcon, top: '80%', right: '14%', size: 48, rotate: 0, delay: 0.80 },
+];
+
 const Hero = () => {
   return (
     <section className="hero-section">
-      <div className="hero-bg">
-        <WrenchIcon />
-        <PhoneIcon />
-        <CircuitIcon />
-        <PenIcon />
-        <MotoIcon />
+      <div className="hero-icons" aria-hidden="true">
+        {ICONS.map(({ id, Icon, top, right, size, rotate, delay }) => (
+          <span
+            key={id}
+            className="hero-icon"
+            style={{
+              top,
+              right,
+              width: size,
+              height: size,
+              transform: `rotate(${rotate}deg)`,
+              animationDelay: `${delay}s`,
+            }}
+          >
+            <Icon />
+          </span>
+        ))}
       </div>
+
       <div className="hero-content fade-in">
         <p className="hero-text">
-          <span className="clean-text">Annuai is an Industrial Designer turning ideas into tangible experiences across domains </span>
+          <span className="clean-text">Turning ideas into tangible experiences across domains </span>
           <span className="expressive-text">— thoughtfully, playfully, and hands-on.</span>
         </p>
-        <div className="hero-tags">
-          <a href="mailto:hi.annuai@gmail.com"><div className="hero-status-tag">
-            <span className="hero-pulse-indicator"></span>
-            Currently looking for work
-          </div>
+        <div className="hero-footer">
+          <a href="mailto:hi.annuai@gmail.com" className="hero-status-link">
+            <div className="hero-status-tag">
+              <span className="hero-pulse-indicator"></span>
+              Currently looking for work
+            </div>
           </a>
         </div>
       </div>

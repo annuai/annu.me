@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import ProjectModal from './ProjectModal';
 import './ProjectGrid.css';
 
-// Load all JSX files in the projects directory at build time
 const modules = Object.fromEntries(
   Object.entries(
     import.meta.glob('../projects/*.jsx', { eager: true })
@@ -18,11 +17,10 @@ const projects = Object.keys(modules).map(path => {
     ...metadata,
     slug: metadata.slug || path.split('/').pop().replace('.jsx', '')
   };
-}).sort((a, b) => Number(a.id) - Number(b.id)); // Sorting by ID ascending
+}).sort((a, b) => Number(a.id) - Number(b.id));
 
 const ProjectGrid = () => {
   const [selectedProject, setSelectedProject] = useState(null);
-  const [tileHeight, setTileHeight] = useState(300); // State for tile height
 
   const openModal = (project) => {
     if (project.customUrl) {
@@ -30,7 +28,7 @@ const ProjectGrid = () => {
       return;
     }
     setSelectedProject(project);
-    document.body.style.overflow = 'hidden'; // Prevent scrolling
+    document.body.style.overflow = 'hidden';
   };
 
   const closeModal = () => {
@@ -38,30 +36,14 @@ const ProjectGrid = () => {
     document.body.style.overflow = 'auto';
   };
 
-  const handleHeightChange = (e) => {
-    setTileHeight(parseInt(e.target.value, 10));
-  };
-
   return (
     <>
       <section className="portfolio-section fade-in" id="work" style={{ animationDelay: '0.2s' }}>
-        <div className="grid-controls">
-          <div className="height-control">
-            <span>Tile Height</span>
-            <input 
-              type="range" 
-              min="200" 
-              max="600" 
-              step="10"
-              value={tileHeight} 
-              onChange={handleHeightChange} 
-              aria-label="Adjust Tile Height"
-            />
-            <span>{tileHeight}px</span>
-          </div>
+        <div className="section-header">
+          <span className="section-label">Selected Work</span>
         </div>
 
-        <div className="grid-container" style={{ '--tile-height': `${tileHeight}px` }}>
+        <div className="grid-container">
           {projects.map((project) => (
             <div
               key={project.id}
@@ -70,16 +52,14 @@ const ProjectGrid = () => {
             >
               <div className="img-wrapper">
                 <img src={project.thumbnail} alt={project.title} />
-                <div className="overlay">
-                  <div className="overlay-tags">
-                    {project.tags && project.tags.map((tag, i) => (
-                      <span key={i} className="tag">{tag}</span>
-                    ))}
-                  </div>
-                  <div className="overlay-title">
-                    <h3>{project.title}</h3>
-                  </div>
-                </div>
+                <div className="card-hover-overlay" />
+              </div>
+              <div className="card-meta">
+                <span className="card-category">
+                  {project.category || (project.tags && project.tags[0])}
+                  {project.year && <span className="card-year"> · {project.year}</span>}
+                </span>
+                <h3 className="card-title">{project.title}</h3>
               </div>
             </div>
           ))}
