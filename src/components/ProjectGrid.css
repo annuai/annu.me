@@ -135,10 +135,6 @@
   transition: opacity 0.3s ease;
 }
 
-.project-card.large .card-title,
-.project-card.wide .card-title {
-  font-size: 1.55rem;
-}
 
 .project-card:hover .card-title {
   opacity: 0.65;
