@@ -134,7 +134,7 @@ const Hero = () => {
       <div className="hero-content fade-in">
         <p className="hero-text">
           <span className="clean-text">Turning ideas into tangible experiences across domains </span>
-          <span className="expressive-text">— thoughtfully, playfully, and hands-on.</span>
+          <span className="expressive-text">— thoughtfully, playfully, and hands&#x2011;on.</span>
         </p>
         <div className="hero-footer">
           <a href="mailto:hi.annuai@gmail.com" className="hero-status-link">
