@@ -23,7 +23,7 @@
   font-family: var(--font-display);
   font-size: clamp(2.2rem, 4vw, 4rem);
   font-weight: 400;
-  font-style: italic;
+  font-style: normal;
   line-height: 1.15;
   color: var(--text-primary);
   margin-bottom: 3rem;
@@ -41,7 +41,7 @@
 .cs-lead {
   font-family: var(--font-display);
   font-size: clamp(1.2rem, 2vw, 1.5rem);
-  font-style: italic;
+  font-style: normal;
   line-height: 1.55;
   color: var(--text-primary);
   margin-bottom: 2.5rem;
@@ -106,7 +106,7 @@
   font-family: var(--font-display);
   font-size: clamp(1.8rem, 3vw, 2.6rem);
   font-weight: 400;
-  font-style: italic;
+  font-style: normal;
   color: var(--text-primary);
   margin-bottom: 2rem;
   letter-spacing: -0.01em;
@@ -276,7 +276,7 @@
   font-family: var(--font-display);
   font-size: clamp(1.2rem, 2vw, 1.5rem);
   font-weight: 400;
-  font-style: italic;
+  font-style: normal;
   line-height: 1.4;
   color: var(--text-primary);
 }
@@ -328,7 +328,7 @@
   font-family: var(--font-display);
   font-size: 1.35rem;
   font-weight: 400;
-  font-style: italic;
+  font-style: normal;
   margin-bottom: 0.75rem;
   color: var(--text-primary);
 }
@@ -401,7 +401,7 @@
   font-family: var(--font-display);
   font-size: 1.25rem;
   font-weight: 400;
-  font-style: italic;
+  font-style: normal;
   color: var(--text-primary);
   margin: 0;
 }

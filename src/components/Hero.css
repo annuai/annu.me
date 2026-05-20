@@ -1,8 +1,8 @@
 .hero-section {
-  min-height: 62vh;
+  min-height: 40vh;
   display: flex;
   align-items: center;
-  padding: 10rem 4rem 6rem;
+  padding: 7rem 4rem 4rem;
   max-width: var(--max-width);
   margin: 0 auto;
   width: 100%;
@@ -49,13 +49,13 @@
 
 .hero-text {
   font-family: var(--font-display);
-  font-size: clamp(2.2rem, 4.5vw, 4.8rem);
-  font-weight: 400;
-  font-style: italic;
+  font-size: clamp(2rem, 3.8vw, 4rem);
+  font-weight: 500;
+  font-style: normal;
   line-height: 1.18;
   color: var(--text-primary);
-  margin-bottom: 3.5rem;
-  letter-spacing: -0.015em;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.02em;
 }
 
 .clean-text {
@@ -146,7 +146,7 @@
 
 @media (max-width: 1024px) {
   .hero-section {
-    padding: 9rem 2.5rem 5rem;
+    padding: 6rem 2.5rem 3.5rem;
   }
 
   .hero-icon {
@@ -162,7 +162,7 @@
 @media (max-width: 768px) {
   .hero-section {
     min-height: auto;
-    padding: 7rem 1.5rem 4rem;
+    padding: 5.5rem 1.5rem 3rem;
   }
 
   .hero-icons {

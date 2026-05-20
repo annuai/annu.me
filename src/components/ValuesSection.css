@@ -50,7 +50,7 @@
 
 .value-text {
   font-family: var(--font-display);
-  font-style: italic;
+  font-style: normal;
   font-size: clamp(1.2rem, 2vw, 1.45rem);
   font-weight: 400;
   color: var(--text-primary);
