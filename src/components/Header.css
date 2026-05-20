@@ -256,7 +256,16 @@
   }
 
   .nav-link.active::after {
-    display: none;
+    display: block;
+    content: '';
+    position: absolute;
+    bottom: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 56px;
+    height: 2px;
+    background: var(--accent-gradient);
+    border-radius: 2px;
   }
 
   .resume-btn {
