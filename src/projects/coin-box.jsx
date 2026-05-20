@@ -9,7 +9,7 @@ export const metadata = {
   tags: ["Packaging Design", "Prototype", "Lifestyle"],
   gridSize: "standard",
   year: "2025",
-  thumbnail: "/projects/coin-box/coin-box-2.png",
+  thumbnail: "/projects/coin-box/coin-box.png",
   images: [
     "/projects/coin-box/coin-box.png",
     "/projects/coin-box/coin-box-2.png",
