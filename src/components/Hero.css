@@ -34,7 +34,7 @@
 
 @keyframes icon-appear {
   from { opacity: 0; }
-  to   { opacity: 0.22; }
+  to   { opacity: 0.13; }
 }
 
 .hero-content {
