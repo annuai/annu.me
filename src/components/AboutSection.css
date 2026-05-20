@@ -70,8 +70,8 @@
   align-items: center;
   gap: 10px;
   padding: 8px 20px;
-  background: rgba(217, 95, 43, 0.06);
-  border: 1px solid rgba(217, 95, 43, 0.18);
+  background: rgba(192, 49, 42, 0.06);
+  border: 1px solid rgba(192, 49, 42, 0.18);
   border-radius: 50px;
   font-family: var(--font-ui);
   font-size: 0.82rem;
@@ -84,7 +84,7 @@
 }
 
 .status-tag:hover {
-  background: rgba(217, 95, 43, 0.1);
+  background: rgba(192, 49, 42, 0.1);
 }
 
 .pulse-dot {
