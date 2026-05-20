@@ -2,19 +2,69 @@
   background-color: var(--bg-primary);
   border-top: 1px solid var(--border-color);
   width: 100%;
-}
-
-.about-container {
-  max-width: var(--max-width);
-  margin: 0 auto;
   padding: 8rem 4rem 6rem;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 8rem;
-  align-items: start;
+  transition: background-color var(--transition-speed);
 }
 
-/* Status tag — matches hero pill */
+.about-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Photo ─────────────────────────────────────────── */
+.about-photo-wrapper {
+  margin-bottom: 3rem;
+}
+
+.about-photo {
+  width: 160px;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  filter: grayscale(100%);
+  transition: filter 0.5s ease, transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-photo-wrapper:hover .about-photo {
+  filter: grayscale(0%);
+  transform: rotate(4deg) translateX(12px);
+}
+
+/* ── Heading ───────────────────────────────────────── */
+.about-heading {
+  text-align: center;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  line-height: 1;
+}
+
+.about-heading-small {
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  letter-spacing: 0.06em;
+}
+
+.about-heading-large {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 6vw, 5.2rem);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--text-primary);
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  margin: 0;
+}
+
+/* ── Status tag ────────────────────────────────────── */
 .status-tag {
   display: inline-flex;
   align-items: center;
@@ -28,7 +78,7 @@
   font-weight: 400;
   color: var(--accent-orange);
   letter-spacing: 0.03em;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3.5rem;
   text-decoration: none;
   transition: background 0.3s ease;
 }
@@ -63,61 +113,36 @@
   100% { transform: scale(2.6); opacity: 0; }
 }
 
-/* Lead paragraph */
-.about-text .lead {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: clamp(1.3rem, 2vw, 1.65rem);
-  font-weight: 400;
-  line-height: 1.5;
-  color: var(--text-primary);
-  margin-bottom: 2rem;
-  letter-spacing: -0.01em;
+/* ── Body text ─────────────────────────────────────── */
+.about-body {
+  width: 100%;
 }
 
-/* Body paragraphs */
-.about-text p {
+.about-body p {
   font-family: var(--font-ui);
   font-size: 1.05rem;
   font-weight: 400;
   color: var(--text-secondary);
-  line-height: 1.8;
-  margin-bottom: 1.25rem;
+  line-height: 1.9;
+  margin-bottom: 1.6rem;
 }
 
-.about-text p:last-child {
+.about-body p:last-child {
   margin-bottom: 0;
 }
 
-/* Photo */
-.about-image {
-  border-radius: 12px;
-  overflow: hidden;
-  position: sticky;
-  top: 6rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-}
-
-.about-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-@media (max-width: 992px) {
-  .about-container {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    padding: 6rem 2.5rem 4rem;
-  }
-
-  .about-image {
-    position: static;
-  }
-}
-
+/* ── Responsive ────────────────────────────────────── */
 @media (max-width: 768px) {
-  .about-container {
-    padding: 5rem 1.5rem 4rem;
+  .about-section {
+    padding: 6rem 1.5rem 4rem;
+  }
+
+  .about-photo {
+    width: 130px;
+    height: 170px;
+  }
+
+  .about-heading-large {
+    font-size: clamp(2.6rem, 9vw, 3.5rem);
   }
 }
