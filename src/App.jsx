@@ -1,5 +1,5 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import ContactSection from './components/ContactSection';
 import Home from './pages/Home';
@@ -9,9 +9,18 @@ import BlogPost from './pages/BlogPost';
 import ProjectDetail from './pages/ProjectDetail';
 import './index.css';
 
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
+
 function App() {
   return (
     <>
+      <ScrollToTop />
       <Header />
       <main className="main-content">
         <Routes>
