@@ -6,6 +6,13 @@ const Header = () => {
   const location = useLocation();
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
@@ -31,7 +38,7 @@ const Header = () => {
   };
 
   return (
-    <header className="site-header fade-in">
+    <header className={`site-header fade-in${scrolled ? ' scrolled' : ''}`}>
       <div className="header-container">
         <div className="logo-container">
           <Link to="/" className="logo-link">
