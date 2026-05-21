@@ -4,12 +4,13 @@
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  z-index: 400;
+  z-index: 99000;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   padding-top: 14vh;
   animation: cmd-overlay-in 0.15s ease;
+  overflow: hidden;
 }
 
 @keyframes cmd-overlay-in {
@@ -25,6 +26,7 @@
   border-radius: 14px;
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.18), 0 4px 16px rgba(0, 0, 0, 0.08);
   overflow: hidden;
+  min-width: 0;
   animation: cmd-panel-in 0.18s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -110,6 +112,7 @@
   align-items: center;
   gap: 0.75rem;
   width: 100%;
+  min-width: 0;
   padding: 0.6rem 0.75rem;
   background: none;
   border: none;
@@ -117,6 +120,7 @@
   cursor: pointer;
   text-align: left;
   transition: background 0.12s ease;
+  overflow: hidden;
 }
 
 .cmd-item.active {
@@ -140,7 +144,11 @@
   font-size: 0.88rem;
   font-weight: 400;
   color: var(--text-primary);
-  flex-shrink: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 1;
+  min-width: 0;
 }
 
 .cmd-hint {
@@ -189,11 +197,52 @@
   }
 
   .cmd-panel {
-    border-radius: 16px 16px 0 0;
+    border-radius: 20px 20px 0 0;
     max-width: 100%;
+    width: 100%;
+    animation: cmd-panel-up 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @keyframes cmd-panel-up {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Drag handle */
+  .cmd-panel::before {
+    content: '';
+    display: block;
+    width: 36px;
+    height: 4px;
+    background: var(--border-color);
+    border-radius: 2px;
+    margin: 10px auto 0;
+  }
+
+  .cmd-input-row {
+    padding: 0.75rem 1rem;
+  }
+
+  /* Hide esc chip on touch — not relevant */
+  .cmd-esc {
+    display: none;
+  }
+
+  /* Hide keyboard shortcut footer — not relevant on touch */
+  .cmd-footer {
+    display: none;
   }
 
   .cmd-results {
-    max-height: 55vh;
+    max-height: 52vh;
+  }
+
+  /* Bigger tap targets */
+  .cmd-item {
+    padding: 0.75rem 1rem;
+  }
+
+  .cmd-group-label {
+    padding: 0.5rem 1rem 0.25rem;
   }
 }

@@ -70,8 +70,12 @@ const CommandPalette = ({ isOpen, onClose }) => {
     if (isOpen) {
       setQuery('');
       setSelected(0);
+      document.body.classList.add('has-overlay');
       setTimeout(() => inputRef.current?.focus(), 40);
+    } else {
+      document.body.classList.remove('has-overlay');
     }
+    return () => document.body.classList.remove('has-overlay');
   }, [isOpen]);
 
   useEffect(() => { setSelected(0); }, [query]);
