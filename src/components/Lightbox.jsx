@@ -1,4 +1,5 @@
 import React, { useEffect, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 import './Lightbox.css';
 
 const Lightbox = ({ images, currentIndex, onClose, onPrev, onNext }) => {
@@ -17,7 +18,7 @@ const Lightbox = ({ images, currentIndex, onClose, onPrev, onNext }) => {
     };
   }, [handleKey]);
 
-  return (
+  return createPortal(
     <div className="lightbox-overlay" onClick={onClose}>
       <button className="lightbox-close" onClick={onClose} aria-label="Close">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
@@ -36,7 +37,8 @@ const Lightbox = ({ images, currentIndex, onClose, onPrev, onNext }) => {
           <span className="lightbox-counter">{currentIndex + 1} / {images.length}</span>
         )}
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 
