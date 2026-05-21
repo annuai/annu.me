@@ -12,9 +12,11 @@ const Lightbox = ({ images, currentIndex, onClose, onPrev, onNext }) => {
   useEffect(() => {
     document.addEventListener('keydown', handleKey);
     document.body.style.overflow = 'hidden';
+    document.body.classList.add('has-overlay');
     return () => {
       document.removeEventListener('keydown', handleKey);
       document.body.style.overflow = '';
+      document.body.classList.remove('has-overlay');
     };
   }, [handleKey]);
 

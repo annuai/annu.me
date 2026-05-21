@@ -1,3 +1,8 @@
+/* Drop header below any overlay when a modal/lightbox is open */
+body.has-overlay .site-header {
+  z-index: 0;
+}
+
 .site-header {
   position: fixed;
   top: 0;
@@ -93,6 +98,28 @@
   width: 100%;
   height: 2px;
   background: var(--accent-gradient);
+}
+
+.search-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all var(--transition-speed);
+}
+
+.search-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--text-primary);
+}
+
+[data-theme='dark'] .search-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .theme-toggle {
