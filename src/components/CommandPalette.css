@@ -161,6 +161,10 @@
   flex: 1;
 }
 
+.cmd-close-mobile {
+  display: none;
+}
+
 .cmd-empty {
   font-family: var(--font-ui);
   font-size: 0.88rem;
@@ -223,9 +227,23 @@
     padding: 0.75rem 1rem;
   }
 
-  /* Hide esc chip on touch — not relevant */
+  /* Swap esc chip for a proper close button on touch */
   .cmd-esc {
     display: none;
+  }
+
+  .cmd-close-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    flex-shrink: 0;
   }
 
   /* Hide keyboard shortcut footer — not relevant on touch */
