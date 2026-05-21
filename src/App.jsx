@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import ContactSection from './components/ContactSection';
+import CommandPalette from './components/CommandPalette';
+import ReadingProgress from './components/ReadingProgress';
 import Home from './pages/Home';
 import About from './pages/About';
 import Blog from './pages/Blog';
@@ -18,11 +20,32 @@ const ScrollToTop = () => {
 };
 
 function App() {
+  const { pathname } = useLocation();
+  const [cmdOpen, setCmdOpen] = useState(false);
+  const isBlogPost = pathname.startsWith('/blog/');
+
+  // ⌘K / Ctrl+K to open command palette
+  const handleKeyDown = useCallback((e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+      e.preventDefault();
+      setCmdOpen(prev => !prev);
+    }
+  }, []);
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [handleKeyDown]);
+
+  // Close palette on route change
+  useEffect(() => { setCmdOpen(false); }, [pathname]);
+
   return (
     <>
       <ScrollToTop />
+      {isBlogPost && <ReadingProgress />}
       <Header />
-      <main className="main-content">
+      <main className="main-content" key={pathname}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -32,6 +55,7 @@ function App() {
         </Routes>
       </main>
       <ContactSection />
+      <CommandPalette isOpen={cmdOpen} onClose={() => setCmdOpen(false)} />
     </>
   );
 }

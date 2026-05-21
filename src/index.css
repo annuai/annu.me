@@ -76,6 +76,16 @@ img {
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* Page transition — triggered by key={pathname} remount */
+.main-content {
+  animation: pageEnter 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes pageEnter {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 .page-wrapper {
   flex: 1;
 }
