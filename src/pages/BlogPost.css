@@ -21,14 +21,32 @@
   margin-bottom: 4rem;
 }
 
+.post-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
 .post-date {
-  font-size: 1rem;
+  font-size: 0.85rem;
   color: var(--accent-orange);
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  display: block;
-  margin-bottom: 1rem;
+  letter-spacing: 0.08em;
+}
+
+.post-reading-time {
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+}
+
+.post-reading-time::before {
+  content: '·';
+  margin-right: 1rem;
+  opacity: 0.4;
 }
 
 .post-title {

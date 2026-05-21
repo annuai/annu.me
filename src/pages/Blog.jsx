@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useSEO from '../hooks/useSEO';
+import FadeIn from '../components/FadeIn';
 import './Blog.css';
 
 // Load all JSX files in the posts directory at build time
@@ -32,8 +33,9 @@ const Blog = () => {
         </header>
 
         <div className="blog-list">
-          {blogPosts.map(post => (
-            <Link to={`/blog/${post.slug}`} key={post.slug} className="blog-card">
+          {blogPosts.map((post, i) => (
+            <FadeIn key={post.slug} delay={i * 40}>
+            <Link to={`/blog/${post.slug}`} className="blog-card">
               <div className="blog-meta">
                 <span className="blog-date">{post.date}</span>
               </div>
@@ -41,6 +43,7 @@ const Blog = () => {
               <p className="blog-excerpt">{post.excerpt}</p>
               <span className="read-more">Read article &rarr;</span>
             </Link>
+            </FadeIn>
           ))}
         </div>
       </div>

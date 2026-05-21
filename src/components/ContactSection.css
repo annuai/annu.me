@@ -25,12 +25,46 @@
   letter-spacing: -0.02em;
 }
 
+.email-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
 .email-link {
   font-size: 1.5rem;
   color: var(--accent-orange);
   transition: opacity 0.3s ease;
   position: relative;
   display: inline-block;
+}
+
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.8rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.copy-btn:hover {
+  border-color: var(--accent-orange);
+  color: var(--accent-orange);
+}
+
+.copy-btn.copied {
+  border-color: var(--accent-orange);
+  color: var(--accent-orange);
+  background: rgba(192, 49, 42, 0.06);
 }
 
 .email-link::after {
