@@ -31,8 +31,9 @@ const POSTS = Object.entries(postModules)
     path: `/blog/${mod.metadata?.slug || path.split('/').pop().replace('.jsx', '')}`,
     icon: '✦',
     group: 'Journal',
+    date: mod.metadata?.date || '',
   }))
-  .sort((a, b) => a.label.localeCompare(b.label));
+  .sort((a, b) => new Date(b.date) - new Date(a.date));
 
 const ALL_ITEMS = [
   ...PAGES.map(p => ({ ...p, group: 'Pages' })),
@@ -126,6 +127,9 @@ const CommandPalette = ({ isOpen, onClose }) => {
             spellCheck={false}
           />
           <kbd className="cmd-esc" onClick={onClose}>esc</kbd>
+          <button className="cmd-close-mobile" onClick={onClose} aria-label="Close">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
         </div>
 
         <div className="cmd-results" ref={listRef}>
