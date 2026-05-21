@@ -37,6 +37,13 @@ function App() {
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [handleKeyDown]);
 
+  // Search icon in header fires this event
+  useEffect(() => {
+    const handler = () => setCmdOpen(true);
+    window.addEventListener('open-cmd-palette', handler);
+    return () => window.removeEventListener('open-cmd-palette', handler);
+  }, []);
+
   // Close palette on route change
   useEffect(() => { setCmdOpen(false); }, [pathname]);
 

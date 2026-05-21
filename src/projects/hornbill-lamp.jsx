@@ -1,5 +1,15 @@
 import React, { useState } from 'react';
+import Lightbox from '../components/Lightbox';
 import './hornbill-lamp.css';
+
+const hornbillImages = [
+  '/projects/hornbill-lamp/hornbill-lamp-wide.png',
+  '/projects/hornbill-lamp/hornbill-lamp-old.png',
+  '/projects/hornbill-lamp/hornbill-lamp-1.jpeg',
+  '/projects/hornbill-lamp/hornbill-lamp-2.jpeg',
+  '/projects/hornbill-lamp/hornbill-lamp-3.jpeg',
+  '/projects/hornbill-lamp/hornbill-lamp.png',
+];
 
 export const metadata = {
   id: "2",
@@ -25,21 +35,25 @@ const CheckIcon = () => (
 );
 
 export default function HornbillLamp() {
-  const [lightboxImg, setLightboxImg] = useState(null);
+  const [lightboxIndex, setLightboxIndex] = useState(null);
   const [activeTab, setActiveTab] = useState('final');
 
-  const openLightbox = (src) => setLightboxImg(src);
-  const closeLightbox = () => setLightboxImg(null);
+  const openLightbox = (src) => {
+    const idx = hornbillImages.indexOf(src);
+    setLightboxIndex(idx >= 0 ? idx : 0);
+  };
 
   return (
     <div className="hl-case-study">
 
-      {/* Lightbox overlay */}
-      {lightboxImg && (
-        <div className="hl-lightbox" onClick={closeLightbox}>
-          <button className="hl-lightbox-close" onClick={closeLightbox}>×</button>
-          <img src={lightboxImg} alt="Enlarged view" onClick={e => e.stopPropagation()} />
-        </div>
+      {lightboxIndex !== null && (
+        <Lightbox
+          images={hornbillImages}
+          currentIndex={lightboxIndex}
+          onClose={() => setLightboxIndex(null)}
+          onPrev={() => setLightboxIndex(i => (i - 1 + hornbillImages.length) % hornbillImages.length)}
+          onNext={() => setLightboxIndex(i => (i + 1) % hornbillImages.length)}
+        />
       )}
 
       {/* ── Section 1: Intro ── */}

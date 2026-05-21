@@ -1,6 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { createPortal } from 'react-dom';
+import React, { useState } from 'react';
+import Lightbox from '../components/Lightbox';
 import './vespoo.css';
+
+const vespooImages = [
+  '/projects/vespoo/vespoo.png',
+  '/projects/vespoo/vespoo-1.png',
+];
 
 export const metadata = {
   id: "3",
@@ -21,33 +26,6 @@ const CheckIcon = () => (
     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
   </svg>
 );
-
-const ImageModal = ({ src, onClose }) => {
-  useEffect(() => {
-    const onKey = (e) => e.key === 'Escape' && onClose();
-    document.addEventListener('keydown', onKey);
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.removeEventListener('keydown', onKey);
-      document.body.style.overflow = '';
-    };
-  }, [onClose]);
-
-  return createPortal(
-    <div className="vp-modal-backdrop" onClick={onClose}>
-      <div className="vp-modal" onClick={e => e.stopPropagation()}>
-        <button className="vp-modal-close" onClick={onClose} aria-label="Close">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-            <line x1="18" y1="6" x2="6" y2="18" />
-            <line x1="6" y1="6" x2="18" y2="18" />
-          </svg>
-        </button>
-        <img src={src} alt="Enlarged view" />
-      </div>
-    </div>,
-    document.body
-  );
-};
 
 const parts = [
   {
@@ -112,12 +90,25 @@ const steps = [
 ];
 
 export default function Vespoo() {
-  const [lightboxImg, setLightboxImg] = useState(null);
+  const [lightboxIndex, setLightboxIndex] = useState(null);
+
+  const openLightbox = (src) => {
+    const idx = vespooImages.indexOf(src);
+    setLightboxIndex(idx >= 0 ? idx : 0);
+  };
 
   return (
     <div className="vp-case-study">
 
-      {lightboxImg && <ImageModal src={lightboxImg} onClose={() => setLightboxImg(null)} />}
+      {lightboxIndex !== null && (
+        <Lightbox
+          images={vespooImages}
+          currentIndex={lightboxIndex}
+          onClose={() => setLightboxIndex(null)}
+          onPrev={() => setLightboxIndex(i => (i - 1 + vespooImages.length) % vespooImages.length)}
+          onNext={() => setLightboxIndex(i => (i + 1) % vespooImages.length)}
+        />
+      )}
 
       {/* ── Intro ── */}
       <section className="vp-intro-section">
@@ -170,7 +161,7 @@ export default function Vespoo() {
 
       {/* ── Hero image ── */}
       <section className="vp-section">
-        <div className="vp-image-wrapper" onClick={() => setLightboxImg('/projects/vespoo/vespoo.png')}>
+        <div className="vp-image-wrapper" onClick={() => openLightbox('/projects/vespoo/vespoo.png')}>
           <img src="/projects/vespoo/vespoo.png" alt="Vespoo — two colour variants" />
         </div>
         <p className="vp-caption">
@@ -214,7 +205,7 @@ export default function Vespoo() {
               in two seconds and an adult appreciates for the rest of their life.
             </p>
           </div>
-          <div className="vp-image-wrapper" onClick={() => setLightboxImg('/projects/vespoo/vespoo-1.png')}>
+          <div className="vp-image-wrapper" onClick={() => openLightbox('/projects/vespoo/vespoo-1.png')}>
             <img src="/projects/vespoo/vespoo-1.png" alt="Vespoo close-up — red variant" />
           </div>
         </div>
@@ -330,7 +321,7 @@ export default function Vespoo() {
             <div
               key={src}
               className="vp-gallery-item"
-              onClick={() => setLightboxImg(src)}
+              onClick={() => openLightbox(src)}
             >
               <img src={src} alt={caption} />
               <div className="vp-gallery-caption">{caption}</div>

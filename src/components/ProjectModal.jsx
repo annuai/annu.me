@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import './ProjectModal.css';
 
 const ProjectModal = ({ project, onClose }) => {
+  useEffect(() => {
+    if (!project) return;
+    document.body.classList.add('has-overlay');
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.classList.remove('has-overlay');
+      document.body.style.overflow = '';
+    };
+  }, [project]);
+
   if (!project) return null;
 
   const isExternal = !!project.externalLink;
   const isWalthroughOnly = !!project.walthroughOnly;
 
-  return (
+  return createPortal(
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={e => e.stopPropagation()}>
         <button className="close-button" onClick={onClose}>&times;</button>
@@ -53,7 +64,8 @@ const ProjectModal = ({ project, onClose }) => {
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 
