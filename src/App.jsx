@@ -9,17 +9,25 @@ import BlogPost from './pages/BlogPost';
 import ProjectDetail from './pages/ProjectDetail';
 import './index.css';
 
+const GA_ID = 'G-9ZHMYH8H2Z';
+
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
-    // Fire GA4 page_view on every route change
-    if (typeof window.gtag === 'function') {
-      window.gtag('event', 'page_view', {
+    // Use gtag('config') — the correct GA4 way to fire a page_view in a SPA
+    const sendPageView = () => {
+      window.gtag('config', GA_ID, {
         page_path: pathname,
         page_location: window.location.href,
         page_title: document.title,
       });
+    };
+    if (typeof window.gtag === 'function') {
+      sendPageView();
+    } else {
+      // gtag.js still loading — queue behind it
+      window.addEventListener('load', sendPageView, { once: true });
     }
   }, [pathname]);
   return null;
