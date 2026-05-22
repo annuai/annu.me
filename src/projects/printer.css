@@ -376,17 +376,20 @@
   height: 100%;
 }
 
-/* CAD embed styling */
+/* CAD embed styling — height controlled via aspect-ratio in responsive block */
 .cad-wrapper {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 15px 40px rgba(0,0,0,0.06);
   border: 1px solid var(--border-color);
+  aspect-ratio: 4 / 3;
 }
 
 .cad-wrapper iframe {
   width: 100%;
+  height: 100%;
   display: block;
+  border: 0;
 }
 
 /* Learnings Grid */
@@ -461,47 +464,88 @@
   opacity: 0.8;
 }
 
-/* Responsive CSS */
+/* ── Missing utility classes ── */
+.bg-red-light {
+  background-color: #fce8e6;
+}
+
+[data-theme='dark'] .bg-red-light {
+  background-color: #2e1a18;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.gap-3 {
+  gap: 1.5rem;
+}
+
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.font-bold {
+  font-weight: 600;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+/* ── Hero section ── */
+.hero-section .cs-image-wrapper {
+  aspect-ratio: 16 / 9;
+}
+
+.hero-section .cs-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ── Responsive CSS ── */
 @media (max-width: 992px) {
   .cs-title {
     font-size: 2.2rem;
   }
-  
+
   .cs-intro-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-  
+
   .brief-card {
     grid-template-columns: 1fr;
     gap: 3rem;
     padding: 2.5rem;
   }
-  
+
   .cs-split-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .cs-grid-2col {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .cs-videos-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .learnings-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .pr-3-desktop {
     padding-right: 0;
   }
-  
+
   .bg-teal-block,
   .bg-purple-block,
   .bg-orange-block {
@@ -510,24 +554,67 @@
 }
 
 @media (max-width: 768px) {
+  .cs-section {
+    margin-bottom: 3.5rem;
+  }
+
   .cs-title {
-    font-size: 1.9rem;
-    margin-bottom: 2rem;
+    font-size: 1.75rem;
+    margin-bottom: 1.75rem;
   }
 
   .cs-lead {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
+    margin-bottom: 1.75rem;
   }
 
   .section-title {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
   }
-  
+
+  .cs-caption-box {
+    padding: 1.25rem 0;
+    font-size: 1rem;
+  }
+
+  .brief-card {
+    padding: 1.75rem;
+    gap: 2rem;
+  }
+
+  .brief-highlight {
+    font-size: 1.1rem;
+  }
+
+  .hero-section .cs-image-wrapper {
+    aspect-ratio: 4 / 3;
+  }
+
   .hide-mobile {
     display: none !important;
   }
-  
+
   .deep-dive-card img {
-    height: 240px;
+    height: 200px;
+  }
+
+  .doc-box {
+    padding: 2rem 1.5rem;
+  }
+
+  .learning-card {
+    padding: 1.75rem;
+  }
+
+  .bg-teal-block,
+  .bg-purple-block,
+  .bg-orange-block {
+    padding: 1.25rem;
+    border-radius: 12px;
+  }
+
+  .cad-wrapper {
+    aspect-ratio: 3 / 4;
   }
 }

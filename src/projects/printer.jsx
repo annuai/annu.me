@@ -320,7 +320,7 @@ export default function ThreeDPrinterDesign() {
       <section className="cs-section cad-embed-section">
         <h2 className="section-title">Interactive CAD Assembly Model</h2>
         <div className="cad-wrapper">
-          <iframe src="https://gmail5422695.autodesk360.com/shares/public/SH90d2dQT28d5b6028116c7046e2df1076f1?mode=embed" width="800" height="600" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" frameborder="0"></iframe>
+          <iframe src="https://gmail5422695.autodesk360.com/shares/public/SH90d2dQT28d5b6028116c7046e2df1076f1?mode=embed" allowFullScreen={true} title="Invnt 3D Autodesk CAD Embed"></iframe>
           {/* <iframe
             src="https://myhub.autodesk360.com/ue289f061/shares/public/SH35dfcQT936092f0e439846dd6537c4507d?mode=embed"
             height="550"
