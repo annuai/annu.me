@@ -51,7 +51,7 @@ export default function ThreeDPrinterDesign() {
       </section>
 
       {/* Hero Image Section */}
-      <section className="cs-section hero-section">
+      <section className="cs-section printer-hero-section">
         <div className="cs-image-wrapper bg-red-light">
           <img src="/projects/invnt-3d-printer/printer-hero.png" alt="3D printer render" />
         </div>
