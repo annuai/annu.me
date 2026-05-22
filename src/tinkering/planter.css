@@ -1,0 +1,239 @@
+.pl-page {
+  width: 100%;
+}
+
+/* ── Intro ── */
+.pl-intro {
+  margin-bottom: 4rem;
+}
+
+.pl-eyebrow {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent-orange);
+  margin-bottom: 1rem;
+}
+
+.pl-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  max-width: 780px;
+}
+
+.pl-lead {
+  font-size: 1.15rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  max-width: 680px;
+  margin-bottom: 1.5rem;
+}
+
+.pl-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.pl-tag {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--accent-orange);
+  background: rgba(192, 49, 42, 0.06);
+  padding: 0.2rem 0.7rem;
+  border-radius: 20px;
+  border: 1px solid rgba(192, 49, 42, 0.18);
+}
+
+/* ── Sections ── */
+.pl-section {
+  margin-bottom: 5.5rem;
+}
+
+.pl-section-title {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.75rem;
+}
+
+.pl-section-sub {
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  max-width: 660px;
+  margin-bottom: 2rem;
+}
+
+/* ── Hero image ── */
+.pl-hero-img {
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  margin-bottom: 1rem;
+}
+
+.pl-hero-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.pl-caption {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  padding: 0 0.25rem;
+}
+
+/* ── Story ── */
+.pl-story-section {
+  border-top: 1px solid var(--border-color);
+  padding-top: 3.5rem;
+}
+
+.pl-story-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.pl-story-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pl-story-label {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-orange);
+}
+
+.pl-story-block p {
+  font-family: var(--font-ui);
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+/* ── Spec cards ── */
+.pl-specs-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.pl-spec-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.25rem 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.pl-spec-label {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+
+.pl-spec-value {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+/* ── Code block ── */
+.pl-code-block {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: auto;
+  padding: 2rem 2.25rem;
+}
+
+.pl-code-block pre {
+  margin: 0;
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+  font-size: 0.82rem;
+  line-height: 1.75;
+  color: var(--text-primary);
+  white-space: pre;
+  tab-size: 2;
+}
+
+.pl-code-block code {
+  font-family: inherit;
+}
+
+/* ── Quote ── */
+.pl-quote {
+  border-left: 3px solid var(--accent-orange);
+  padding: 1.5rem 2.5rem;
+  margin: 0;
+  background: var(--bg-secondary);
+  border-radius: 0 12px 12px 0;
+  max-width: 760px;
+}
+
+.pl-quote p {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  line-height: 1.55;
+  font-weight: 500;
+  color: var(--text-primary);
+  font-style: italic;
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 992px) {
+  .pl-specs-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .pl-story-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .pl-specs-row {
+    grid-template-columns: 1fr 1fr;
+  }
+  .pl-code-block {
+    padding: 1.25rem;
+  }
+  .pl-code-block pre {
+    font-size: 0.75rem;
+  }
+  .pl-quote p {
+    font-size: 1.1rem;
+  }
+}
