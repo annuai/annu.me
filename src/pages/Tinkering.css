@@ -152,7 +152,7 @@
 .tinkering-post-wrapper {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 5rem 4rem;
+  padding: 7rem 4rem 5rem;
 }
 
 .tinkering-post-back {
@@ -173,7 +173,7 @@
 
 @media (max-width: 768px) {
   .tinkering-container {
-    padding: 5rem 1.25rem 4rem;
+    padding: 6rem 1.25rem 4rem;
   }
 
   .tinkering-grid {
@@ -181,6 +181,6 @@
   }
 
   .tinkering-post-wrapper {
-    padding: 3rem 1.25rem 4rem;
+    padding: 5.5rem 1.25rem 4rem;
   }
 }
