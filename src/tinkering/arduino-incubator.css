@@ -1,0 +1,342 @@
+.ai-page {
+  width: 100%;
+}
+
+/* ── Intro ── */
+.ai-intro {
+  margin-bottom: 4rem;
+}
+
+.ai-eyebrow {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent-orange);
+  margin-bottom: 1rem;
+}
+
+.ai-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  max-width: 780px;
+}
+
+.ai-lead {
+  font-size: 1.15rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  max-width: 680px;
+  margin-bottom: 1.5rem;
+}
+
+.ai-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.ai-tag {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--accent-orange);
+  background: rgba(192, 49, 42, 0.06);
+  padding: 0.2rem 0.7rem;
+  border-radius: 20px;
+  border: 1px solid rgba(192, 49, 42, 0.18);
+}
+
+/* ── Sections ── */
+.ai-section {
+  margin-bottom: 5.5rem;
+}
+
+.ai-section-title {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: 1.75rem;
+}
+
+.ai-section-caption {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  padding-top: 1rem;
+  max-width: 680px;
+}
+
+/* ── Images ── */
+.ai-image-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-secondary);
+  cursor: zoom-in;
+  position: relative;
+}
+
+.ai-image-hero {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+.ai-image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ai-image-wrapper:hover img {
+  transform: scale(1.03);
+}
+
+.ai-img-caption {
+  display: block;
+  padding: 0.6rem 0.75rem;
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+}
+
+/* ── Spec cards ── */
+.ai-specs-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.ai-spec-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.25rem 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.ai-spec-label {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+
+.ai-spec-value {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+/* ── Story section ── */
+.ai-story-section {
+  border-top: 1px solid var(--border-color);
+  padding-top: 3.5rem;
+}
+
+.ai-story-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.ai-story-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.ai-story-label {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-orange);
+}
+
+.ai-story-grid p {
+  font-family: var(--font-ui);
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+/* ── Image grids ── */
+.ai-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.ai-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+/* ── Split layout ── */
+.ai-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.ai-split-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.ai-split-text p {
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.ai-split-images {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.ai-download-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--accent-orange);
+  border: 1px solid rgba(192, 49, 42, 0.3);
+  border-radius: 8px;
+  padding: 0.55rem 1rem;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  align-self: flex-start;
+  margin-top: 0.25rem;
+}
+
+.ai-download-link:hover {
+  background: rgba(192, 49, 42, 0.06);
+  border-color: var(--accent-orange);
+}
+
+/* ── Results ── */
+.ai-results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.ai-result-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.ai-result-card.ai-result-partial {
+  border-color: var(--accent-orange);
+  background: rgba(192, 49, 42, 0.03);
+}
+
+.ai-result-label {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-orange);
+}
+
+.ai-result-card p {
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+
+/* ── Quote ── */
+.ai-quote {
+  border-left: 3px solid var(--accent-orange);
+  padding: 1.5rem 2.5rem;
+  margin: 0;
+  background: var(--bg-secondary);
+  border-radius: 0 12px 12px 0;
+  max-width: 760px;
+}
+
+.ai-quote p {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  line-height: 1.55;
+  font-weight: 500;
+  color: var(--text-primary);
+  font-style: italic;
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 992px) {
+  .ai-specs-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .ai-story-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .ai-split {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .ai-results-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .ai-specs-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ai-grid-2,
+  .ai-grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-section-title {
+    font-size: 1.6rem;
+  }
+
+  .ai-quote p {
+    font-size: 1.1rem;
+  }
+}
