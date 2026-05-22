@@ -3,7 +3,7 @@ import './aega-saves.css';
 
 export const metadata = {
   slug: 'aega-saves',
-  title: 'AEGA — Design Saves',
+  title: 'aega — Design Saves',
   date: '2024',
   thumbnail: '/tinkering/aega-saves/screenshot.jpeg',
   excerpt:
@@ -78,7 +78,7 @@ export default function AegaSaves() {
       {/* ── Intro ── */}
       <section className="as-intro">
         <span className="as-eyebrow">Industrial Design · References · Ongoing</span>
-        <h1 className="as-title">AEGA — Design Saves</h1>
+        <h1 className="as-title">aega — Design Saves</h1>
         <p className="as-lead">
           A running collection of references I keep coming back to — CMF directions, forms worth
           studying, and objects that solve problems well. Saved as I find them, no particular order.
