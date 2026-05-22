@@ -5,7 +5,7 @@ export const metadata = {
   slug: 'aega-saves',
   title: 'AEGA — Design Saves',
   date: '2024',
-  thumbnail: '/tinkering/aega-saves/screenshot.png',
+  thumbnail: '/tinkering/aega-saves/screenshot.jpeg',
   excerpt:
     'A running collection of industrial design references, CMF directions, and objects worth studying — saved to Pinterest.',
   tags: ['Industrial Design', 'CMF', 'References', 'Inspiration'],
