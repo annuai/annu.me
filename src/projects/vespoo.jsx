@@ -8,7 +8,7 @@ const vespooImages = [
 ];
 
 export const metadata = {
-  id: "3",
+  id: "2",
   slug: "vespoo",
   title: "Vespoo!",
   category: "Product Design",

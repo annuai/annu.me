@@ -2,7 +2,7 @@ import React from "react";
 import ProjectLayout from '../components/ProjectLayout';
 
 export const metadata = {
-    id: "9",
+    id: "7",
     slug: "fwd",
     title: "Chinese Insurance",
     category: "UI/UX Design",

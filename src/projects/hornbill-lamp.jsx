@@ -12,7 +12,7 @@ const hornbillImages = [
 ];
 
 export const metadata = {
-  id: "2",
+  id: "3",
   slug: "hornbill-lamp",
   title: "Hornbill Lamp",
   category: "Product Design",

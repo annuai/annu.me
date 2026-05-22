@@ -5,14 +5,14 @@ import './aega.css';
 export const metadata = {
   id: "4",
   slug: "aega",
-  title: "Aega — Lifestyle Products",
+  title: "aega — Lifestyle Products",
   category: "Product Design",
   tags: ["Industrial Design", "Lifestyle", "Visualisation", "Prototype"],
   gridSize: "wide",
   year: "2025–2026",
   thumbnail: "/projects/organizer/organizer.png",
   description:
-    "Aega is a collection of five desktop objects — organizer, coin box, clock, hexa tray, and display bar — designed as a single visual system. Each piece shares the same geometric restraint, muted material palette, and insistence on surface quality that makes them feel like a family.",
+    "aega is a collection of five desktop objects — organizer, coin box, clock, hexa tray, and display bar — designed as a single visual system. Each piece shares the same geometric restraint, muted material palette, and insistence on surface quality that makes them feel like a family.",
 };
 
 // All lightbox-eligible images in order
@@ -44,7 +44,7 @@ export default function Aega() {
       <section className="ag-intro-section">
         <span className="ag-eyebrow">Product Design · 2025–2026</span>
         <h1 className="ag-title">
-          Aega — Five Objects, One Design Language
+          aega — Five Objects, One Design Language
         </h1>
 
         <div className="ag-intro-grid">
@@ -52,7 +52,7 @@ export default function Aega() {
             <p className="ag-lead">
               A modern desk accumulates noise — mismatched objects from a dozen
               different brands, each with its own personality, none of them
-              talking to each other. Aega is the counterproposal.
+              talking to each other. aega is the counterproposal.
             </p>
             <p className="ag-subtext">
               Five objects designed to live together: an organizer, a coin box,
@@ -69,7 +69,7 @@ export default function Aega() {
           <div className="ag-meta-box">
             <div className="ag-meta-row">
               <span className="ag-meta-label">Collection</span>
-              <span className="ag-meta-val">Aega Lifestyle Series</span>
+              <span className="ag-meta-val">aega Lifestyle Series</span>
             </div>
             <div className="ag-meta-row">
               <span className="ag-meta-label">Category</span>
@@ -98,10 +98,10 @@ export default function Aega() {
       {/* ── 2. Hero image ── */}
       <section className="ag-section">
         <div className="ag-image-wrapper" onClick={() => open("/projects/organizer/organizer.png")}>
-          <img src="/projects/organizer/organizer.png" alt="Aega Organizer — hero render" />
+          <img src="/projects/organizer/organizer.png" alt="aega Organizer — hero render" />
         </div>
         <p className="ag-caption">
-          The Aega Organizer — the anchor of the collection. Its three-compartment
+          The aega Organizer — the anchor of the collection. Its three-compartment
           form and clean geometric edges set the visual language shared by every
           other piece. Click any image to enlarge.
         </p>
@@ -114,7 +114,7 @@ export default function Aega() {
             "The best object on a desk is the one you stop noticing —
             because it has completely become part of how you work."
           </p>
-          <cite>— Design intent behind the Aega collection</cite>
+          <cite>— Design intent behind the aega collection</cite>
         </blockquote>
       </section>
 
@@ -123,11 +123,11 @@ export default function Aega() {
         <h2 className="ag-section-title">The Collection</h2>
         <div className="ag-collection-grid">
           {[
-            { src: "/projects/organizer/organizer.png",       label: "01 — Organizer" },
-            { src: "/projects/coin-box/coin-box.png",         label: "02 — Coin Box" },
-            { src: "/projects/clock/clock.png",               label: "03 — Clock" },
-            { src: "/projects/hexa/hexa-organizer.png",       label: "04 — Hexa Organizer" },
-            { src: "/projects/display-bar/display-bar.png",   label: "05 — Display Bar" },
+            { src: "/projects/organizer/organizer.png", label: "01 — Organizer" },
+            { src: "/projects/coin-box/coin-box.png", label: "02 — Coin Box" },
+            { src: "/projects/clock/clock.png", label: "03 — Clock" },
+            { src: "/projects/hexa/hexa-organizer.png", label: "04 — Hexa Organizer" },
+            { src: "/projects/display-bar/display-bar.png", label: "05 — Display Bar" },
           ].map(({ src, label }) => (
             <div key={src} className="ag-collection-item" onClick={() => open(src)}>
               <div className="ag-collection-thumb">
@@ -147,7 +147,7 @@ export default function Aega() {
         <div className="ag-product-section">
           <div className="ag-product-images">
             <div className="ag-image-wrapper" onClick={() => open("/projects/organizer/organizer.png")}>
-              <img src="/projects/organizer/organizer.png" alt="Aega Organizer" />
+              <img src="/projects/organizer/organizer.png" alt="aega Organizer" />
             </div>
             <div className="ag-product-images-pair">
               <div className="ag-image-wrapper" onClick={() => open("/projects/organizer/organizer-1.jpeg")}>
@@ -195,7 +195,7 @@ export default function Aega() {
         <div className="ag-product-section reverse">
           <div className="ag-product-images">
             <div className="ag-image-wrapper" onClick={() => open("/projects/coin-box/coin-box.png")}>
-              <img src="/projects/coin-box/coin-box.png" alt="Aega Coin Box" />
+              <img src="/projects/coin-box/coin-box.png" alt="aega Coin Box" />
             </div>
             <div className="ag-product-images-pair">
               <div className="ag-image-wrapper" onClick={() => open("/projects/coin-box/coin-box-2.png")}>
@@ -244,7 +244,7 @@ export default function Aega() {
         <div className="ag-product-section">
           <div className="ag-product-images">
             <div className="ag-image-wrapper" onClick={() => open("/projects/clock/clock.png")}>
-              <img src="/projects/clock/clock.png" alt="Aega Clock" />
+              <img src="/projects/clock/clock.png" alt="aega Clock" />
             </div>
             <div className="ag-image-wrapper" onClick={() => open("/projects/clock/clock-1.png")}>
               <img src="/projects/clock/clock-1.png" alt="Clock — alternate view" />
@@ -287,7 +287,7 @@ export default function Aega() {
         <div className="ag-product-section reverse">
           <div className="ag-product-images">
             <div className="ag-image-wrapper" onClick={() => open("/projects/hexa/hexa-organizer.png")}>
-              <img src="/projects/hexa/hexa-organizer.png" alt="Aega Hexa Organizer" />
+              <img src="/projects/hexa/hexa-organizer.png" alt="aega Hexa Organizer" />
             </div>
             <div className="ag-image-wrapper" onClick={() => open("/projects/hexa/hexa-organizer-1.jpeg")}>
               <img src="/projects/hexa/hexa-organizer-1.jpeg" alt="Hexa Organizer — prototype" />
@@ -331,7 +331,7 @@ export default function Aega() {
         <div className="ag-product-section">
           <div className="ag-product-images">
             <div className="ag-image-wrapper" onClick={() => open("/projects/display-bar/display-bar.png")}>
-              <img src="/projects/display-bar/display-bar.png" alt="Aega Display Bar" />
+              <img src="/projects/display-bar/display-bar.png" alt="aega Display Bar" />
             </div>
             <div className="ag-image-wrapper" onClick={() => open("/projects/display-bar/display-bar-1.png")}>
               <img src="/projects/display-bar/display-bar-1.png" alt="Display Bar — detail" />
@@ -351,7 +351,7 @@ export default function Aega() {
               compatible clips to mount directly to the wall rail, keeping
               frequently-used items at eye level without taking up desk
               space. Display and lightweight storage on the same vertical
-              plane — a vertical extension of the Aega system into the
+              plane — a vertical extension of the aega system into the
               space above the desk.
             </p>
             <div className="ag-product-specs">
@@ -380,7 +380,7 @@ export default function Aega() {
             {
               num: "Principle 01",
               title: "Geometry as the Only Ornament",
-              text: "Every surface decision in the Aega collection is a geometric one. The 45° chamfer that appears on the Coin Box lid also appears on the Organizer dividers. The radius used on the Clock case echoes the Organizer's corners. The collection holds together because the geometry is consistent — not because the pieces were styled to match.",
+              text: "Every surface decision in the aega collection is a geometric one. The 45° chamfer that appears on the Coin Box lid also appears on the Organizer dividers. The radius used on the Clock case echoes the Organizer's corners. The collection holds together because the geometry is consistent — not because the pieces were styled to match.",
             },
             {
               num: "Principle 02",
@@ -444,9 +444,9 @@ export default function Aega() {
         <h2 className="ag-section-title">Prototype Photography</h2>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem' }}>
           {[
-            { src: "/projects/organizer/organizer-1.jpeg",     caption: "Organizer prototype — bench view" },
-            { src: "/projects/coin-box/coin-box-1.jpeg",       caption: "Coin Box — lid removed" },
-            { src: "/projects/hexa/hexa-organizer-1.jpeg",     caption: "Hexa Organizer — natural light" },
+            { src: "/projects/organizer/organizer-1.jpeg", caption: "Organizer prototype — bench view" },
+            { src: "/projects/coin-box/coin-box-1.jpeg", caption: "Coin Box — lid removed" },
+            { src: "/projects/hexa/hexa-organizer-1.jpeg", caption: "Hexa Organizer — natural light" },
           ].map(({ src, caption }) => (
             <div key={src} className="ag-image-wrapper" onClick={() => open(src)} title={caption}>
               <img src={src} alt={caption} style={{ aspectRatio: '4/3', objectFit: 'cover' }} />
@@ -478,7 +478,7 @@ export default function Aega() {
             },
             {
               title: "Coherence Compounds Value",
-              body: "Any single product in the Aega collection is a competent desk object. As a set, they produce something more than their sum: a sense that the desk has been deliberately considered rather than accumulated by chance. That perception of intent is the real product the collection delivers.",
+              body: "Any single product in the aega collection is a competent desk object. As a set, they produce something more than their sum: a sense that the desk has been deliberately considered rather than accumulated by chance. That perception of intent is the real product the collection delivers.",
             },
           ].map(({ title, body }) => (
             <div key={title} className="ag-takeaway-card">

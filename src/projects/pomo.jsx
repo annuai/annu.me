@@ -2,11 +2,11 @@ import React from "react";
 import ProjectLayout from "../components/ProjectLayout";
 
 export const metadata = {
-  id: "10",
+  id: "8",
   slug: "pomo",
   title: "Pomo: A Pomodoro Timer",
   category: "Software Development",
-  gridSize: "large",
+  // gridSize: "large",
   tags: ["Software Development", "UI Design", "Digital Product"],
   year: "2026",
   thumbnail: "/projects/pomo-preview.png",
