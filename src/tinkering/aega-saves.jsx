@@ -1,34 +1,53 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './aega-saves.css';
 
 export const metadata = {
   slug: 'aega-saves',
   title: 'AEGA — Design Saves',
   date: '2024',
+  thumbnail: '/tinkering/aega-saves/screenshot.png',
   excerpt:
     'A running collection of industrial design references, CMF directions, and objects worth studying — saved to Pinterest.',
   tags: ['Industrial Design', 'CMF', 'References', 'Inspiration'],
 };
 
-export default function AegaSaves() {
-  useEffect(() => {
-    // Load Pinterest embed script after mount
-    const existing = document.getElementById('pinterest-pinit');
-    if (existing) {
-      // Script already loaded — re-trigger widget build
-      if (window.PinUtils) window.PinUtils.build();
-      return;
-    }
-    const script = document.createElement('script');
-    script.id = 'pinterest-pinit';
-    script.src = '//assets.pinterest.com/js/pinit.js';
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
+function loadOrRebuild(anchorEl, wrapperEl) {
+  if (!anchorEl || !wrapperEl) return;
 
-    return () => {
-      // Leave script in DOM — removing causes flicker on nav back
-    };
+  // Set pixel width from actual container — Pinterest ignores % values
+  const width = wrapperEl.offsetWidth || 800;
+  anchorEl.setAttribute('data-pin-board-width', width);
+
+  const existing = document.getElementById('pinterest-pinit');
+  if (existing) {
+    if (window.PinUtils) window.PinUtils.build();
+    return;
+  }
+  const script = document.createElement('script');
+  script.id = 'pinterest-pinit';
+  script.src = '//assets.pinterest.com/js/pinit.js';
+  script.async = true;
+  script.defer = true;
+  document.body.appendChild(script);
+}
+
+export default function AegaSaves() {
+  const wrapperRef = useRef(null);
+  const anchorRef = useRef(null);
+
+  useEffect(() => {
+    loadOrRebuild(anchorRef.current, wrapperRef.current);
+
+    // Re-set width on resize so the widget stays full-width
+    const observer = new ResizeObserver(() => {
+      if (anchorRef.current && wrapperRef.current && window.PinUtils) {
+        anchorRef.current.setAttribute('data-pin-board-width', wrapperRef.current.offsetWidth);
+        window.PinUtils.build();
+      }
+    });
+    if (wrapperRef.current) observer.observe(wrapperRef.current);
+
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -52,10 +71,11 @@ export default function AegaSaves() {
 
       {/* ── Pinterest Board Embed ── */}
       <section className="as-section">
-        <div className="as-board-wrapper">
+        <div className="as-board-wrapper" ref={wrapperRef}>
           <a
+            ref={anchorRef}
             data-pin-do="embedBoard"
-            data-pin-board-width="100%"
+            data-pin-board-width="800"
             data-pin-scale-height="600"
             data-pin-scale-width="115"
             href="https://www.pinterest.com/annuai/aega/"
