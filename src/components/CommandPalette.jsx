@@ -21,7 +21,8 @@ const PROJECTS = Object.entries(projectModules).map(([path, mod]) => ({
   path: `/work/${mod.metadata?.slug || path.split('/').pop().replace('.jsx', '')}`,
   icon: '◈',
   group: 'Projects',
-}));
+  projectId: Number(mod.metadata?.id) || 0,
+})).sort((a, b) => a.projectId - b.projectId);
 
 const POSTS = Object.entries(postModules)
   .map(([path, mod]) => ({
