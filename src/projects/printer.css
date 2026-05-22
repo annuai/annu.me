@@ -505,13 +505,13 @@
 
 .printer-hero-section .cs-image-wrapper {
   width: 100%;
-  aspect-ratio: 16 / 9;
 }
 
 .printer-hero-section .cs-image-wrapper img {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  height: auto;
+  display: block;
+  object-fit: fill;
 }
 
 .printer-hero-section .cs-caption-box {
@@ -607,9 +607,6 @@
     font-size: 1.1rem;
   }
 
-  .printer-hero-section .cs-image-wrapper {
-    aspect-ratio: 4 / 3;
-  }
 
   .hide-mobile {
     display: none !important;
