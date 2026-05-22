@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import useSEO from '../hooks/useSEO';
+import './Tinkering.css';
 
 const modules = import.meta.glob('../tinkering/*.jsx', { eager: true });
 
@@ -27,26 +28,13 @@ const TinkeringPost = () => {
   if (!mod || !meta) return <Navigate to="/tinkering" />;
 
   return (
-    <div className="tinkering-post-page fade-in" style={{ maxWidth: '1100px', margin: '0 auto', padding: '5rem 4rem' }}>
-      <Link
-        to="/tinkering"
-        style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: '0.4rem',
-          fontFamily: 'var(--font-ui)',
-          fontSize: '0.85rem',
-          color: 'var(--text-secondary)',
-          textDecoration: 'none',
-          marginBottom: '3rem',
-          transition: 'color 0.2s',
-        }}
-        onMouseEnter={e => e.currentTarget.style.color = 'var(--text-primary)'}
-        onMouseLeave={e => e.currentTarget.style.color = 'var(--text-secondary)'}
-      >
-        ← Tinkering
-      </Link>
-      <Content />
+    <div className="tinkering-post-page fade-in">
+      <div className="tinkering-post-wrapper">
+        <Link to="/tinkering" className="tinkering-post-back">
+          ← Tinkering
+        </Link>
+        <Content />
+      </div>
     </div>
   );
 };
