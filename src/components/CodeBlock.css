@@ -73,25 +73,7 @@
   -webkit-overflow-scrolling: touch;
 }
 
-/* ── Syntax tokens ───────────────────────────────────────────────────────────── */
-.cb-keyword {
-  color: #ff7b72;
-} /* red   — keywords */
-.cb-string {
-  color: #a5d6ff;
-} /* blue  — strings  */
-.cb-comment {
-  color: #6e7681;
-  font-style: italic;
-} /* grey  — comments */
-.cb-preprocessor {
-  color: #ffa657;
-} /* amber — #include/#define */
-.cb-number {
-  color: #79c0ff;
-} /* cyan  — numbers  */
-
-/* ── Light theme overrides ───────────────────────────────────────────────────── */
+/* Prism handles token colours via inline styles (vsDark theme) */
 /* Dark code block intentionally stays dark in both themes — readable on any bg */
 
 /* Scrollbar styling (WebKit) */

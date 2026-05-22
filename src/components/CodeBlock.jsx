@@ -1,206 +1,7 @@
 import React, { useState } from 'react';
+import { Highlight, themes } from 'prism-react-renderer';
 import './CodeBlock.css';
 
-// ── Token types ──────────────────────────────────────────────────────────────
-const C_KEYWORDS = new Set([
-  'const',
-  'int',
-  'void',
-  'if',
-  'else',
-  'while',
-  'for',
-  'return',
-  'true',
-  'false',
-  'boolean',
-  'byte',
-  'char',
-  'float',
-  'double',
-  'long',
-  'unsigned',
-  'short',
-  'static',
-  'extern',
-  'struct',
-  'enum',
-  'new',
-  'delete',
-  'class',
-  'public',
-  'private',
-  'protected',
-  'this',
-  'HIGH',
-  'LOW',
-  'INPUT',
-  'OUTPUT',
-  'INPUT_PULLUP',
-  'LED_BUILTIN',
-  'NULL',
-  'nullptr',
-  'true',
-  'false',
-]);
-
-const JS_KEYWORDS = new Set([
-  'const',
-  'let',
-  'var',
-  'function',
-  'return',
-  'if',
-  'else',
-  'for',
-  'while',
-  'do',
-  'switch',
-  'case',
-  'break',
-  'continue',
-  'new',
-  'delete',
-  'typeof',
-  'instanceof',
-  'in',
-  'of',
-  'import',
-  'export',
-  'default',
-  'class',
-  'extends',
-  'super',
-  'this',
-  'true',
-  'false',
-  'null',
-  'undefined',
-  'async',
-  'await',
-  'try',
-  'catch',
-  'finally',
-  'throw',
-  'void',
-  'static',
-]);
-
-function getKeywords(lang) {
-  if (lang === 'js' || lang === 'javascript' || lang === 'ts' || lang === 'typescript')
-    return JS_KEYWORDS;
-  return C_KEYWORDS; // default: C / C++ / Arduino
-}
-
-// ── Tokeniser ─────────────────────────────────────────────────────────────────
-function tokenize(code, lang) {
-  const keywords = getKeywords(lang);
-  const tokens = [];
-  let i = 0;
-
-  while (i < code.length) {
-    // Block comment
-    if (code[i] === '/' && code[i + 1] === '*') {
-      const end = code.indexOf('*/', i + 2);
-      const endIdx = end === -1 ? code.length : end + 2;
-      tokens.push({ type: 'comment', value: code.slice(i, endIdx) });
-      i = endIdx;
-      continue;
-    }
-
-    // Line comment
-    if (code[i] === '/' && code[i + 1] === '/') {
-      const end = code.indexOf('\n', i);
-      const endIdx = end === -1 ? code.length : end;
-      tokens.push({ type: 'comment', value: code.slice(i, endIdx) });
-      i = endIdx;
-      continue;
-    }
-
-    // Hash comment (Python / shell)
-    if (code[i] === '#' && (lang === 'python' || lang === 'sh' || lang === 'bash')) {
-      const end = code.indexOf('\n', i);
-      const endIdx = end === -1 ? code.length : end;
-      tokens.push({ type: 'comment', value: code.slice(i, endIdx) });
-      i = endIdx;
-      continue;
-    }
-
-    // Preprocessor directive (#include, #define …)
-    if (code[i] === '#' && (i === 0 || code[i - 1] === '\n')) {
-      const end = code.indexOf('\n', i);
-      const endIdx = end === -1 ? code.length : end;
-      tokens.push({ type: 'preprocessor', value: code.slice(i, endIdx) });
-      i = endIdx;
-      continue;
-    }
-
-    // Double-quoted string
-    if (code[i] === '"') {
-      let j = i + 1;
-      while (j < code.length && code[j] !== '"' && code[j] !== '\n') {
-        if (code[j] === '\\') j++;
-        j++;
-      }
-      tokens.push({ type: 'string', value: code.slice(i, j + 1) });
-      i = j + 1;
-      continue;
-    }
-
-    // Single-quoted char / string
-    if (code[i] === "'") {
-      let j = i + 1;
-      while (j < code.length && code[j] !== "'" && code[j] !== '\n') {
-        if (code[j] === '\\') j++;
-        j++;
-      }
-      tokens.push({ type: 'string', value: code.slice(i, j + 1) });
-      i = j + 1;
-      continue;
-    }
-
-    // Identifier or keyword
-    if (/[a-zA-Z_$]/.test(code[i])) {
-      let j = i;
-      while (j < code.length && /[a-zA-Z0-9_$]/.test(code[j])) j++;
-      const word = code.slice(i, j);
-      tokens.push({ type: keywords.has(word) ? 'keyword' : 'ident', value: word });
-      i = j;
-      continue;
-    }
-
-    // Number (int, float, hex)
-    if (/[0-9]/.test(code[i]) || (code[i] === '.' && /[0-9]/.test(code[i + 1]))) {
-      let j = i;
-      while (j < code.length && /[0-9a-fA-FxX._]/.test(code[j])) j++;
-      tokens.push({ type: 'number', value: code.slice(i, j) });
-      i = j;
-      continue;
-    }
-
-    // Everything else (operators, punctuation, whitespace, newlines)
-    tokens.push({ type: 'plain', value: code[i] });
-    i++;
-  }
-
-  return tokens;
-}
-
-function escapeHtml(str) {
-  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-}
-
-function renderTokens(tokens) {
-  return tokens
-    .map((tok, idx) => {
-      const safe = escapeHtml(tok.value);
-      if (tok.type === 'plain' || tok.type === 'ident') return safe;
-      return `<span class="cb-${tok.type}">${safe}</span>`;
-    })
-    .join('');
-}
-
-// ── Component ─────────────────────────────────────────────────────────────────
 const CodeBlock = ({ code, language = 'cpp', label }) => {
   const [copied, setCopied] = useState(false);
 
@@ -212,7 +13,6 @@ const CodeBlock = ({ code, language = 'cpp', label }) => {
         setTimeout(() => setCopied(false), 2000);
       })
       .catch(() => {
-        // fallback for older browsers
         const el = document.createElement('textarea');
         el.value = code;
         document.body.appendChild(el);
@@ -225,8 +25,6 @@ const CodeBlock = ({ code, language = 'cpp', label }) => {
   };
 
   const displayLabel = label || language;
-  const tokens = tokenize(code, language);
-  const highlighted = renderTokens(tokens);
 
   return (
     <div className="cb-root">
@@ -273,7 +71,19 @@ const CodeBlock = ({ code, language = 'cpp', label }) => {
           )}
         </button>
       </div>
-      <pre className="cb-pre" dangerouslySetInnerHTML={{ __html: highlighted }} />
+      <Highlight code={code.trim()} language={language} theme={themes.vsDark}>
+        {({ style, tokens, getLineProps, getTokenProps }) => (
+          <pre className="cb-pre" style={{ ...style, background: 'transparent', margin: 0 }}>
+            {tokens.map((line, i) => (
+              <div key={i} {...getLineProps({ line })}>
+                {line.map((token, key) => (
+                  <span key={key} {...getTokenProps({ token })} />
+                ))}
+              </div>
+            ))}
+          </pre>
+        )}
+      </Highlight>
     </div>
   );
 };
