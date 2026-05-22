@@ -10,7 +10,7 @@ export const metadata = {
   tags: ["Industrial Design", "Lifestyle", "Visualisation", "Prototype"],
   gridSize: "wide",
   year: "2025–2026",
-  thumbnail: "/projects/organizer/organizer.png",
+  thumbnail: "/projects/organizer/organizer-3.jpeg",
   description:
     "aega is a collection of five desktop objects — organizer, coin box, clock, hexa tray, and display bar — designed as a single visual system. Each piece shares the same geometric restraint, muted material palette, and insistence on surface quality that makes them feel like a family.",
 };
