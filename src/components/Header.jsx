@@ -52,7 +52,8 @@ const Header = () => {
             <ul>
               <li><Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>Work</Link></li>
               <li><Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}>About</Link></li>
-              <li><Link to="/blog" className={`nav-link ${location.pathname.startsWith('/blog') ? 'active' : ''}`}>Blog</Link></li>
+              <li><Link to="/blog" className={`nav-link ${location.pathname.startsWith('/blog') ? 'active' : ''}`}>Journal</Link></li>
+              <li><Link to="/tinkering" className={`nav-link ${location.pathname.startsWith('/tinkering') ? 'active' : ''}`}>Tinkering</Link></li>
               <li>
                 <a href="/annuai-resume.pdf" target="_blank" rel="noopener noreferrer" className="nav-link resume-btn">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="resume-icon">

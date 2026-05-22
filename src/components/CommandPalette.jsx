@@ -3,15 +3,17 @@ import { useNavigate } from 'react-router-dom';
 import './CommandPalette.css';
 
 const postModules = import.meta.glob('../posts/*.jsx', { eager: true });
+const tinkeringModules = import.meta.glob('../tinkering/*.jsx', { eager: true });
 const projectModules = Object.fromEntries(
   Object.entries(import.meta.glob('../projects/*.jsx', { eager: true }))
     .filter(([p]) => !p.split('/').pop().startsWith('_'))
 );
 
 const PAGES = [
-  { id: 'work',  label: 'Work',    hint: 'Portfolio',    path: '/',       icon: '⬡' },
-  { id: 'about', label: 'About',   hint: 'About Annuai', path: '/about',  icon: '◉' },
-  { id: 'blog',  label: 'Journal', hint: 'Writing',      path: '/blog',   icon: '◎' },
+  { id: 'work',      label: 'Work',      hint: 'Portfolio',    path: '/',           icon: '⬡' },
+  { id: 'about',     label: 'About',     hint: 'About Annuai', path: '/about',      icon: '◉' },
+  { id: 'blog',      label: 'Journal',   hint: 'Writing',      path: '/blog',       icon: '◎' },
+  { id: 'tinkering', label: 'Tinkering', hint: 'Experiments',  path: '/tinkering',  icon: '⚙' },
 ];
 
 const PROJECTS = Object.entries(projectModules).map(([path, mod]) => ({
@@ -36,10 +38,24 @@ const POSTS = Object.entries(postModules)
   }))
   .sort((a, b) => new Date(b.date) - new Date(a.date));
 
+const TINKERING = Object.entries(tinkeringModules)
+  .filter(([p]) => !p.split('/').pop().startsWith('_'))
+  .map(([path, mod]) => ({
+    id: path,
+    label: mod.metadata?.title || 'Project',
+    hint: mod.metadata?.excerpt?.slice(0, 60) || '',
+    path: `/tinkering/${mod.metadata?.slug || path.split('/').pop().replace('.jsx', '')}`,
+    icon: '⚙',
+    group: 'Tinkering',
+    date: mod.metadata?.date || '',
+  }))
+  .sort((a, b) => new Date(b.date) - new Date(a.date));
+
 const ALL_ITEMS = [
   ...PAGES.map(p => ({ ...p, group: 'Pages' })),
   ...PROJECTS,
   ...POSTS,
+  ...TINKERING,
 ];
 
 const CommandPalette = ({ isOpen, onClose }) => {

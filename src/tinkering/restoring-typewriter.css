@@ -1,0 +1,242 @@
+.tw-page {
+  width: 100%;
+}
+
+/* ── Intro ── */
+.tw-intro {
+  margin-bottom: 4rem;
+}
+
+.tw-eyebrow {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent-orange);
+  margin-bottom: 1rem;
+}
+
+.tw-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  max-width: 780px;
+}
+
+.tw-lead {
+  font-size: 1.2rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  max-width: 680px;
+  margin-bottom: 1.5rem;
+}
+
+.tw-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tw-tag {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--accent-orange);
+  background: rgba(192, 49, 42, 0.06);
+  padding: 0.2rem 0.7rem;
+  border-radius: 20px;
+  border: 1px solid rgba(192, 49, 42, 0.18);
+}
+
+/* ── Sections ── */
+.tw-section {
+  margin-bottom: 5.5rem;
+}
+
+.tw-section-title {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.75rem;
+}
+
+.tw-section-sub {
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  max-width: 660px;
+  margin-bottom: 2.5rem;
+}
+
+/* ── Photo grid ── */
+.tw-photo-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.tw-photo-item {
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-secondary);
+  cursor: zoom-in;
+  aspect-ratio: 4 / 3;
+}
+
+.tw-photo-wide {
+  grid-row: 1 / 3;
+  aspect-ratio: auto;
+}
+
+.tw-photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tw-photo-item:hover img {
+  transform: scale(1.03);
+}
+
+.tw-caption {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  padding: 0 0.25rem;
+}
+
+/* ── Story section ── */
+.tw-story-section {
+  border-top: 1px solid var(--border-color);
+  padding-top: 3.5rem;
+}
+
+.tw-story-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.tw-story-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.tw-story-label {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-orange);
+}
+
+.tw-story-block p {
+  font-family: var(--font-ui);
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+/* ── Letterforms header ── */
+.tw-letterforms-header {
+  margin-bottom: 2.5rem;
+}
+
+/* ── Glyph grid ── */
+.tw-glyph-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+  gap: 6px;
+}
+
+.tw-glyph-cell {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.tw-glyph-cell:hover {
+  transform: scale(1.08);
+  border-color: var(--accent-orange);
+  z-index: 1;
+}
+
+.tw-glyph-cell img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  display: block;
+  /* Invert in dark mode so the black ink on white paper reads correctly */
+}
+
+[data-theme='dark'] .tw-glyph-cell img {
+  filter: invert(1);
+}
+
+/* ── Quote ── */
+.tw-quote {
+  border-left: 3px solid var(--accent-orange);
+  padding: 1.5rem 2.5rem;
+  margin: 0;
+  background: var(--bg-secondary);
+  border-radius: 0 12px 12px 0;
+  max-width: 760px;
+}
+
+.tw-quote p {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1.55;
+  font-weight: 500;
+  color: var(--text-primary);
+  font-style: italic;
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .tw-photo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tw-photo-wide {
+    grid-row: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .tw-story-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .tw-glyph-grid {
+    grid-template-columns: repeat(auto-fill, minmax(56px, 1fr));
+    gap: 4px;
+  }
+
+  .tw-quote p {
+    font-size: 1.1rem;
+  }
+}

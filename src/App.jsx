@@ -9,6 +9,8 @@ import About from './pages/About';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import ProjectDetail from './pages/ProjectDetail';
+import Tinkering from './pages/Tinkering';
+import TinkeringPost from './pages/TinkeringPost';
 import './index.css';
 
 const ScrollToTop = () => {
@@ -59,6 +61,8 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogPost />} />
           <Route path="/work/:slug" element={<ProjectDetail />} />
+          <Route path="/tinkering" element={<Tinkering />} />
+          <Route path="/tinkering/:slug" element={<TinkeringPost />} />
         </Routes>
       </main>
       <ContactSection />
