@@ -161,34 +161,47 @@
 /* ── Glyph grid ── */
 .tw-glyph-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
-  gap: 6px;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: 12px;
 }
 
 .tw-glyph-cell {
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
-  border-radius: 8px;
-  aspect-ratio: 1;
+  border-radius: 10px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 0.75rem 0.5rem 0.6rem;
+  gap: 0.45rem;
   overflow: hidden;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .tw-glyph-cell:hover {
-  transform: scale(1.08);
+  transform: translateY(-2px);
   border-color: var(--accent-orange);
+  box-shadow: 0 6px 16px rgba(192, 49, 42, 0.1);
   z-index: 1;
 }
 
 .tw-glyph-cell img {
-  width: 80%;
-  height: 80%;
+  width: 64px;
+  height: 64px;
   object-fit: contain;
   display: block;
-  /* Invert in dark mode so the black ink on white paper reads correctly */
+}
+
+.tw-glyph-name {
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-align: center;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  user-select: none;
 }
 
 [data-theme='dark'] .tw-glyph-cell img {
@@ -232,8 +245,13 @@
   }
 
   .tw-glyph-grid {
-    grid-template-columns: repeat(auto-fill, minmax(56px, 1fr));
-    gap: 4px;
+    grid-template-columns: repeat(auto-fill, minmax(76px, 1fr));
+    gap: 8px;
+  }
+
+  .tw-glyph-cell img {
+    width: 48px;
+    height: 48px;
   }
 
   .tw-quote p {

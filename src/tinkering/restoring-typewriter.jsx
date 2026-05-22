@@ -217,6 +217,7 @@ export default function RestoringTypewriter() {
                 alt={`Malayalam character: ${label}`}
                 loading="lazy"
               />
+              <span className="tw-glyph-name">{file}</span>
             </div>
           ))}
         </div>
