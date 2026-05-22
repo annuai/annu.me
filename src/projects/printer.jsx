@@ -230,15 +230,15 @@ export default function ThreeDPrinterDesign() {
       {/* Final Product */}
       <section className="cs-section">
         <h2 className="section-title">Final Product</h2>
-        <div className="cs-image-wrapper">
+        <div className="cs-image-wrapper white-bg-wrapper">
           <img src="/projects/invnt-3d-printer/invnt-annume13.png" alt="Final 3D printer render" />
         </div>
       </section>
 
       <section className="cs-section">
         <div className="cs-grid-2col">
-          <img src="/projects/invnt-3d-printer/invnt-annume14.png" alt="Detailed assembly profile" className="rounded-img" />
-          <img src="/projects/invnt-3d-printer/invnt-annume15.png" alt="Printbed calibration detail" className="rounded-img" />
+          <img src="/projects/invnt-3d-printer/invnt-annume14.png" alt="Detailed assembly profile" className="rounded-img white-bg" />
+          <img src="/projects/invnt-3d-printer/invnt-annume15.png" alt="Printbed calibration detail" className="rounded-img white-bg" />
         </div>
       </section>
 
