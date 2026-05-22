@@ -80,13 +80,9 @@ export default function ThreeDPrinterDesign() {
       </section>
 
       <section className="cs-section">
-        <div className="cs-split-grid align-center">
-          <div className="cs-image-column span-1">
-            <img src="/projects/invnt-3d-printer/invnt-annume3-1.png" alt="3D printer market" className="pr-3-desktop" />
-          </div>
-          <div className="cs-image-column span-2">
-            <img src="/projects/invnt-3d-printer/invnt-annume3.png" alt="3D printer market chart" />
-          </div>
+        <div className="cs-grid-2col">
+          <img src="/projects/invnt-3d-printer/invnt-annume3-1.png" alt="3D printer market" className="rounded-img" />
+          <img src="/projects/invnt-3d-printer/invnt-annume3.png" alt="3D printer market chart" className="rounded-img" />
         </div>
         <div className="cs-caption-box">
           <p>
