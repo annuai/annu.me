@@ -191,6 +191,15 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
 }
 
+/* White background for sketch/illustration images with transparency */
+.white-bg-wrapper {
+  background: #ffffff !important;
+}
+
+.white-bg {
+  background: #ffffff;
+}
+
 /* Specific background styles for block sections */
 .bg-teal-block {
   background-color: #d3eaee;

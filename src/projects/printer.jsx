@@ -198,7 +198,7 @@ export default function ThreeDPrinterDesign() {
       {/* Ideation & Prototyping */}
       <section className="cs-section">
         <h2 className="section-title">Ideation & Prototyping</h2>
-        <div className="cs-image-wrapper">
+        <div className="cs-image-wrapper white-bg-wrapper">
           <img src="/projects/invnt-3d-printer/invnt-annume9.png" alt="Concept sketches" />
         </div>
         <div className="cs-caption-box">
@@ -209,7 +209,7 @@ export default function ThreeDPrinterDesign() {
       </section>
 
       <section className="cs-section">
-        <div className="cs-image-wrapper">
+        <div className="cs-image-wrapper white-bg-wrapper">
           <img src="/projects/invnt-3d-printer/invnt-annume10.png" alt="Movable display structure" />
         </div>
         <div className="cs-caption-box">
@@ -222,8 +222,8 @@ export default function ThreeDPrinterDesign() {
 
       <section className="cs-section">
         <div className="cs-grid-2col">
-          <img src="/projects/invnt-3d-printer/invnt-annume11.png" alt="Enclosure detail" className="rounded-img" />
-          <img src="/projects/invnt-3d-printer/invnt-annume12.png" alt="Hinges and modular joints" className="rounded-img" />
+          <img src="/projects/invnt-3d-printer/invnt-annume11.png" alt="Enclosure detail" className="rounded-img white-bg" />
+          <img src="/projects/invnt-3d-printer/invnt-annume12.png" alt="Hinges and modular joints" className="rounded-img white-bg" />
         </div>
       </section>
 
