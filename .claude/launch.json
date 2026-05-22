@@ -4,7 +4,7 @@
     {
       "name": "annu-me",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
+      "runtimeArgs": ["run", "dev"]
       "port": 5173
     }
   ]
