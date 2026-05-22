@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build && node scripts/prerender.cjs",
+    "dev": "/Users/annuai/.nvm/versions/node/v22.21.1/bin/node /Users/annuai/Downloads/annu.me/node_modules/.bin/vite",
+    "build": "/Users/annuai/.nvm/versions/node/v22.21.1/bin/node /Users/annuai/Downloads/annu.me/node_modules/.bin/vite build && /Users/annuai/.nvm/versions/node/v22.21.1/bin/node scripts/prerender.cjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
