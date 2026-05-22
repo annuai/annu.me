@@ -11,18 +11,8 @@ export const metadata = {
   tags: ['Industrial Design', 'CMF', 'References', 'Inspiration'],
 };
 
-function loadOrRebuild(anchorEl, wrapperEl) {
-  if (!anchorEl || !wrapperEl) return;
-
-  // Set pixel width from actual container — Pinterest ignores % values
-  const width = wrapperEl.offsetWidth || 800;
-  anchorEl.setAttribute('data-pin-board-width', width);
-
-  const existing = document.getElementById('pinterest-pinit');
-  if (existing) {
-    if (window.PinUtils) window.PinUtils.build();
-    return;
-  }
+function loadPinterestScript() {
+  if (document.getElementById('pinterest-pinit')) return;
   const script = document.createElement('script');
   script.id = 'pinterest-pinit';
   script.src = '//assets.pinterest.com/js/pinit.js';
@@ -31,25 +21,58 @@ function loadOrRebuild(anchorEl, wrapperEl) {
   document.body.appendChild(script);
 }
 
-export default function AegaSaves() {
+// ── Reusable board embed ──────────────────────────────────────────────────────
+function PinterestBoard({ href, label, caption }) {
   const wrapperRef = useRef(null);
   const anchorRef = useRef(null);
 
   useEffect(() => {
-    loadOrRebuild(anchorRef.current, wrapperRef.current);
+    const anchor = anchorRef.current;
+    const wrapper = wrapperRef.current;
+    if (!anchor || !wrapper) return;
 
-    // Re-set width on resize so the widget stays full-width
+    // Pinterest only accepts pixel widths — measure actual container
+    anchor.setAttribute('data-pin-board-width', wrapper.offsetWidth || 800);
+    loadPinterestScript();
+    if (window.PinUtils) window.PinUtils.build();
+
     const observer = new ResizeObserver(() => {
-      if (anchorRef.current && wrapperRef.current && window.PinUtils) {
-        anchorRef.current.setAttribute('data-pin-board-width', wrapperRef.current.offsetWidth);
+      if (anchor && wrapper && window.PinUtils) {
+        anchor.setAttribute('data-pin-board-width', wrapper.offsetWidth);
         window.PinUtils.build();
       }
     });
-    if (wrapperRef.current) observer.observe(wrapperRef.current);
-
+    observer.observe(wrapper);
     return () => observer.disconnect();
   }, []);
 
+  return (
+    <div className="as-board-block">
+      {label && <span className="as-board-label">{label}</span>}
+      <div className="as-board-wrapper" ref={wrapperRef}>
+        <a
+          ref={anchorRef}
+          data-pin-do="embedBoard"
+          data-pin-board-width="800"
+          data-pin-scale-height="600"
+          data-pin-scale-width="115"
+          href={href}
+        />
+      </div>
+      {caption && (
+        <p className="as-caption">
+          {caption.text}{' '}
+          <a href={href} target="_blank" rel="noopener noreferrer" className="as-link">
+            {caption.linkText} ↗
+          </a>
+        </p>
+      )}
+    </div>
+  );
+}
+
+// ── Page ─────────────────────────────────────────────────────────────────────
+export default function AegaSaves() {
   return (
     <div className="as-page">
       {/* ── Intro ── */}
@@ -69,29 +92,24 @@ export default function AegaSaves() {
         </div>
       </section>
 
-      {/* ── Pinterest Board Embed ── */}
+      {/* ── Boards ── */}
       <section className="as-section">
-        <div className="as-board-wrapper" ref={wrapperRef}>
-          <a
-            ref={anchorRef}
-            data-pin-do="embedBoard"
-            data-pin-board-width="800"
-            data-pin-scale-height="600"
-            data-pin-scale-width="115"
-            href="https://www.pinterest.com/annuai/aega/"
-          />
-        </div>
-        <p className="as-caption">
-          Board updates automatically as new pins are saved —{' '}
-          <a
-            href="https://www.pinterest.com/annuai/aega/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="as-link"
-          >
-            view full board on Pinterest ↗
-          </a>
-        </p>
+        <PinterestBoard
+          href="https://www.pinterest.com/annuai/aega/"
+          label="AEGA"
+          caption={{
+            text: 'Board updates automatically as new pins are saved —',
+            linkText: 'view on Pinterest',
+          }}
+        />
+        <PinterestBoard
+          href="https://www.pinterest.com/annuai/product-design/"
+          label="Product Design"
+          caption={{
+            text: 'Board updates automatically as new pins are saved —',
+            linkText: 'view on Pinterest',
+          }}
+        />
       </section>
     </div>
   );
