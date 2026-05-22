@@ -123,7 +123,36 @@ function main() {
       }
     });
   }
-  
+
+  // 5. Prerender Tinkering index + detail pages
+  // (critical: public/tinkering/ image dirs are copied to dist/tinkering/ by Vite,
+  //  so Vercel sees those directories and never fires the SPA rewrite unless
+  //  an index.html exists inside each one)
+  prerenderRoute(
+    templateHtml,
+    '/tinkering',
+    'Annuai | Tinkering',
+    'Personal experiments, restorations, and hands-on curiosities outside of formal design work.',
+    '/favicon.svg'
+  );
+
+  const tinkeringDir = path.join(__dirname, '../src/tinkering');
+  if (fs.existsSync(tinkeringDir)) {
+    const files = fs.readdirSync(tinkeringDir)
+      .filter(f => f.endsWith('.jsx') && !f.startsWith('_'));
+    files.forEach(file => {
+      const filePath = path.join(tinkeringDir, file);
+      const meta = extractMetadata(filePath);
+      if (meta) {
+        const slug = meta.slug || file.replace('.jsx', '');
+        const title = `Annuai | ${meta.title}`;
+        const description = meta.excerpt || 'A tinkering project by Annuai.';
+        const image = meta.thumbnail || '/favicon.svg';
+        prerenderRoute(templateHtml, `/tinkering/${slug}`, title, description, image);
+      }
+    });
+  }
+
   console.log('Static route prerendering completed successfully!');
 }
 
