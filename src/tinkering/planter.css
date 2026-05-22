@@ -169,28 +169,6 @@
   line-height: 1.2;
 }
 
-/* ── Code block ── */
-.pl-code-block {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  overflow: auto;
-  padding: 2rem 2.25rem;
-}
-
-.pl-code-block pre {
-  margin: 0;
-  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
-  font-size: 0.82rem;
-  line-height: 1.75;
-  color: var(--text-primary);
-  white-space: pre;
-  tab-size: 2;
-}
-
-.pl-code-block code {
-  font-family: inherit;
-}
 
 /* ── Quote ── */
 .pl-quote {
@@ -227,13 +205,7 @@
   .pl-specs-row {
     grid-template-columns: 1fr 1fr;
   }
-  .pl-code-block {
-    padding: 1.25rem;
-  }
-  .pl-code-block pre {
-    font-size: 0.75rem;
-  }
-  .pl-quote p {
+.pl-quote p {
     font-size: 1.1rem;
   }
 }

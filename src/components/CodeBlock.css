@@ -1,0 +1,108 @@
+/* ── Code Block ─────────────────────────────────────────────────────────────── */
+.cb-root {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background: #1a1b1e;
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', 'Consolas', 'Menlo', monospace;
+}
+
+/* Header */
+.cb-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 1.25rem;
+  background: #111214;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.cb-lang {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.35);
+  user-select: none;
+}
+
+/* Copy button */
+.cb-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.4);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 0.3rem 0.65rem;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  letter-spacing: 0.02em;
+}
+
+.cb-copy:hover {
+  color: rgba(255, 255, 255, 0.8);
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.cb-copy--done {
+  color: #4ade80;
+  border-color: rgba(74, 222, 128, 0.3);
+  background: rgba(74, 222, 128, 0.06);
+}
+
+/* Code pre */
+.cb-pre {
+  margin: 0;
+  padding: 1.5rem 1.75rem;
+  overflow-x: auto;
+  font-size: 0.82rem;
+  line-height: 1.8;
+  color: #c9d1d9;
+  white-space: pre;
+  tab-size: 2;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ── Syntax tokens ───────────────────────────────────────────────────────────── */
+.cb-keyword      { color: #ff7b72; }   /* red   — keywords */
+.cb-string       { color: #a5d6ff; }   /* blue  — strings  */
+.cb-comment      { color: #6e7681; font-style: italic; }  /* grey  — comments */
+.cb-preprocessor { color: #ffa657; }   /* amber — #include/#define */
+.cb-number       { color: #79c0ff; }   /* cyan  — numbers  */
+
+/* ── Light theme overrides ───────────────────────────────────────────────────── */
+/* Dark code block intentionally stays dark in both themes — readable on any bg */
+
+/* Scrollbar styling (WebKit) */
+.cb-pre::-webkit-scrollbar {
+  height: 5px;
+}
+.cb-pre::-webkit-scrollbar-track {
+  background: transparent;
+}
+.cb-pre::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+}
+.cb-pre::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .cb-pre {
+    font-size: 0.75rem;
+    padding: 1.25rem;
+  }
+
+  .cb-header {
+    padding: 0.55rem 1rem;
+  }
+}

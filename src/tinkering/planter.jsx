@@ -1,4 +1,5 @@
 import React from 'react';
+import CodeBlock from '../components/CodeBlock';
 import './planter.css';
 
 export const metadata = {
@@ -171,9 +172,7 @@ export default function Planter() {
           The full NodeMCU sketch — RTC-driven hourly checks, moisture reading,
           pump control, and low-water alert.
         </p>
-        <div className="pl-code-block">
-          <pre><code>{CODE}</code></pre>
-        </div>
+        <CodeBlock code={CODE} language="cpp" label="Arduino / NodeMCU" />
       </section>
 
       {/* ── Closing note ── */}
