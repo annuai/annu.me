@@ -80,7 +80,7 @@
   height: auto;
   border-radius: 12px;
   margin: 3rem 0;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 768px) {

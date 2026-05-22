@@ -3,21 +3,21 @@ import ProjectModal from './ProjectModal';
 import './ProjectGrid.css';
 
 const modules = Object.fromEntries(
-  Object.entries(
-    import.meta.glob('../projects/*.jsx', { eager: true })
-  ).filter(([path]) => {
+  Object.entries(import.meta.glob('../projects/*.jsx', { eager: true })).filter(([path]) => {
     const fileName = path.split('/').pop();
     return !fileName.startsWith('_');
   })
 );
-const projects = Object.keys(modules).map(path => {
-  const mod = modules[path];
-  const metadata = mod.metadata || {};
-  return {
-    ...metadata,
-    slug: metadata.slug || path.split('/').pop().replace('.jsx', '')
-  };
-}).sort((a, b) => Number(a.id) - Number(b.id));
+const projects = Object.keys(modules)
+  .map((path) => {
+    const mod = modules[path];
+    const metadata = mod.metadata || {};
+    return {
+      ...metadata,
+      slug: metadata.slug || path.split('/').pop().replace('.jsx', ''),
+    };
+  })
+  .sort((a, b) => Number(a.id) - Number(b.id));
 
 const ProjectGrid = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -66,9 +66,7 @@ const ProjectGrid = () => {
         </div>
       </section>
 
-      {selectedProject && (
-        <ProjectModal project={selectedProject} onClose={closeModal} />
-      )}
+      {selectedProject && <ProjectModal project={selectedProject} onClose={closeModal} />}
     </>
   );
 };

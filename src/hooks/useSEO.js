@@ -19,7 +19,7 @@ export default function useSEO({ title, description, image, url }) {
     const finalImage = image || '/favicon.svg';
 
     setMetaTag('meta[name="description"]', 'content', description);
-    
+
     // Open Graph
     setMetaTag('meta[property="og:title"]', 'content', title);
     setMetaTag('meta[property="og:description"]', 'content', description);
@@ -33,6 +33,5 @@ export default function useSEO({ title, description, image, url }) {
     setMetaTag('meta[name="twitter:description"]', 'content', description);
     setMetaTag('meta[name="twitter:image"]', 'content', finalImage);
     setMetaTag('meta[name="twitter:url"]', 'content', url || window.location.href);
-
   }, [title, description, image, url]);
 }

@@ -111,11 +111,11 @@
 }
 
 .social-links a:hover .instagram {
-  color: #E1306C;
+  color: #e1306c;
 }
 
 .social-links a:hover .twitter {
-  color: #1DA1F2;
+  color: #1da1f2;
 }
 
 .social-links a:hover .github {
@@ -140,7 +140,7 @@
     align-items: flex-start;
     gap: 4rem;
   }
-  
+
   .contact-info h2 {
     font-size: 3rem;
   }

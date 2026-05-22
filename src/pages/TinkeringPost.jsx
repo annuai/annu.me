@@ -8,7 +8,7 @@ const modules = import.meta.glob('../tinkering/*.jsx', { eager: true });
 const TinkeringPost = () => {
   const { slug } = useParams();
 
-  const path = Object.keys(modules).find(p => {
+  const path = Object.keys(modules).find((p) => {
     const mod = modules[p];
     const s = mod.metadata?.slug || p.split('/').pop().replace('.jsx', '');
     return s === slug;

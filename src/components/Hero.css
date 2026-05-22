@@ -33,8 +33,12 @@
 }
 
 @keyframes icon-appear {
-  from { opacity: 0; }
-  to   { opacity: 0.13; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.13;
+  }
 }
 
 .hero-content {
@@ -88,8 +92,14 @@
 }
 
 @keyframes hero-slide-up {
-  0% { opacity: 0; transform: translateY(24px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-status-link {
@@ -138,8 +148,14 @@
 }
 
 @keyframes hero-pulse {
-  0% { transform: scale(0.5); opacity: 0.7; }
-  100% { transform: scale(2.6); opacity: 0; }
+  0% {
+    transform: scale(0.5);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -151,7 +167,7 @@
     transform: scale(0.8) rotate(var(--r, 0deg));
   }
 
-  .hero-icon:nth-child(n+7) {
+  .hero-icon:nth-child(n + 7) {
     display: none;
   }
 }

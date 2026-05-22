@@ -26,7 +26,9 @@
   border-radius: 10px;
   display: block;
   filter: grayscale(100%);
-  transition: filter 0.5s ease, transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    filter 0.5s ease,
+    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .about-photo-wrapper:hover .about-photo {
@@ -109,8 +111,14 @@
 }
 
 @keyframes about-pulse {
-  0%   { transform: scale(0.5); opacity: 0.7; }
-  100% { transform: scale(2.6); opacity: 0; }
+  0% {
+    transform: scale(0.5);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
 }
 
 /* ── Body text ─────────────────────────────────────── */

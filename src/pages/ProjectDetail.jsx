@@ -6,23 +6,24 @@ import './ProjectDetail.css';
 
 // Load all JSX files in the projects directory at build time
 const modules = Object.fromEntries(
-  Object.entries(import.meta.glob('../projects/*.jsx', { eager: true }))
-    .filter(([path]) => !path.split('/').pop().startsWith('_'))
+  Object.entries(import.meta.glob('../projects/*.jsx', { eager: true })).filter(
+    ([path]) => !path.split('/').pop().startsWith('_')
+  )
 );
 
-const projects = Object.keys(modules).map(path => {
+const projects = Object.keys(modules).map((path) => {
   const mod = modules[path];
   const metadata = mod.metadata || {};
   return {
     ...metadata,
-    slug: metadata.slug || path.split('/').pop().replace('.jsx', '')
+    slug: metadata.slug || path.split('/').pop().replace('.jsx', ''),
   };
 });
 
 const ProjectDetail = () => {
   const { slug } = useParams();
 
-  const path = Object.keys(modules).find(p => {
+  const path = Object.keys(modules).find((p) => {
     const mod = modules[p];
     const projectSlug = mod.metadata?.slug || p.split('/').pop().replace('.jsx', '');
     return projectSlug === slug;
@@ -34,9 +35,11 @@ const ProjectDetail = () => {
 
   useSEO({
     title: project ? `Annuai | ${project.title}` : 'Annuai | Work',
-    description: project ? (project.excerpt || project.description) : 'View my industrial design work.',
+    description: project
+      ? project.excerpt || project.description
+      : 'View my industrial design work.',
     url: project ? `https://annu.me/work/${slug}` : `https://annu.me/`,
-    image: '/favicon.svg'
+    image: '/favicon.svg',
   });
 
   useEffect(() => {
@@ -48,14 +51,14 @@ const ProjectDetail = () => {
   }
 
   // Get a few other projects to show at the bottom (excluding current and walkthroughOnly/mailto ones if necessary)
-  const otherProjects = projects
-    .filter(p => p.slug !== slug && !p.walthroughOnly)
-    .slice(0, 4);
+  const otherProjects = projects.filter((p) => p.slug !== slug && !p.walthroughOnly).slice(0, 4);
 
   return (
     <div className="project-detail-page fade-in">
       <div className="project-detail-header-wrapper">
-        <Link to="/" className="back-link">&larr; Back to Portfolio</Link>
+        <Link to="/" className="back-link">
+          &larr; Back to Portfolio
+        </Link>
       </div>
 
       <div className="project-detail-canvas">
@@ -66,9 +69,9 @@ const ProjectDetail = () => {
         <div className="related-projects-section">
           <h2>More Projects</h2>
           <div className="grid-container">
-            {otherProjects.map(p => {
+            {otherProjects.map((p) => {
               const linkProps = p.customUrl
-                ? { href: p.customUrl, as: "a" }
+                ? { href: p.customUrl, as: 'a' }
                 : { to: `/work/${p.slug}`, as: Link };
               const Component = linkProps.as;
 

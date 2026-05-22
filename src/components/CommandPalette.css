@@ -14,8 +14,12 @@
 }
 
 @keyframes cmd-overlay-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .cmd-panel {
@@ -24,15 +28,23 @@
   background: var(--bg-primary);
   border: 1px solid var(--border-color);
   border-radius: 14px;
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.18), 0 4px 16px rgba(0, 0, 0, 0.08);
+  box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.18),
+    0 4px 16px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   min-width: 0;
   animation: cmd-panel-in 0.18s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @keyframes cmd-panel-in {
-  from { opacity: 0; transform: scale(0.97) translateY(-8px); }
-  to   { opacity: 1; transform: scale(1) translateY(0); }
+  from {
+    opacity: 0;
+    transform: scale(0.97) translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
 /* Input row */
@@ -84,9 +96,16 @@
   padding: 0.5rem 0;
 }
 
-.cmd-results::-webkit-scrollbar { width: 4px; }
-.cmd-results::-webkit-scrollbar-track { background: transparent; }
-.cmd-results::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 4px; }
+.cmd-results::-webkit-scrollbar {
+  width: 4px;
+}
+.cmd-results::-webkit-scrollbar-track {
+  background: transparent;
+}
+.cmd-results::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
 
 .cmd-group {
   padding: 0 0.5rem;
@@ -208,8 +227,14 @@
   }
 
   @keyframes cmd-panel-up {
-    from { opacity: 0; transform: translateY(40px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   /* Drag handle */

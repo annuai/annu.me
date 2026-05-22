@@ -16,7 +16,9 @@ const DesignerBio = () => {
           </div>
           <div className="bio-right">
             <p className="bio-statement">
-              I'm Annuai, an Industrial Designer and maker from Kannur, Kerala, exploring the intersection of industrial design, digital interfaces, and tactile materiality — creating products that feel intuitive, functional, and emotionally resonant.
+              I'm Annuai, an Industrial Designer and maker from Kannur, Kerala, exploring the
+              intersection of industrial design, digital interfaces, and tactile materiality —
+              creating products that feel intuitive, functional, and emotionally resonant.
             </p>
           </div>
         </div>

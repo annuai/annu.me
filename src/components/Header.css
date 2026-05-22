@@ -14,7 +14,10 @@ body.has-overlay .site-header {
   -webkit-backdrop-filter: none;
   border-bottom: 1px solid transparent;
   padding: 1.1rem 0;
-  transition: background 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s ease;
+  transition:
+    background 0.4s ease,
+    border-color 0.4s ease,
+    backdrop-filter 0.4s ease;
 }
 
 .site-header.scrolled {
@@ -86,7 +89,8 @@ body.has-overlay .site-header {
   letter-spacing: 0.02em;
 }
 
-.nav-link:hover, .nav-link.active {
+.nav-link:hover,
+.nav-link.active {
   color: var(--text-primary);
 }
 
@@ -201,7 +205,7 @@ body.has-overlay .site-header {
 
 .hamburger-inner::before,
 .hamburger-inner::after {
-  content: "";
+  content: '';
   display: block;
 }
 
@@ -231,7 +235,7 @@ body.has-overlay .site-header {
   .logo-subtitle {
     display: none;
   }
-  
+
   .header-right {
     gap: 0.5rem;
   }
@@ -327,7 +331,7 @@ body.has-overlay .site-header {
   .header-container {
     padding: 0 1.5rem;
   }
-  
+
   .theme-toggle {
     margin-left: 0;
     z-index: 110;

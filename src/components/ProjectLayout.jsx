@@ -6,8 +6,8 @@ const ProjectLayout = ({ metadata, children }) => {
   const [lightboxIndex, setLightboxIndex] = useState(null);
   const images = metadata.images || [];
 
-  const prev = () => setLightboxIndex(i => (i - 1 + images.length) % images.length);
-  const next = () => setLightboxIndex(i => (i + 1) % images.length);
+  const prev = () => setLightboxIndex((i) => (i - 1 + images.length) % images.length);
+  const next = () => setLightboxIndex((i) => (i + 1) % images.length);
 
   return (
     <div className="default-project-layout">

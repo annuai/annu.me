@@ -8,7 +8,7 @@ const About = () => {
     title: 'Annuai | About',
     description: 'Learn more about Annuai, an Industrial Designer based in Kannur, Kerala.',
     url: 'https://annu.me/about',
-    image: '/favicon.svg'
+    image: '/favicon.svg',
   });
   return (
     <div className="page-wrapper">

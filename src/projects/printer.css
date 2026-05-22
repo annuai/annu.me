@@ -381,7 +381,7 @@
 .cad-wrapper {
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
   border: 1px solid var(--border-color);
   aspect-ratio: 4 / 3;
 }
@@ -606,7 +606,6 @@
   .brief-highlight {
     font-size: 1.1rem;
   }
-
 
   .hide-mobile {
     display: none !important;

@@ -21,8 +21,10 @@ const ProjectModal = ({ project, onClose }) => {
 
   return createPortal(
     <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-content" onClick={e => e.stopPropagation()}>
-        <button className="close-button" onClick={onClose}>&times;</button>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <button className="close-button" onClick={onClose}>
+          &times;
+        </button>
 
         <div className="modal-body">
           <div className="modal-image-container">
@@ -49,16 +51,18 @@ const ProjectModal = ({ project, onClose }) => {
                 >
                   View External Project &rarr;
                 </a>
+              ) : isWalthroughOnly ? (
+                <Link
+                  to={`mailto:hi.annuai@gmail.com`}
+                  className="view-project-link"
+                  onClick={onClose}
+                >
+                  Walkthrough only
+                </Link>
               ) : (
-                isWalthroughOnly ? (
-                  <Link to={`mailto:hi.annuai@gmail.com`} className="view-project-link" onClick={onClose}>
-                    Walkthrough only
-                  </Link>
-                ) : (
-                  <Link to={`/work/${project.slug}`} className="view-project-link" onClick={onClose}>
-                    View Full Project &rarr;
-                  </Link>
-                )
+                <Link to={`/work/${project.slug}`} className="view-project-link" onClick={onClose}>
+                  View Full Project &rarr;
+                </Link>
               )}
             </div>
           </div>

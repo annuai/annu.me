@@ -30,7 +30,7 @@ function App() {
   const handleKeyDown = useCallback((e) => {
     if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
       e.preventDefault();
-      setCmdOpen(prev => !prev);
+      setCmdOpen((prev) => !prev);
     }
   }, []);
 
@@ -47,7 +47,9 @@ function App() {
   }, []);
 
   // Close palette on route change
-  useEffect(() => { setCmdOpen(false); }, [pathname]);
+  useEffect(() => {
+    setCmdOpen(false);
+  }, [pathname]);
 
   return (
     <>

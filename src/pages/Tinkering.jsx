@@ -20,7 +20,8 @@ const items = Object.entries(modules)
 const Tinkering = () => {
   useSEO({
     title: 'Annuai | Tinkering',
-    description: 'Personal experiments, restorations, and hands-on curiosities outside of formal design work.',
+    description:
+      'Personal experiments, restorations, and hands-on curiosities outside of formal design work.',
     url: 'https://annu.me/tinkering',
     image: '/favicon.svg',
   });
@@ -31,7 +32,10 @@ const Tinkering = () => {
         <header className="tinkering-header">
           <FadeIn>
             <h1>Tinkering</h1>
-            <p>Personal experiments, restorations, and hands-on curiosities outside of formal design work.</p>
+            <p>
+              Personal experiments, restorations, and hands-on curiosities outside of formal design
+              work.
+            </p>
           </FadeIn>
         </header>
 
@@ -53,7 +57,11 @@ const Tinkering = () => {
                   <p className="tinkering-card-excerpt">{item.excerpt}</p>
                   {item.tags && (
                     <div className="tinkering-card-tags">
-                      {item.tags.map(t => <span key={t} className="tinkering-tag">{t}</span>)}
+                      {item.tags.map((t) => (
+                        <span key={t} className="tinkering-tag">
+                          {t}
+                        </span>
+                      ))}
                     </div>
                   )}
                   <span className="tinkering-read-more">Read more &rarr;</span>

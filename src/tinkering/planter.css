@@ -169,7 +169,6 @@
   line-height: 1.2;
 }
 
-
 /* ── Quote ── */
 .pl-quote {
   border-left: 3px solid var(--accent-orange);
@@ -205,7 +204,7 @@
   .pl-specs-row {
     grid-template-columns: 1fr 1fr;
   }
-.pl-quote p {
+  .pl-quote p {
     font-size: 1.1rem;
   }
 }

@@ -1,55 +1,42 @@
-import React from "react";
+import React from 'react';
 
 export const metadata = {
-  title: "Interesting Corners of the Internet",
-  date: "2026-05-13",
+  title: 'Interesting Corners of the Internet',
+  date: '2026-05-13',
   excerpt:
-    "A collection of websites, essays, and tools around design, engineering, fabrication, and the modern web.",
+    'A collection of websites, essays, and tools around design, engineering, fabrication, and the modern web.',
 };
 
 export default function InterestingCorners() {
   return (
     <>
       <p>
-        A small collection of websites, essays, and tools I keep returning to —
-        mostly around design, fabrication, interfaces, and the growing overlap
-        between designers and engineers.
+        A small collection of websites, essays, and tools I keep returning to — mostly around
+        design, fabrication, interfaces, and the growing overlap between designers and engineers.
       </p>
 
       <h2>Experimental Websites</h2>
 
       <ul>
         <li>
-          <a
-            href="https://sinceyouarrived.world/taken"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://sinceyouarrived.world/taken" target="_blank" rel="noopener noreferrer">
             Since You Arrived — Taken
-          </a>{" "}
+          </a>{' '}
           — Shows what websites can infer about you the moment you visit them.
         </li>
 
         <li>
-          <a
-            href="https://sinceyouarrived.world/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://sinceyouarrived.world/" target="_blank" rel="noopener noreferrer">
             Since You Arrived
-          </a>{" "}
-          — Live counters showing what humanity has collectively been doing
-          since you opened the page.
+          </a>{' '}
+          — Live counters showing what humanity has collectively been doing since you opened the
+          page.
         </li>
 
         <li>
-          <a
-            href="https://gcodetools.com/vase-maker"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://gcodetools.com/vase-maker" target="_blank" rel="noopener noreferrer">
             GCode Vase Maker
-          </a>{" "}
+          </a>{' '}
           — Generates procedural vase forms directly as G-code.
         </li>
       </ul>
@@ -64,7 +51,7 @@ export default function InterestingCorners() {
             rel="noopener noreferrer"
           >
             Caligra C100 Developer Terminal — Pentagram
-          </a>{" "}
+          </a>{' '}
           — A beautifully restrained developer-focused hardware concept.
         </li>
 
@@ -75,18 +62,14 @@ export default function InterestingCorners() {
             rel="noopener noreferrer"
           >
             Pentagram Industrial & Product Design
-          </a>{" "}
+          </a>{' '}
           — A strong archive of industrial and product design work.
         </li>
 
         <li>
-          <a
-            href="https://sidebar.io/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://sidebar.io/" target="_blank" rel="noopener noreferrer">
             Sidebar.io
-          </a>{" "}
+          </a>{' '}
           — My go-to source for design and development updates.
         </li>
       </ul>
@@ -101,7 +84,7 @@ export default function InterestingCorners() {
             rel="noopener noreferrer"
           >
             The Future of Design Jobs
-          </a>{" "}
+          </a>{' '}
           — On how AI is changing the role of designers.
         </li>
 
@@ -112,7 +95,7 @@ export default function InterestingCorners() {
             rel="noopener noreferrer"
           >
             What Is a Design Engineer?
-          </a>{" "}
+          </a>{' '}
           — A good introduction to the design engineer role.
         </li>
 
@@ -123,7 +106,7 @@ export default function InterestingCorners() {
             rel="noopener noreferrer"
           >
             The Adolescence of Technology — Dario Amodei
-          </a>{" "}
+          </a>{' '}
           — A thoughtful essay on the current phase of technological growth.
         </li>
 
@@ -134,7 +117,7 @@ export default function InterestingCorners() {
             rel="noopener noreferrer"
           >
             The Death of Design
-          </a>{" "}
+          </a>{' '}
           — On how design roles are evolving alongside AI and automation.
         </li>
 
@@ -145,7 +128,7 @@ export default function InterestingCorners() {
             rel="noopener noreferrer"
           >
             Can AI Help You Build Your Design Portfolio?
-          </a>{" "}
+          </a>{' '}
           — Practical ways AI can assist portfolio building.
         </li>
       </ul>
@@ -154,47 +137,31 @@ export default function InterestingCorners() {
 
       <ul>
         <li>
-          <a
-            href="https://design-engineers.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://design-engineers.vercel.app/" target="_blank" rel="noopener noreferrer">
             Design Engineers
-          </a>{" "}
-          — “People who are really serious about user interface should be able
-          to implement it themselves.”
+          </a>{' '}
+          — “People who are really serious about user interface should be able to implement it
+          themselves.”
         </li>
 
         <li>
-          <a
-            href="https://designengineer.io/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://designengineer.io/" target="_blank" rel="noopener noreferrer">
             DesignEngineer.io
-          </a>{" "}
+          </a>{' '}
           — Job board focused on design engineering roles.
         </li>
 
         <li>
-          <a
-            href="https://www.theodinproject.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://www.theodinproject.com/" target="_blank" rel="noopener noreferrer">
             The Odin Project
-          </a>{" "}
+          </a>{' '}
           — One of the best free resources for learning web development.
         </li>
 
         <li>
-          <a
-            href="https://aigoodies.beehiiv.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://aigoodies.beehiiv.com/" target="_blank" rel="noopener noreferrer">
             AI Goodies
-          </a>{" "}
+          </a>{' '}
           — Where I found many of these links.
         </li>
       </ul>

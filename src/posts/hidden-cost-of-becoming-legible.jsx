@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
 export const metadata = {
-  title: "The Hidden Cost of Becoming Legible",
-  date: "2026-05-19",
+  title: 'The Hidden Cost of Becoming Legible',
+  date: '2026-05-19',
   excerpt:
-    "The internet rewards clarity of identity. But for multidisciplinary people, becoming easy to categorize can come at the cost of originality.",
+    'The internet rewards clarity of identity. But for multidisciplinary people, becoming easy to categorize can come at the cost of originality.',
 };
 
 export default function HiddenCostOfBecomingLegible() {
@@ -24,17 +24,16 @@ export default function HiddenCostOfBecomingLegible() {
       </ul>
 
       <p>
-        Simple labels travel well. They fit into algorithms, resumes,
-        introductions, and opportunities.
+        Simple labels travel well. They fit into algorithms, resumes, introductions, and
+        opportunities.
       </p>
 
       <p>But some people do not naturally fit into a single category.</p>
 
       <p>
-        A person might design motorcycle accessories, prototype electronics,
-        write software, obsess over rendering quality, and think deeply about
-        materials and interfaces — without fully belonging to any one
-        discipline.
+        A person might design motorcycle accessories, prototype electronics, write software, obsess
+        over rendering quality, and think deeply about materials and interfaces — without fully
+        belonging to any one discipline.
       </p>
 
       <p>
@@ -44,15 +43,13 @@ export default function HiddenCostOfBecomingLegible() {
       </p>
 
       <p>
-        The modern internet is optimized for recognizable shapes. The easier you
-        are to classify, the easier you are to recommend, hire, follow, or
-        trust.
+        The modern internet is optimized for recognizable shapes. The easier you are to classify,
+        the easier you are to recommend, hire, follow, or trust.
       </p>
 
       <p>
-        Multidisciplinary people often spend years appearing “inconsistent” when
-        they are actually developing a connected way of thinking that others
-        cannot immediately see.
+        Multidisciplinary people often spend years appearing “inconsistent” when they are actually
+        developing a connected way of thinking that others cannot immediately see.
       </p>
 
       <p>
@@ -64,16 +61,15 @@ export default function HiddenCostOfBecomingLegible() {
       <p>To become easier to explain.</p>
 
       <p>
-        But becoming legible too early can also become a trap. Once an audience
-        understands you one way, growth outside that identity becomes harder. A
-        designer who codes surprises people. A founder interested in philosophy
-        confuses people. A product engineer talking about aesthetics feels
-        “off-brand.”
+        But becoming legible too early can also become a trap. Once an audience understands you one
+        way, growth outside that identity becomes harder. A designer who codes surprises people. A
+        founder interested in philosophy confuses people. A product engineer talking about
+        aesthetics feels “off-brand.”
       </p>
 
       <p>
-        The irony is that many meaningful ideas come from people who stayed
-        difficult to categorize long enough to combine fields in unusual ways.
+        The irony is that many meaningful ideas come from people who stayed difficult to categorize
+        long enough to combine fields in unusual ways.
       </p>
 
       <p>

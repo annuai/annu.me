@@ -5,26 +5,29 @@ import './CommandPalette.css';
 const postModules = import.meta.glob('../posts/*.jsx', { eager: true });
 const tinkeringModules = import.meta.glob('../tinkering/*.jsx', { eager: true });
 const projectModules = Object.fromEntries(
-  Object.entries(import.meta.glob('../projects/*.jsx', { eager: true }))
-    .filter(([p]) => !p.split('/').pop().startsWith('_'))
+  Object.entries(import.meta.glob('../projects/*.jsx', { eager: true })).filter(
+    ([p]) => !p.split('/').pop().startsWith('_')
+  )
 );
 
 const PAGES = [
-  { id: 'work',      label: 'Work',      hint: 'Portfolio',    path: '/',           icon: '⬡' },
-  { id: 'about',     label: 'About',     hint: 'About Annuai', path: '/about',      icon: '◉' },
-  { id: 'blog',      label: 'Journal',   hint: 'Writing',      path: '/blog',       icon: '◎' },
-  { id: 'tinkering', label: 'Tinkering', hint: 'Experiments',  path: '/tinkering',  icon: '⚙' },
+  { id: 'work', label: 'Work', hint: 'Portfolio', path: '/', icon: '⬡' },
+  { id: 'about', label: 'About', hint: 'About Annuai', path: '/about', icon: '◉' },
+  { id: 'blog', label: 'Journal', hint: 'Writing', path: '/blog', icon: '◎' },
+  { id: 'tinkering', label: 'Tinkering', hint: 'Experiments', path: '/tinkering', icon: '⚙' },
 ];
 
-const PROJECTS = Object.entries(projectModules).map(([path, mod]) => ({
-  id: path,
-  label: mod.metadata?.title || 'Project',
-  hint: mod.metadata?.category || 'Project',
-  path: `/work/${mod.metadata?.slug || path.split('/').pop().replace('.jsx', '')}`,
-  icon: '◈',
-  group: 'Projects',
-  projectId: Number(mod.metadata?.id) || 0,
-})).sort((a, b) => a.projectId - b.projectId);
+const PROJECTS = Object.entries(projectModules)
+  .map(([path, mod]) => ({
+    id: path,
+    label: mod.metadata?.title || 'Project',
+    hint: mod.metadata?.category || 'Project',
+    path: `/work/${mod.metadata?.slug || path.split('/').pop().replace('.jsx', '')}`,
+    icon: '◈',
+    group: 'Projects',
+    projectId: Number(mod.metadata?.id) || 0,
+  }))
+  .sort((a, b) => a.projectId - b.projectId);
 
 const POSTS = Object.entries(postModules)
   .map(([path, mod]) => ({
@@ -52,7 +55,7 @@ const TINKERING = Object.entries(tinkeringModules)
   .sort((a, b) => new Date(b.date) - new Date(a.date));
 
 const ALL_ITEMS = [
-  ...PAGES.map(p => ({ ...p, group: 'Pages' })),
+  ...PAGES.map((p) => ({ ...p, group: 'Pages' })),
   ...PROJECTS,
   ...POSTS,
   ...TINKERING,
@@ -66,10 +69,11 @@ const CommandPalette = ({ isOpen, onClose }) => {
   const navigate = useNavigate();
 
   const filtered = query.trim()
-    ? ALL_ITEMS.filter(item =>
-        item.label.toLowerCase().includes(query.toLowerCase()) ||
-        item.hint.toLowerCase().includes(query.toLowerCase()) ||
-        (item.group || '').toLowerCase().includes(query.toLowerCase())
+    ? ALL_ITEMS.filter(
+        (item) =>
+          item.label.toLowerCase().includes(query.toLowerCase()) ||
+          item.hint.toLowerCase().includes(query.toLowerCase()) ||
+          (item.group || '').toLowerCase().includes(query.toLowerCase())
       )
     : ALL_ITEMS;
 
@@ -96,7 +100,9 @@ const CommandPalette = ({ isOpen, onClose }) => {
     return () => document.body.classList.remove('has-overlay');
   }, [isOpen]);
 
-  useEffect(() => { setSelected(0); }, [query]);
+  useEffect(() => {
+    setSelected(0);
+  }, [query]);
 
   // Scroll selected item into view
   useEffect(() => {
@@ -104,24 +110,30 @@ const CommandPalette = ({ isOpen, onClose }) => {
     el?.scrollIntoView({ block: 'nearest' });
   }, [selected]);
 
-  const go = useCallback((item) => {
-    navigate(item.path);
-    onClose();
-  }, [navigate, onClose]);
-
-  const handleKey = useCallback((e) => {
-    if (e.key === 'ArrowDown') {
-      e.preventDefault();
-      setSelected(s => Math.min(s + 1, flatList.length - 1));
-    } else if (e.key === 'ArrowUp') {
-      e.preventDefault();
-      setSelected(s => Math.max(s - 1, 0));
-    } else if (e.key === 'Enter') {
-      if (flatList[selected]) go(flatList[selected]);
-    } else if (e.key === 'Escape') {
+  const go = useCallback(
+    (item) => {
+      navigate(item.path);
       onClose();
-    }
-  }, [flatList, selected, go, onClose]);
+    },
+    [navigate, onClose]
+  );
+
+  const handleKey = useCallback(
+    (e) => {
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        setSelected((s) => Math.min(s + 1, flatList.length - 1));
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        setSelected((s) => Math.max(s - 1, 0));
+      } else if (e.key === 'Enter') {
+        if (flatList[selected]) go(flatList[selected]);
+      } else if (e.key === 'Escape') {
+        onClose();
+      }
+    },
+    [flatList, selected, go, onClose]
+  );
 
   if (!isOpen) return null;
 
@@ -129,23 +141,47 @@ const CommandPalette = ({ isOpen, onClose }) => {
 
   return (
     <div className="cmd-overlay" onClick={onClose} role="dialog" aria-modal="true">
-      <div className="cmd-panel" onClick={e => e.stopPropagation()}>
-
+      <div className="cmd-panel" onClick={(e) => e.stopPropagation()}>
         <div className="cmd-input-row">
-          <svg className="cmd-search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <svg
+            className="cmd-search-icon"
+            width="15"
+            height="15"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+          >
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.35-4.35" />
+          </svg>
           <input
             ref={inputRef}
             className="cmd-input"
             placeholder="Search pages, projects, posts…"
             value={query}
-            onChange={e => setQuery(e.target.value)}
+            onChange={(e) => setQuery(e.target.value)}
             onKeyDown={handleKey}
             autoComplete="off"
             spellCheck={false}
           />
-          <kbd className="cmd-esc" onClick={onClose}>esc</kbd>
+          <kbd className="cmd-esc" onClick={onClose}>
+            esc
+          </kbd>
           <button className="cmd-close-mobile" onClick={onClose} aria-label="Close">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+            >
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
           </button>
         </div>
 
@@ -177,9 +213,15 @@ const CommandPalette = ({ isOpen, onClose }) => {
         </div>
 
         <div className="cmd-footer">
-          <span><kbd>↑↓</kbd> navigate</span>
-          <span><kbd>↵</kbd> open</span>
-          <span><kbd>esc</kbd> close</span>
+          <span>
+            <kbd>↑↓</kbd> navigate
+          </span>
+          <span>
+            <kbd>↵</kbd> open
+          </span>
+          <span>
+            <kbd>esc</kbd> close
+          </span>
         </div>
       </div>
     </div>
