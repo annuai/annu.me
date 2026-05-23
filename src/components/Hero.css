@@ -54,7 +54,7 @@
 .hero-split {
   display: flex;
   align-items: baseline;
-  gap: 1.5rem;
+  gap: 0.6rem;
   margin-bottom: 2rem;
   flex-wrap: nowrap;
 }
@@ -170,7 +170,7 @@
   /* On tablet, hero-descriptors fixed width would squeeze the statement — stack instead */
   .hero-split {
     flex-direction: column;
-    gap: 0.85rem;
+    gap: 0.3rem;
   }
 
   .hero-statement,
@@ -195,7 +195,11 @@
   }
 
   .hero-statement {
-    font-size: clamp(1.25rem, 4.5vw, 1.6rem);
+    font-size: clamp(1.5rem, 5.5vw, 1.9rem);
+  }
+
+  .hero-descriptors {
+    font-size: clamp(1.7rem, 6vw, 2.1rem);
   }
 
   .hero-footer {
