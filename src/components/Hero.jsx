@@ -185,7 +185,7 @@ const ICONS = [
 const Hero = () => {
   return (
     <section className="hero-section">
-      <div className="hero-icons" aria-hidden="true">
+      {/* <div className="hero-icons" aria-hidden="true">
         {ICONS.map(({ id, Icon, top, left, size, rotate, delay }) => (
           <span
             key={id}
@@ -202,15 +202,17 @@ const Hero = () => {
             <Icon />
           </span>
         ))}
-      </div>
+      </div> */}
 
       <div className="hero-content fade-in">
-        <p className="hero-text">
-          <span className="clean-text">
-            Turning ideas into tangible experiences across domains{' '}
-          </span>
-          <span className="expressive-text">— thoughtfully, playfully, and hands&#x2011;on.</span>
-        </p>
+        <div className="hero-split">
+          <p className="hero-statement">
+            Turning ideas into tangible experiences across domains
+          </p>
+          <p className="hero-descriptors">
+            thoughtfully, playfully &amp; hands&#x2011;on
+          </p>
+        </div>
         <div className="hero-footer">
           <a href="mailto:hi.annuai@gmail.com" className="hero-status-link">
             <div className="hero-status-tag">

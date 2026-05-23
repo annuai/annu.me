@@ -1,8 +1,8 @@
 .hero-section {
-  min-height: 40vh;
+  min-height: auto;
   display: flex;
   align-items: center;
-  padding: 8.5rem 4rem 4rem;
+  padding: 8.5rem 4rem 3.5rem;
   max-width: var(--max-width);
   margin: 0 auto;
   width: 100%;
@@ -42,7 +42,7 @@
 }
 
 .hero-content {
-  max-width: 860px;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -50,45 +50,49 @@
   z-index: 1;
 }
 
-.hero-text {
+/* ── Single-line row ───────────────────────────────── */
+.hero-split {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: nowrap;
+}
+
+/* Main statement */
+.hero-statement {
+  flex: 0 0 auto;
+  white-space: nowrap;
   font-family: var(--font-display);
-  font-size: clamp(2rem, 3.8vw, 4rem);
-  font-weight: 500;
-  font-style: normal;
-  line-height: 1.18;
+  font-size: clamp(1.3rem, 1.8vw, 1.85rem);
+  font-weight: 400;
+  line-height: 1.45;
   color: var(--text-primary);
-  margin-bottom: 2.5rem;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
+  opacity: 0;
+  animation: hero-slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.12s forwards;
 }
 
-.clean-text {
-  color: var(--text-primary);
-}
-
-.expressive-text {
+/* Descriptor phrase — inline after the statement */
+.hero-descriptors {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
   font-family: var(--font-accent);
-  font-style: normal;
-  font-size: 1.15em;
+  font-size: clamp(1.55rem, 2.15vw, 2.2rem);
   color: var(--accent-orange);
+  line-height: 1.45;
+  opacity: 0;
+  animation: hero-slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.22s forwards;
 }
 
 .hero-footer {
   display: flex;
   align-items: center;
-  border-top: 1px solid var(--border-color);
-  padding-top: 2rem;
+  padding-top: 0;
   opacity: 0;
   animation: hero-slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
-}
-
-.hero-text {
-  opacity: 0;
-  animation: hero-slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
-}
-
-.hero-eyebrow {
-  opacity: 0;
-  animation: hero-slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0s forwards;
 }
 
 @keyframes hero-slide-up {
@@ -158,9 +162,20 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .hero-section {
     padding: 6rem 2.5rem 3.5rem;
+  }
+
+  /* On tablet, hero-descriptors fixed width would squeeze the statement — stack instead */
+  .hero-split {
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .hero-statement,
+  .hero-descriptors {
+    white-space: normal;
   }
 
   /* On tablet, hide the bottom band — top row still frames the section */
@@ -179,9 +194,8 @@
     display: none;
   }
 
-  .hero-text {
-    font-size: clamp(1.8rem, 6vw, 2.6rem);
-    margin-bottom: 2.5rem;
+  .hero-statement {
+    font-size: clamp(1.25rem, 4.5vw, 1.6rem);
   }
 
   .hero-footer {

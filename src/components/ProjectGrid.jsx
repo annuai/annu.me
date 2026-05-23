@@ -39,10 +39,6 @@ const ProjectGrid = () => {
   return (
     <>
       <section className="portfolio-section fade-in" id="work" style={{ animationDelay: '0.2s' }}>
-        <div className="section-header">
-          <span className="section-label">Selected Work</span>
-        </div>
-
         <div className="grid-container">
           {projects.map((project) => (
             <div
@@ -52,9 +48,17 @@ const ProjectGrid = () => {
             >
               <div className="img-wrapper">
                 <img src={project.thumbnail} alt={project.title} />
-                <div className="card-hover-overlay" />
+                {/* Desktop: hover overlay */}
+                <div className="card-meta-overlay">
+                  <span className="card-category">
+                    {project.category || (project.tags && project.tags[0])}
+                    {project.year && <span className="card-year"> · {project.year}</span>}
+                  </span>
+                  <h3 className="card-title">{project.title}</h3>
+                </div>
               </div>
-              <div className="card-meta">
+              {/* Mobile: static meta below image */}
+              <div className="card-meta-below">
                 <span className="card-category">
                   {project.category || (project.tags && project.tags[0])}
                   {project.year && <span className="card-year"> · {project.year}</span>}
