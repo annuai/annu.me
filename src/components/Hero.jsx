@@ -166,30 +166,33 @@ const MotoIcon = () => (
   </svg>
 );
 
+// Uniform size, spread evenly across the full hero in three horizontal bands
 const ICONS = [
-  { id: 'wrench', Icon: WrenchIcon, top: '10%', right: '6%', size: 46, rotate: -15, delay: 0.45 },
-  { id: 'circuit', Icon: CircuitIcon, top: '11%', right: '28%', size: 44, rotate: 5, delay: 0.5 },
-  { id: 'pen', Icon: PenIcon, top: '25%', right: '17%', size: 44, rotate: -10, delay: 0.55 },
-  { id: 'phone', Icon: PhoneIcon, top: '36%', right: '5%', size: 44, rotate: -4, delay: 0.55 },
-  { id: 'hammer', Icon: HammerIcon, top: '33%', right: '28%', size: 44, rotate: 20, delay: 0.6 },
-  { id: 'ruler', Icon: RulerIcon, top: '50%', right: '16%', size: 48, rotate: -5, delay: 0.63 },
-  { id: 'ui', Icon: UIDesignIcon, top: '54%', right: '32%', size: 44, rotate: 4, delay: 0.67 },
-  { id: 'ux', Icon: UXResearchIcon, top: '65%', right: '5%', size: 44, rotate: 0, delay: 0.7 },
-  { id: 'gear', Icon: GearIcon, top: '72%', right: '24%', size: 46, rotate: 12, delay: 0.75 },
-  { id: 'moto', Icon: MotoIcon, top: '80%', right: '14%', size: 48, rotate: 0, delay: 0.8 },
+  // ── top band — full width ──
+  { id: 'wrench', Icon: WrenchIcon, top: '11%', left: '3%', size: 42, rotate: -18, delay: 0.44 },
+  { id: 'ux', Icon: UXResearchIcon, top: '8%', left: '22%', size: 42, rotate: 4, delay: 0.48 },
+  { id: 'circuit', Icon: CircuitIcon, top: '13%', left: '44%', size: 42, rotate: 8, delay: 0.52 },
+  { id: 'pen', Icon: PenIcon, top: '30%', left: '65%', size: 42, rotate: -12, delay: 0.55 },
+  { id: 'gear', Icon: GearIcon, top: '22%', left: '83%', size: 42, rotate: 14, delay: 0.58 },
+  // ── bottom band — full width ──
+  { id: 'hammer', Icon: HammerIcon, top: '72%', left: '5%', size: 42, rotate: 22, delay: 0.62 },
+  { id: 'ruler', Icon: RulerIcon, top: '60%', left: '24%', size: 42, rotate: -8, delay: 0.65 },
+  { id: 'phone', Icon: PhoneIcon, top: '70%', left: '47%', size: 42, rotate: -4, delay: 0.68 },
+  { id: 'ui', Icon: UIDesignIcon, top: '74%', left: '67%', size: 42, rotate: 5, delay: 0.72 },
+  { id: 'moto', Icon: MotoIcon, top: '53%', left: '85%', size: 42, rotate: -2, delay: 0.76 },
 ];
 
 const Hero = () => {
   return (
     <section className="hero-section">
       <div className="hero-icons" aria-hidden="true">
-        {ICONS.map(({ id, Icon, top, right, size, rotate, delay }) => (
+        {ICONS.map(({ id, Icon, top, left, size, rotate, delay }) => (
           <span
             key={id}
             className="hero-icon"
             style={{
               top,
-              right,
+              left,
               width: size,
               height: size,
               transform: `rotate(${rotate}deg)`,

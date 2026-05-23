@@ -37,7 +37,7 @@
     opacity: 0;
   }
   to {
-    opacity: 0.13;
+    opacity: 0.11;
   }
 }
 
@@ -163,11 +163,8 @@
     padding: 6rem 2.5rem 3.5rem;
   }
 
-  .hero-icon {
-    transform: scale(0.8) rotate(var(--r, 0deg));
-  }
-
-  .hero-icon:nth-child(n + 7) {
+  /* On tablet, hide the bottom band — top row still frames the section */
+  .hero-icon:nth-child(n + 6) {
     display: none;
   }
 }
