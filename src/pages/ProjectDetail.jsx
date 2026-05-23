@@ -79,9 +79,17 @@ const ProjectDetail = () => {
                 <Component {...linkProps} key={p.id} className="project-card standard">
                   <div className="img-wrapper">
                     <img src={p.thumbnail} alt={p.title} />
-                    <div className="card-hover-overlay" />
+                    {/* Desktop: hover overlay */}
+                    <div className="card-meta-overlay">
+                      <span className="card-category">
+                        {p.category || (p.tags && p.tags[0])}
+                        {p.year && <span className="card-year"> · {p.year}</span>}
+                      </span>
+                      <h3 className="card-title">{p.title}</h3>
+                    </div>
                   </div>
-                  <div className="card-meta">
+                  {/* Mobile: static meta below image */}
+                  <div className="card-meta-below">
                     <span className="card-category">
                       {p.category || (p.tags && p.tags[0])}
                       {p.year && <span className="card-year"> · {p.year}</span>}
