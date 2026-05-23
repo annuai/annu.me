@@ -255,7 +255,9 @@ body.has-overlay .site-header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 2rem;
+    /* Offset top padding by header height (~64px) so content is visually centred
+       in the space below the header bar, not the raw viewport */
+    padding: 4rem 2rem 0;
     transform: translateX(100%);
     transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 100;
@@ -268,12 +270,10 @@ body.has-overlay .site-header {
   .header-nav ul {
     flex-direction: column;
     gap: 0;
-    width: 100%;
     align-items: center;
   }
 
   .header-nav ul li {
-    width: 100%;
     text-align: center;
   }
 
@@ -284,7 +284,6 @@ body.has-overlay .site-header {
     font-weight: 500;
     letter-spacing: -0.01em;
     display: block;
-    width: 100%;
     padding: 0.9rem 0;
     color: var(--text-secondary);
   }
@@ -311,7 +310,7 @@ body.has-overlay .site-header {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    margin-top: 0.5rem;
+    margin-top: 2rem;
     padding: 0.75rem 2rem;
     background-color: var(--bg-secondary);
     border: 1px solid var(--border-color);
