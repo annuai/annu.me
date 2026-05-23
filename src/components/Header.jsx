@@ -65,18 +65,18 @@ const Header = () => {
               </li>
               <li>
                 <Link
-                  to="/blog"
-                  className={`nav-link ${location.pathname.startsWith('/blog') ? 'active' : ''}`}
-                >
-                  Journal
-                </Link>
-              </li>
-              <li>
-                <Link
                   to="/tinkering"
                   className={`nav-link ${location.pathname.startsWith('/tinkering') ? 'active' : ''}`}
                 >
                   Tinkering
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/blog"
+                  className={`nav-link ${location.pathname.startsWith('/blog') ? 'active' : ''}`}
+                >
+                  Journal
                 </Link>
               </li>
               <li>

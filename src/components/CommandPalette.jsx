@@ -13,8 +13,8 @@ const projectModules = Object.fromEntries(
 const PAGES = [
   { id: 'work', label: 'Work', hint: 'Portfolio', path: '/', icon: '⬡' },
   { id: 'about', label: 'About', hint: 'About Annuai', path: '/about', icon: '◉' },
-  { id: 'blog', label: 'Journal', hint: 'Writing', path: '/blog', icon: '◎' },
   { id: 'tinkering', label: 'Tinkering', hint: 'Experiments', path: '/tinkering', icon: '⚙' },
+  { id: 'blog', label: 'Journal', hint: 'Writing', path: '/blog', icon: '◎' },
 ];
 
 const PROJECTS = Object.entries(projectModules)
