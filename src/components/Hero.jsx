@@ -204,7 +204,7 @@ const Hero = () => {
         ))}
       </div> */}
 
-      <div className="hero-content fade-in">
+      <div className="hero-content">
         <div className="hero-split">
           <p className="hero-statement">
             Turning ideas into tangible experiences across domains

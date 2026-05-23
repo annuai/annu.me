@@ -75,7 +75,7 @@ img {
 }
 
 .fade-in {
-  animation: fadeIn 0.6s ease-out;
+  animation: fadeIn 0.6s ease-out both;
 }
 
 @keyframes fadeIn {
