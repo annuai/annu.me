@@ -6,29 +6,29 @@
 
 /* Intro Section */
 .cs-intro-section {
-  margin-bottom: 0;
+  margin-bottom: 5rem;
 }
 
 .cs-category {
   display: block;
   font-family: var(--font-ui);
-  font-size: 0.72rem;
-  font-weight: 400;
+  font-size: 0.85rem;
+  font-weight: 600;
   text-transform: uppercase;
-  color: var(--text-secondary);
-  letter-spacing: 0.18em;
-  margin-bottom: 1.5rem;
+  color: var(--accent-orange);
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
 }
 
 .cs-title {
   font-family: var(--font-display);
   font-size: clamp(2.2rem, 4vw, 4rem);
-  font-weight: 400;
+  font-weight: 700;
   font-style: normal;
-  line-height: 1.15;
+  line-height: 1.1;
   color: var(--text-primary);
   margin-bottom: 3rem;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   max-width: 960px;
 }
 
@@ -79,22 +79,47 @@
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.cs-meta-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
 .cs-meta-label {
   font-family: var(--font-ui);
-  font-size: 0.68rem;
-  font-weight: 400;
+  font-size: 0.75rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.05em;
   color: var(--text-secondary);
 }
 
 .cs-meta-val {
   font-family: var(--font-ui);
-  font-size: 0.95rem;
-  font-weight: 400;
+  font-size: 1rem;
+  font-weight: 500;
   color: var(--text-primary);
+}
+
+/* Tags */
+.cs-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+}
+
+.cs-tag {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--accent-orange);
+  background-color: rgba(192, 49, 42, 0.08);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  border: 1px solid rgba(192, 49, 42, 0.2);
 }
 
 /* Base Case Study Sections */
@@ -106,7 +131,7 @@
 .section-title {
   font-family: var(--font-display);
   font-size: clamp(1.8rem, 3vw, 2.6rem);
-  font-weight: 400;
+  font-weight: 600;
   font-style: normal;
   color: var(--text-primary);
   margin-bottom: 2rem;
@@ -143,6 +168,84 @@
 
 .cs-caption-box p:last-child {
   margin-bottom: 0;
+}
+
+/* Short single-image caption — matches hornbill hl-caption */
+.cs-caption {
+  padding: 1.5rem 0.5rem;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  max-width: 900px;
+}
+
+/* Blockquote */
+.cs-blockquote {
+  border-left: 3px solid var(--accent-orange);
+  padding: 1.5rem 2rem;
+  margin: 0;
+  background: var(--bg-secondary);
+  border-radius: 0 12px 12px 0;
+}
+
+.cs-blockquote p {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+.cs-blockquote cite {
+  font-size: 0.9rem;
+  color: var(--accent-orange);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-style: normal;
+}
+
+/* Process Steps */
+.cs-process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.cs-process-step {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 2rem;
+  align-items: flex-start;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.cs-process-step:last-child {
+  border-bottom: none;
+}
+
+.cs-step-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--accent-orange);
+  opacity: 0.3;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.cs-step-content h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.cs-step-content p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
 }
 
 /* Grids for Split Images */
@@ -275,17 +378,17 @@
 
 .brief-label {
   font-family: var(--font-ui);
-  font-size: 0.68rem;
-  font-weight: 400;
+  font-size: 0.8rem;
+  font-weight: 600;
   text-transform: uppercase;
-  color: var(--text-secondary);
-  letter-spacing: 0.16em;
+  color: var(--accent-orange);
+  letter-spacing: 0.08em;
 }
 
 .brief-highlight {
   font-family: var(--font-display);
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
-  font-weight: 400;
+  font-size: 1.4rem;
+  font-weight: 500;
   font-style: normal;
   line-height: 1.4;
   color: var(--text-primary);
@@ -307,9 +410,9 @@
 }
 
 .check-icon {
-  width: 20px;
-  height: 20px;
-  color: #10b981;
+  width: 18px;
+  height: 18px;
+  color: var(--accent-orange);
   flex-shrink: 0;
   margin-top: 2px;
 }
@@ -337,7 +440,7 @@
 .deep-dive-card h3 {
   font-family: var(--font-display);
   font-size: 1.35rem;
-  font-weight: 400;
+  font-weight: 600;
   font-style: normal;
   margin-bottom: 0.75rem;
   color: var(--text-primary);
@@ -408,12 +511,20 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  transition:
+    transform var(--transition-speed),
+    box-shadow var(--transition-speed);
+}
+
+.learning-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.06);
 }
 
 .learning-card h4 {
   font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 400;
+  font-size: 1.2rem;
+  font-weight: 600;
   font-style: normal;
   color: var(--text-primary);
   margin: 0;
@@ -574,6 +685,19 @@
 }
 
 @media (max-width: 768px) {
+  .cs-process-step {
+    grid-template-columns: 50px 1fr;
+    gap: 1rem;
+  }
+
+  .cs-step-number {
+    font-size: 2rem;
+  }
+
+  .cs-blockquote p {
+    font-size: 1.2rem;
+  }
+
   .cs-section {
     margin-bottom: 3.5rem;
   }
@@ -604,7 +728,7 @@
   }
 
   .brief-highlight {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .hide-mobile {
