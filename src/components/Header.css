@@ -231,10 +231,13 @@ body.has-overlay .site-header {
   transform: rotate(-90deg);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .logo-subtitle {
     display: none;
   }
+}
+
+@media (max-width: 768px) {
 
   .header-right {
     gap: 0.5rem;
