@@ -22,7 +22,7 @@ export const metadata = {
   tags: ['Industrial Design', 'Mechanical Engineering', 'Visualisation'],
   gridSize: 'large',
   year: '2022',
-  thumbnail: '/projects/invnt-3d-printer/printer-hero-with-bg.png',
+  thumbnail: '/projects/invnt-3d-printer/printer-ai-render.jpeg',
   images: ['/projects/invnt-3d-printer/printer-hero.png'],
   description:
     'Developing an inexpensive FDM 3D printing platform from readily available components, prioritizing usability, low-maintenance, and cost-efficiency.',
