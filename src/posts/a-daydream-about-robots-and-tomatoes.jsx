@@ -122,6 +122,33 @@ export default function EternalAgObsession() {
                 coexist — is the hardest thing to get right.
             </p>
 
+            <h2>Closer to Home Than I Expected</h2>
+
+            <p>
+                Today I was working with copra. My family runs a small business converting coconuts to
+                copra — they've been doing it for years. I grew up watching it happen, and somewhere in the
+                middle of today I found myself thinking: why isn't there a machine for this?
+            </p>
+
+            <p>
+                My dad did invest in one small step forward — a dryer, an oven-like machine that dries the
+                copra instead of sun drying it. When I was smaller, we used to lay them out one by one
+                under the sun. At least a thousand pieces a day, placed in a straight line. It was the kind
+                of work that is hard to explain to someone who hasn't done it — repetitive, physical,
+                unrelenting. The dryer changed that. One machine, one decision, and a whole layer of labour
+                just disappeared.
+            </p>
+
+            <p>
+                But the rest of it is still manual. The cracking, the extraction — getting the copra and
+                the <em>pongu</em> (the white edible sprout that grows inside a mature coconut) out cleanly,
+                without damage, at any kind of scale. Nobody has made a machine for that yet, as far as I
+                know. And I've been thinking about why. The coconut is variable. The interior geometry
+                changes. The sprout is delicate. These are exactly the kinds of problems that make
+                automation hard — and exactly the kinds of problems eternal.ag is learning to solve for
+                tomatoes.
+            </p>
+
             <p>
                 I don't know if they'll come back to me. Probably not. But I find myself thinking about
                 the grower's experience, about what it feels like to hand trust over to a machine, about
@@ -129,6 +156,11 @@ export default function EternalAgObsession() {
                 about it because the problem is real — food security, climate pressure, the slow erosion
                 of agricultural labour — and eternal.ag is one of the few companies trying to{' '}
                 <em>design</em> its way through those problems, not around them.
+            </p>
+
+            <p>
+                And maybe I'm drawn to it because I've seen what even one small machine can change.
+                What a thousand coconuts a day looks like before and after someone decides to solve it.
             </p>
 
             <p>That's worth obsessing over, even if it doesn't work out.</p>
