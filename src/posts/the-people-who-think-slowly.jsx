@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const metadata = {
-  title: 'The People Who Think Slowly',
+  title: 'The people who think slowly',
   date: '2026-05-20',
   excerpt:
     'Modern hiring processes increasingly reward fast answers and confident delivery. But some of the best thinkers need time before they speak.',

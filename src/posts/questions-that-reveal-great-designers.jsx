@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const metadata = {
-  title: 'Questions That Reveal Great Designers',
+  title: 'Questions that reveal Great Designers',
   date: '2026-05-14',
   excerpt:
     'A collection of thoughtful UX and product design interview questions with concise answers that reveal how designers think, collaborate, and make decisions.',

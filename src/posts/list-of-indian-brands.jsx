@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const metadata = {
-  title: "List of Indian Brands I've Found on Instagram",
+  title: "List of Indian brands i've found on instagram",
   date: '2021-03-26',
   excerpt:
     'A massive curated collection of Indian brands across clothing, home decor, food, coffee, gifting, skincare, stationery, sustainable products, and lifestyle accessories.',

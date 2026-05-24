@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const metadata = {
-    title: 'What Good Design Means to Me (Right Now)',
+    title: 'What good design means to me (Right now)',
     date: '2026-05-23',
     excerpt:
         'A year ago I believed in subtraction almost as a moral position. Today I made my website cleaner — and I keep thinking about what I gave up to get there.',

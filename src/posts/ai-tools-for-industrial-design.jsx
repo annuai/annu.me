@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const metadata = {
-  title: 'Tools for Product Designers in the AI Era',
+  title: 'Tools for product designers in the AI era',
   date: '2026-05-12',
   excerpt:
     'A curated list of AI tools shaping modern product design workflows — from visualization and rendering to research, storytelling, and 3D generation.',

@@ -1,7 +1,7 @@
 import React from "react";
 
 export const metadata = {
-    title: "How AI Actually Works",
+    title: "How AI actually works?",
     date: "2026-05-22",
     excerpt:
         "A simple explanation of Large Language Models and Multimodal AI.",

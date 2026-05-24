@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const metadata = {
-  title: 'The Hidden Cost of Becoming Legible',
+  title: 'The hidden cost of becoming legible',
   date: '2026-05-19',
   excerpt:
     'The internet rewards clarity of identity. But for multidisciplinary people, becoming easy to categorize can come at the cost of originality.',

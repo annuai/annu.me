@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const metadata = {
-  title: 'When Your Own Work Starts Looking Bad',
+  title: 'When your own work starts looking bad',
   date: '2026-05-21',
   excerpt:
     'The more time you spend looking at your own work, the more flaws you begin to see. Familiarity slowly destroys objectivity.',

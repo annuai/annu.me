@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const metadata = {
-  title: 'Industrial Design Portfolios Worth Bookmarking',
+  title: 'Industrial design portfolios worth bookmarking',
   date: '2026-05-16',
   excerpt:
     'A running list of industrial and product design portfolios I keep returning to — from independent designers to full studios.',

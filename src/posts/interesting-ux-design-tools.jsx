@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const metadata = {
-  title: 'List of Interesting UX Design Tools',
+  title: 'List of interesting UX Design tools',
   date: '2021-03-06',
   excerpt:
     'A curated collection of UX design resources, case studies, inspiration galleries, onboarding references, and interface design tools.',

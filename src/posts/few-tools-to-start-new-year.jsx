@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const metadata = {
-  title: 'Few Tools to Start the New Year',
+  title: 'Few tools to start the New Year',
   date: '2023-01-02',
   excerpt:
     'A small collection of tools, communities, resources, and websites for developers, designers, startup builders, and curious makers.',
