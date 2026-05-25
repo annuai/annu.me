@@ -29,8 +29,10 @@ function App() {
 
   // Track page views on route change
   useEffect(() => {
-    posthog.capture('$pageview', { $current_url: window.location.href });
-  }, [pathname]);
+    if (posthog) {
+      posthog.capture('$pageview', { $current_url: window.location.href });
+    }
+  }, [pathname, posthog]);
   const isBlogPost = pathname.startsWith('/blog/');
 
   // ⌘K / Ctrl+K to open command palette

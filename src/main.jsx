@@ -7,7 +7,9 @@ import './index.css';
 
 const posthogOptions = {
   api_host: import.meta.env.VITE_POSTHOG_HOST,
-  defaults: '2026-01-30',
+  person_profiles: 'identified_only',
+  capture_pageview: false,  // we handle this manually for SPA route changes
+  capture_pageleave: true,
 };
 
 ReactDOM.createRoot(document.getElementById('root')).render(
