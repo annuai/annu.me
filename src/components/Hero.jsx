@@ -5,7 +5,7 @@ const SENTENCES = [
   'Turning ideas into tangible experiences across domains',
   'I care about the tiny frictions most people learn to ignore.',
   'I like products that feel inevitable once they exist.',
-  'Focused on intelligent physical products, prototyping, and human-machine interaction.',
+  'Focused on intelligent products, prototyping, and human-machine interaction.',
 ];
 
 const WrenchIcon = () => (
@@ -199,7 +199,7 @@ const Hero = () => {
       const cycle = () => {
         setPhase('exiting');
         setTimeout(() => {
-          setIndex(i => (i + 1) % SENTENCES.length);
+          setIndex((i) => (i + 1) % SENTENCES.length);
           setPhase('entering');
         }, 380);
       };
@@ -216,14 +216,18 @@ const Hero = () => {
     'hero-statement',
     phase === 'exiting' ? 'hero-carousel--exit' : '',
     phase === 'entering' ? 'hero-carousel--enter' : '',
-  ].filter(Boolean).join(' ');
+  ]
+    .filter(Boolean)
+    .join(' ');
 
   const descriptorClass = [
     'hero-descriptors',
     index !== 0 ? 'hero-carousel--hidden' : '',
     index === 0 && phase === 'exiting' ? 'hero-carousel--exit' : '',
     index === 0 && phase === 'entering' ? 'hero-carousel--enter' : '',
-  ].filter(Boolean).join(' ');
+  ]
+    .filter(Boolean)
+    .join(' ');
 
   return (
     <section className="hero-section">
@@ -248,12 +252,8 @@ const Hero = () => {
 
       <div className="hero-content">
         <div className="hero-split">
-          <p className={statementClass}>
-            {SENTENCES[index]}
-          </p>
-          <p className={descriptorClass}>
-            thoughtfully, playfully &amp; hands&#x2011;on
-          </p>
+          <p className={statementClass}>{SENTENCES[index]}</p>
+          <p className={descriptorClass}>thoughtfully, playfully &amp; hands&#x2011;on</p>
         </div>
         <div className="hero-footer">
           <a href="mailto:hi.annuai@gmail.com" className="hero-status-link">
