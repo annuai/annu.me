@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
+import { usePostHog } from '@posthog/react';
 import Header from './components/Header';
 import ContactSection from './components/ContactSection';
 import CommandPalette from './components/CommandPalette';
@@ -24,6 +25,12 @@ const ScrollToTop = () => {
 function App() {
   const { pathname } = useLocation();
   const [cmdOpen, setCmdOpen] = useState(false);
+  const posthog = usePostHog();
+
+  // Track page views on route change
+  useEffect(() => {
+    posthog.capture('$pageview', { $current_url: window.location.href });
+  }, [pathname]);
   const isBlogPost = pathname.startsWith('/blog/');
 
   // ⌘K / Ctrl+K to open command palette
