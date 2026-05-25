@@ -1,5 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Hero.css';
+
+const SENTENCES = [
+  'Turning ideas into tangible experiences across domains',
+  'I care about the tiny frictions most people learn to ignore.',
+  'I like products that feel inevitable once they exist.',
+  'Focused on intelligent physical products, prototyping, and human-machine interaction.',
+];
 
 const WrenchIcon = () => (
   <svg
@@ -183,6 +190,41 @@ const ICONS = [
 ];
 
 const Hero = () => {
+  const [index, setIndex] = useState(0);
+  const [phase, setPhase] = useState('idle'); // 'idle' | 'exiting' | 'entering'
+
+  useEffect(() => {
+    let interval;
+    const startTimeout = setTimeout(() => {
+      const cycle = () => {
+        setPhase('exiting');
+        setTimeout(() => {
+          setIndex(i => (i + 1) % SENTENCES.length);
+          setPhase('entering');
+        }, 380);
+      };
+      interval = setInterval(cycle, 3500);
+    }, 3500);
+
+    return () => {
+      clearTimeout(startTimeout);
+      clearInterval(interval);
+    };
+  }, []);
+
+  const statementClass = [
+    'hero-statement',
+    phase === 'exiting' ? 'hero-carousel--exit' : '',
+    phase === 'entering' ? 'hero-carousel--enter' : '',
+  ].filter(Boolean).join(' ');
+
+  const descriptorClass = [
+    'hero-descriptors',
+    index !== 0 ? 'hero-carousel--hidden' : '',
+    index === 0 && phase === 'exiting' ? 'hero-carousel--exit' : '',
+    index === 0 && phase === 'entering' ? 'hero-carousel--enter' : '',
+  ].filter(Boolean).join(' ');
+
   return (
     <section className="hero-section">
       {/* <div className="hero-icons" aria-hidden="true">
@@ -206,10 +248,10 @@ const Hero = () => {
 
       <div className="hero-content">
         <div className="hero-split">
-          <p className="hero-statement">
-            Turning ideas into tangible experiences across domains
+          <p className={statementClass}>
+            {SENTENCES[index]}
           </p>
-          <p className="hero-descriptors">
+          <p className={descriptorClass}>
             thoughtfully, playfully &amp; hands&#x2011;on
           </p>
         </div>

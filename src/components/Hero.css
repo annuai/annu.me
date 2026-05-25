@@ -87,6 +87,44 @@
   animation: hero-slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.22s forwards;
 }
 
+/* Carousel exit — slides up and fades out */
+.hero-carousel--exit {
+  animation: hero-carousel-exit 0.38s cubic-bezier(0.4, 0, 1, 1) forwards !important;
+}
+
+/* Carousel enter — slides up from below and fades in */
+.hero-carousel--enter {
+  animation: hero-carousel-enter 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+
+/* Hidden (descriptors when not on sentence 0) */
+.hero-carousel--hidden {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+@keyframes hero-carousel-exit {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes hero-carousel-enter {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .hero-footer {
   display: flex;
   align-items: center;
