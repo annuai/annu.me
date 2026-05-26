@@ -5,7 +5,7 @@ const SENTENCES = [
   'Turning ideas into tangible experiences across domains',
   'I care about the tiny frictions most people learn to ignore.',
   'I like products that feel inevitable once they exist.',
-  'Focused on intelligent products, prototyping, and human-machine interaction.',
+  'Intelligent products, prototyping, and human-machine interaction.',
 ];
 
 const WrenchIcon = () => (
