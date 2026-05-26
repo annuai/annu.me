@@ -167,6 +167,19 @@
     width: 40px;
   }
 
+  .footer-contact-row {
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .footer-arrow-line {
+    display: none;
+  }
+
+  .footer-email {
+    width: 100%;
+  }
+
   .footer-bottom {
     flex-direction: column;
     align-items: flex-start;
