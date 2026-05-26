@@ -129,12 +129,14 @@ const ContactSection = () => {
               {PHONE}
             </a>
             <span className="footer-dot">·</span>
-            <span>Kerala, India</span>
+            <span>Built with curiosity in India ❤︎⁠</span>
             <span className="footer-dot">·</span>
-            <span>
-              <span className="footer-copyleft">©</span> {new Date().getFullYear()}. No Rights
-              Reserved.
-            </span>
+            <a href="https://github.com/annuai/annu.me" target="_blank" rel="noopener noreferrer">
+              <span>
+                <span className="footer-copyleft">©</span> {new Date().getFullYear()}. Open-source
+                at heart.
+              </span>
+            </a>
           </div>
         </div>
       </div>
