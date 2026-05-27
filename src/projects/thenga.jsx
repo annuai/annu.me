@@ -4,6 +4,7 @@ import './thenga.css';
 
 const thengaImages = [
   '/projects/thenga/thenga-thumbnail.png',
+  '/projects/thenga/sketch-1.jpeg',
   '/projects/thenga/copra-large-machine.png',
   '/projects/thenga/fully-automated-machine.png',
   '/projects/thenga/industrial-arm-robot.png',
@@ -255,6 +256,24 @@ export default function Thenga() {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* ── Ideation ── */}
+      <section className="th-section">
+        <h2 className="th-section-title">Ideation</h2>
+        <div
+          className="th-image-wrapper"
+          onClick={() => openLightbox('/projects/thenga/sketch-1.jpeg')}
+        >
+          <img
+            src="/projects/thenga/sketch-1.jpeg"
+            alt="THENGA — early ideation sketches"
+          />
+        </div>
+        <p className="th-caption">
+          Early sketches exploring the machine architecture, processing sequence, and form language
+          before moving into 3D visualisation.
+        </p>
       </section>
 
       {/* ── Design Intent ── */}
