@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const metadata = {
-    title: 'The Copycat Canvas: Herd Mentality in UX Design',
+    title: 'Herd mentality in UX Design',
     date: '2026-05-27',
     excerpt:
         'Why popular consensus can lead product teams down suboptimal paths, and how to balance industry standards with user-centric innovation.',
