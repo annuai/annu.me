@@ -11,7 +11,9 @@ function getKeralaTime() {
   const h = kerala.getHours();
   const m = kerala.getMinutes().toString().padStart(2, '0');
   const isDay = h >= 6 && h < 19;
-  return { display: `${h.toString().padStart(2, '0')}:${m}`, isDay };
+  const h12 = h % 12 || 12;
+  const ampm = h < 12 ? 'AM' : 'PM';
+  return { display: `${h12}:${m} ${ampm}`, isDay };
 }
 
 const SunIcon = () => (
