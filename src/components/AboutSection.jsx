@@ -47,11 +47,11 @@ const AboutSection = () => {
             <h1 className="about-heading-large">Annuai?</h1>
             <a
               className="about-pronunciation"
-              href="https://ipa-reader.com/?text=%2F%CB%88%CA%8Cn.wa%C9%AA%2F&voice=Nicole"
+              href="https://ipa-reader.com/?text=%20%2F%CA%8Cn.nu%CB%90.ve%C9%AA%2F&voice=Aditi"
               target="_blank"
               rel="noopener noreferrer"
             >
-              /ˈʌn.waɪ/
+              /ʌn.nuː.veɪ/
             </a>
           </div>
 
