@@ -69,6 +69,11 @@ export default function FerrariLuce() {
                 That&apos;s also why I find it more compelling than the Jaguar Type 00.
             </p>
 
+            <img
+                src="/posts/luce/jaguar-type-00.webp"
+                alt="Jaguar Type 00"
+            />
+
             <p>
                 The Type 00 generated enormous attention because it was shocking. It
                 felt like Jaguar deliberately wanted to break away from its past and
