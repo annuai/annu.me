@@ -192,6 +192,68 @@ const ICONS = [
 const Hero = () => {
   const [index, setIndex] = useState(0);
   const [phase, setPhase] = useState('idle'); // 'idle' | 'exiting' | 'entering'
+  const [bioOpen, setBioOpen] = useState(false);
+  const [bioPinned, setBioPinned] = useState(false);
+  const [dragPos, setDragPos] = useState(null); // null = CSS default
+  const bioCloseTimer = React.useRef(null);
+  const wrapperRef = React.useRef(null);
+  const dragState = React.useRef({ dragging: false, startX: 0, startY: 0, origX: 0, origY: 0, moved: false });
+
+  const handleBioEnter = () => {
+    clearTimeout(bioCloseTimer.current);
+    setBioOpen(true);
+  };
+
+  const handleBioLeave = () => {
+    if (bioPinned) return;
+    bioCloseTimer.current = setTimeout(() => setBioOpen(false), 120);
+  };
+
+  const handleTriggerClick = () => {
+    if (bioPinned) {
+      setBioPinned(false);
+      setBioOpen(false);
+    } else {
+      setBioPinned(true);
+      setBioOpen(true);
+    }
+  };
+
+  const handleDragStart = (e) => {
+    e.preventDefault();
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+    const wrapperRect = wrapperRef.current.getBoundingClientRect();
+    const parentRect = wrapperRef.current.parentElement.getBoundingClientRect();
+    dragState.current = {
+      dragging: true,
+      startX: clientX,
+      startY: clientY,
+      origX: wrapperRect.left - parentRect.left,
+      origY: wrapperRect.top - parentRect.top,
+      moved: false,
+    };
+    const onMove = (ev) => {
+      const cx = ev.touches ? ev.touches[0].clientX : ev.clientX;
+      const cy = ev.touches ? ev.touches[0].clientY : ev.clientY;
+      const dx = cx - dragState.current.startX;
+      const dy = cy - dragState.current.startY;
+      if (Math.abs(dx) > 4 || Math.abs(dy) > 4) dragState.current.moved = true;
+      setDragPos({ x: dragState.current.origX + dx, y: dragState.current.origY + dy });
+    };
+    const onUp = () => {
+      dragState.current.dragging = false;
+      document.removeEventListener('mousemove', onMove);
+      document.removeEventListener('mouseup', onUp);
+      document.removeEventListener('touchmove', onMove);
+      document.removeEventListener('touchend', onUp);
+      if (!dragState.current.moved) handleTriggerClick();
+    };
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('mouseup', onUp);
+    document.addEventListener('touchmove', onMove, { passive: false });
+    document.addEventListener('touchend', onUp);
+  };
 
   useEffect(() => {
     let interval;
@@ -263,6 +325,53 @@ const Hero = () => {
             </div>
           </a>
         </div>
+      </div>
+
+      {/* ── About trigger + panel wrapper ── */}
+      <div
+        ref={wrapperRef}
+        className="hero-about-wrapper"
+        onMouseEnter={handleBioEnter}
+        onMouseLeave={handleBioLeave}
+        style={dragPos ? { left: dragPos.x, top: dragPos.y, right: 'auto' } : {}}
+      >
+        <button
+          className={`hero-about-trigger ${bioOpen ? 'hero-about-trigger--open' : ''} ${bioPinned ? 'hero-about-trigger--pinned' : ''}`}
+          onMouseDown={handleDragStart}
+          onTouchStart={handleDragStart}
+          aria-label="About me"
+        >
+          <img src="/images/me.jpg" alt="Annuai" className="hero-about-trigger-photo" draggable="false" onDragStart={(e) => e.preventDefault()} />
+        </button>
+
+        {bioOpen && (
+          <div className="hero-bio-panel">
+            <div className="hero-bio-panel-body">
+              <p>
+                I'm an Industrial Designer from Kerala, currently building products through{' '}
+                <a href="https://nirmit.co" target="_blank" rel="noopener noreferrer">nirmit</a>
+                , a small studio focused on design, prototyping, and manufacturing.
+              </p>
+              <p>
+                My work sits at the intersection of design, engineering, and making. I enjoy
+                tackling complex problems that require research, experimentation, and hands-on
+                development — whether that's motorcycle accessories, connected devices, mechanical
+                systems, or entirely new product concepts.
+              </p>
+              <p>
+                Over the past few years, I've worked across industrial design, CAD, prototyping,
+                fabrication, electronics, and user research. Rather than separating design from
+                engineering, I prefer moving between both, building ideas into functional products
+                and testing them in the real world.
+              </p>
+              <p>
+                I'm particularly interested in intelligent physical products — tools, vehicles,
+                robots, and systems that combine technology with thoughtful design to solve
+                meaningful problems.
+              </p>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

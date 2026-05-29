@@ -7,7 +7,8 @@
   margin: 0 auto;
   width: 100%;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  z-index: 10;
 }
 
 /* ── Floating icons ────────────────────────────────── */
@@ -57,6 +58,7 @@
   gap: 0.6rem;
   margin-bottom: 2rem;
   flex-wrap: nowrap;
+  position: relative;
 }
 
 /* Main statement */
@@ -123,6 +125,145 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* ── About wrapper ─────────────────────────────────── */
+.hero-about-wrapper {
+  position: absolute;
+  top: calc(8.5rem - 10px);
+  right: calc(6rem - 10px);
+  padding: 10px;
+  width: 68px; /* fixed: 48px trigger + 20px padding — never grows */
+  z-index: 101;
+}
+
+/* ── About trigger button ──────────────────────────── */
+.hero-about-trigger {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  overflow: hidden;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  opacity: 1;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.hero-about-trigger:active {
+  cursor: grabbing;
+}
+
+.hero-about-trigger:hover {
+  border-color: var(--text-secondary);
+  transform: scale(1.06);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.hero-about-trigger--open {
+  border-color: var(--text-primary);
+  background: var(--bg-secondary);
+}
+
+.hero-about-trigger--pinned {
+  border-color: var(--accent-orange);
+  box-shadow: 0 0 0 3px rgba(192, 49, 42, 0.15);
+}
+
+.hero-about-trigger-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
+}
+
+/* ── Bio panel — command palette style ────────────── */
+.hero-bio-panel {
+  position: absolute;
+  top: calc(48px + 10px + 8px); /* trigger + padding + gap */
+  right: 10px; /* aligns with wrapper's right padding */
+  width: clamp(300px, 28vw, 440px);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.04),
+    0 8px 16px rgba(0, 0, 0, 0.06),
+    0 24px 60px rgba(0, 0, 0, 0.14);
+  z-index: 100;
+  animation: bio-panel-in 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transform-origin: top right;
+}
+
+@keyframes bio-panel-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.hero-bio-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.hero-bio-panel-title {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+
+
+.hero-bio-panel-body {
+  padding: 1.25rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.hero-bio-panel-body p {
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.hero-bio-panel-body p:first-child {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.hero-bio-panel-body a {
+  color: var(--accent-orange);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(244, 96, 54, 0.3);
+  transition: border-color 0.2s ease;
+}
+
+.hero-bio-panel-body a:hover {
+  border-color: var(--accent-orange);
 }
 
 .hero-footer {
@@ -244,5 +385,22 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 1.5rem;
+  }
+
+  /* ── About panel: full-width on mobile ── */
+  .hero-about-wrapper {
+    top: calc(5rem - 8px);
+    right: calc(1.5rem - 8px);
+    width: 58px; /* 42px trigger + 16px padding */
+  }
+
+  .hero-bio-panel {
+    width: calc(100vw - 3rem);
+    right: 8px;
+  }
+
+  .hero-about-trigger {
+    width: 42px;
+    height: 42px;
   }
 }
