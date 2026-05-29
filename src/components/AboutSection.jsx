@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import './AboutSection.css';
 
 const LinkedInIcon = () => (
@@ -29,7 +29,39 @@ const GitHubIcon = () => (
   </svg>
 );
 
+const SpeakerIcon = ({ playing }) => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+    {playing ? (
+      <>
+        <line x1="23" y1="9" x2="17" y2="15" />
+        <line x1="17" y1="9" x2="23" y2="15" />
+      </>
+    ) : (
+      <>
+        <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+      </>
+    )}
+  </svg>
+);
+
 const AboutSection = () => {
+  const audioRef = useRef(null);
+  const [playing, setPlaying] = useState(false);
+
+  const playPronunciation = () => {
+    if (!audioRef.current) return;
+    if (playing) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+      setPlaying(false);
+    } else {
+      audioRef.current.play();
+      setPlaying(true);
+    }
+  };
+
   return (
     <section id="about" className="about-section">
       <div className="about-inner">
@@ -45,14 +77,28 @@ const AboutSection = () => {
           <div className="about-heading">
             <span className="about-heading-small">who is</span>
             <h1 className="about-heading-large">Annuai?</h1>
-            <a
-              className="about-pronunciation"
-              href="https://ipa-reader.com/?text=%20%2F%CA%8Cn.nu%CB%90.ve%C9%AA%2F&voice=Aditi"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              /ʌn.nuː.veɪ/
-            </a>
+            <div className="about-pronunciation-row">
+              <a
+                className="about-pronunciation"
+                href="https://ipa-reader.com/?text=%20%2F%CA%8Cn.nu%CB%90.ve%C9%AA%2F&voice=Aditi"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                /ʌn.nuː.veɪ/
+              </a>
+              <button
+                className={`about-speaker ${playing ? 'about-speaker--playing' : ''}`}
+                onClick={playPronunciation}
+                aria-label="Play pronunciation"
+              >
+                <SpeakerIcon playing={playing} />
+              </button>
+            </div>
+            <audio
+              ref={audioRef}
+              src="/audio/annuai.m4a"
+              onEnded={() => setPlaying(false)}
+            />
           </div>
 
           <a href="mailto:hi.annuai@gmail.com" className="status-tag">

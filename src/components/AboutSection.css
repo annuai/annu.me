@@ -72,6 +72,13 @@
   animation: about-slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
 }
 
+.about-pronunciation-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.1rem;
+}
+
 .about-pronunciation {
   font-family: var(--font-ui);
   font-size: 1.1rem;
@@ -79,7 +86,6 @@
   color: var(--text-secondary);
   letter-spacing: 0.04em;
   opacity: 0.7;
-  margin-top: 0.1rem;
   text-decoration: none;
   transition: opacity 0.2s ease, color 0.2s ease;
 }
@@ -87,6 +93,34 @@
 .about-pronunciation:hover {
   opacity: 1;
   color: var(--accent-orange);
+}
+
+.about-speaker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.about-speaker:hover {
+  background: var(--bg-secondary);
+  color: var(--accent-orange);
+  border-color: var(--accent-orange);
+}
+
+.about-speaker--playing {
+  color: var(--accent-orange);
+  border-color: var(--accent-orange);
+  background: rgba(192, 49, 42, 0.06);
 }
 
 .about-heading-small {
