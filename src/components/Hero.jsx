@@ -4,8 +4,7 @@ import './Hero.css';
 const SENTENCES = [
   'Turning ideas into tangible experiences across domains',
   'I care about the tiny frictions most people learn to ignore.',
-  'I like products that feel inevitable once they exist.',
-  'Intelligent products, prototyping, and human-machine interaction.',
+  'I like products that feel inevitable once they exist.'
 ];
 
 const WrenchIcon = () => (
