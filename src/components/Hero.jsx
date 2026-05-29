@@ -211,6 +211,22 @@ const Hero = () => {
 
   const mouseHandled = React.useRef(false);
 
+  useEffect(() => {
+    if (!bioPinned) return;
+    const handleOutsideClick = (e) => {
+      if (wrapperRef.current && !wrapperRef.current.contains(e.target)) {
+        setBioPinned(false);
+        setBioOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleOutsideClick);
+    document.addEventListener('touchstart', handleOutsideClick);
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+      document.removeEventListener('touchstart', handleOutsideClick);
+    };
+  }, [bioPinned]);
+
   const handleTriggerClick = () => {
     if (bioPinned) {
       setBioPinned(false);
