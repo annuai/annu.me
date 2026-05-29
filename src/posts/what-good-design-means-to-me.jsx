@@ -1,95 +1,172 @@
-import React from 'react';
-
 export const metadata = {
-    title: 'What good design means to me (Right now)',
-    date: '2026-05-23',
+    title: 'The last person everywhere',
+    date: '2026-05-29',
     excerpt:
-        'A year ago I believed in subtraction almost as a moral position. Today I made my website cleaner — and I keep thinking about what I gave up to get there.',
+        'Lately I have had the feeling that everyone else has arrived somewhere while I am still trying to figure out where I belong.',
 };
 
-export default function WhatGoodDesignMeansToMe() {
+export default function TheLastPersonEverywhere() {
     return (
-        <>
-            <p>
-                A year ago, I would have told you good design disappears. That the best objects are the ones
-                you stop noticing — no excess, no noise, nothing that isn't earning its place. I believed in
-                subtraction almost as a moral position. Strip it back. Let it breathe. If you can remove it,
-                remove it. I think I picked this up the way most design students do — through a steady diet
-                of Dieter Rams quotes and a quiet contempt for anything that felt decorative.
-            </p>
-
-            <p>I'm not sure I believe that anymore.</p>
-
-            <h2>The Website</h2>
+        <> <p>
+            Lately I've had the feeling that I'm the last person everywhere. </p>
 
             <p>
-                Today a friend told me to simplify my website. And I did — because they weren't wrong, not
-                technically. It's cleaner now. More considered. Better in the ways that are easy to measure
-                and explain. The kind of thing I would have been proud of a year ago, maybe even shown off.
+                The last friend to figure things out. The last designer to find
+                their place. The last entrepreneur to build something worth
+                talking about.
             </p>
 
             <p>
-                But I kept thinking about what I removed. There were icons in the background of the old
-                version. Scattered, a little messy, overlapping in places they probably shouldn't have. Not
-                quite justifiable by any clean design principle. If you'd asked me to defend them I probably
-                couldn't have — not in any language that would survive a critique. But they were{' '}
-                <em>mine</em>. They felt like the inside of my head made visible. The new version is better
-                designed and somehow less me, and I haven't quite made peace with that trade.
-            </p>
-
-            <p>That tension has been sitting with me all day.</p>
-
-            <h2>The Problem with Subtraction</h2>
-
-            <p>
-                I think somewhere in the last year I started feeling like simplification was becoming an
-                excuse — a way to avoid the harder, messier work of actually saying something. It's easy to
-                keep removing things. There's always something else to strip away, another element to
-                question, another reason to make it quieter. But at some point you've removed so much that
-                the thing stops belonging to anyone. It becomes correct without being alive.
+                It isn't really jealousy. At least I don't think it is.
             </p>
 
             <p>
-                Minimalism is safe. It's easy to defend. Nobody argues with a clean line. But clean lines
-                don't always have anything to say. And I've been in enough conversations about design to
-                notice that "it's too much" is often said with more confidence than it deserves — as if
-                restraint were a virtue independent of what's actually being made, and for whom, and why.
-            </p>
-
-            <h2>What I'm Drawn to Now</h2>
-
-            <p>
-                What I'm drawn to now is design that has a point of view so strong it can't be quiet about
-                it. Surfaces that are doing something. Forms that feel like they came from somewhere real —
-                a material pushed to its limit, a detail that didn't need to be there but insists on being
-                there anyway. Maximalism, when it's honest, feels like confidence. Like a maker who stopped
-                apologizing for what they find beautiful and just went there fully. There's a kind of
-                generosity in that, I think. It gives you something to actually respond to.
+                It's something stranger than that.
             </p>
 
             <p>
-                I don't think I've abandoned restraint entirely. Chaos for its own sake is lazy, and I know
-                the difference between a considered abundance and just not editing yourself. But I've started
-                asking a different first question. Before, I asked <em>what can I take away?</em> Now I ask{' '}
-                <em>what is this trying to express?</em> Those questions lead to very different places, and I
-                think I spent too long assuming the first one was always the more sophisticated of the two.
-            </p>
-
-            <h2>Mess That Means Something</h2>
-
-            <p>
-                Maybe the icons were bad design. Maybe they were exactly the point. I haven't figured out
-                where that line is yet — between mess that means something and mess that's just mess. Between
-                personality and noise. But I think the fact that removing them felt like losing something is
-                worth paying attention to.
+                A friend messages to say they've settled into a new city. Someone
+                else gets promoted. Another person joins a company you've admired
+                for years. You open LinkedIn and it feels like everyone your age
+                has reached some destination while you're still looking at the
+                map.
             </p>
 
             <p>
-                Good design used to mean clarity to me. Now I think it might mean honesty — and those two
-                things, it turns out, are not always the same.
+                The strange thing is that none of these people are doing anything
+                wrong. They're not showing off. They're simply living their
+                lives. Yet every success story feels like evidence that you're
+                late.
             </p>
 
-            <p>Today I made my website cleaner. And I keep thinking about what I gave up to get there.</p>
+            <p>
+                I think part of the problem is that we're exposed to too many
+                timelines.
+            </p>
+
+            <p>
+                A hundred years ago you compared yourself to a handful of people
+                in your town. Today you're comparing yourself to the most
+                successful designer in Bengaluru, the fastest-growing founder in
+                San Francisco, the engineer who got hired at their dream company,
+                and the creator whose work suddenly went viral.
+            </p>
+
+            <p>
+                The result is an illusion that everyone is ahead.
+            </p>
+
+            <p>
+                But whenever I look closely at the people I admire, I notice
+                something interesting.
+            </p>
+
+            <p>
+                Most of their stories took much longer than I imagined.
+            </p>
+
+            <p>
+                There were years nobody saw. Years of wandering. Years of failed
+                ideas. Years of doing work that didn't immediately lead
+                anywhere.
+            </p>
+
+            <p>
+                We tend to compare our behind-the-scenes footage with someone
+                else's highlight reel and then wonder why the comparison feels
+                unfair.
+            </p>
+
+            <p>
+                Maybe being late isn't actually the problem.
+            </p>
+
+            <p>
+                Maybe the problem is believing there is a schedule.
+            </p>
+
+            <p>
+                Life isn't one race with a shared finish line. A designer, a
+                founder, an artist and a scientist are not even playing the same
+                game, let alone competing against each other.
+            </p>
+
+            <p>
+                The moment you stop measuring your progress against someone
+                else's timeline, you start noticing things comparison tends to
+                hide.
+            </p>
+
+            <p>
+                The skills you've built.
+            </p>
+
+            <p>
+                The mistakes you've survived.
+            </p>
+
+            <p>
+                The small victories that never make it onto social media.
+            </p>
+
+            <p>
+                The person you've quietly become.
+            </p>
+
+            <h2>What I'm going to do about it</h2>
+
+            <p>
+                I've spent enough time wondering whether I'm behind.
+            </p>
+
+            <p>
+                For the next year, I want to focus less on where other people are
+                and more on building the things that matter to me.
+            </p>
+
+            <p>
+                The first is building a portfolio that is impossible to ignore.
+                Not because it will get me a job, but because it will become a
+                clear expression of the kind of designer I want to be. I want it
+                to reflect my interests honestly: complex systems, motorcycles,
+                physical products, technology, and the space where engineering
+                and design meet.
+            </p>
+
+            <p>
+                The second is continuing to publish my thoughts. The internet is
+                full of finished work but far less documentation of how people
+                think. Writing has become a way of understanding what I believe,
+                and a year from now I want a record of the ideas that shaped me,
+                even if some of them turn out to be wrong.
+            </p>
+
+            <p>
+                The third is shipping real things into the world. Not concepts.
+                Not plans. Real things. Prototypes, products, experiments,
+                however small they might be. A product that exists teaches more
+                than a hundred ideas that never leave a sketchbook.
+            </p>
+
+            <p>
+                Maybe none of this will make me feel ahead.
+            </p>
+
+            <p>
+                Maybe that's not the point.
+            </p>
+
+            <p>
+                A year from now, I don't want to be known as the person who spent
+                all their time comparing timelines. I want to be the person who
+                kept building, even when the path wasn't obvious.
+            </p>
+
+            <p>
+                Because eventually, the only timeline that matters is the one
+                you're creating yourself.
+            </p>
         </>
     );
+
 }
