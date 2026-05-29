@@ -8,11 +8,14 @@ const ProjectModal = ({ project, onClose }) => {
     if (!project) return;
     document.body.classList.add('has-overlay');
     document.body.style.overflow = 'hidden';
+    const handleKey = (e) => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', handleKey);
     return () => {
       document.body.classList.remove('has-overlay');
       document.body.style.overflow = '';
+      document.removeEventListener('keydown', handleKey);
     };
-  }, [project]);
+  }, [project, onClose]);
 
   if (!project) return null;
 
