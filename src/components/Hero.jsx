@@ -209,6 +209,8 @@ const Hero = () => {
     bioCloseTimer.current = setTimeout(() => setBioOpen(false), 120);
   };
 
+  const mouseHandled = React.useRef(false);
+
   const handleTriggerClick = () => {
     if (bioPinned) {
       setBioPinned(false);
@@ -219,25 +221,31 @@ const Hero = () => {
     }
   };
 
+  // onClick fires for both mouse and touch. On desktop it's already handled
+  // by mouseup inside handleDragStart, so we skip it using the flag.
+  const handleButtonClick = () => {
+    if (mouseHandled.current) {
+      mouseHandled.current = false;
+      return;
+    }
+    handleTriggerClick();
+  };
+
   const handleDragStart = (e) => {
-    e.preventDefault();
-    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+    e.preventDefault(); // mouse only — touch uses onClick
     const wrapperRect = wrapperRef.current.getBoundingClientRect();
     const parentRect = wrapperRef.current.parentElement.getBoundingClientRect();
     dragState.current = {
       dragging: true,
-      startX: clientX,
-      startY: clientY,
+      startX: e.clientX,
+      startY: e.clientY,
       origX: wrapperRect.left - parentRect.left,
       origY: wrapperRect.top - parentRect.top,
       moved: false,
     };
     const onMove = (ev) => {
-      const cx = ev.touches ? ev.touches[0].clientX : ev.clientX;
-      const cy = ev.touches ? ev.touches[0].clientY : ev.clientY;
-      const dx = cx - dragState.current.startX;
-      const dy = cy - dragState.current.startY;
+      const dx = ev.clientX - dragState.current.startX;
+      const dy = ev.clientY - dragState.current.startY;
       if (Math.abs(dx) > 4 || Math.abs(dy) > 4) dragState.current.moved = true;
       setDragPos({ x: dragState.current.origX + dx, y: dragState.current.origY + dy });
     };
@@ -245,14 +253,13 @@ const Hero = () => {
       dragState.current.dragging = false;
       document.removeEventListener('mousemove', onMove);
       document.removeEventListener('mouseup', onUp);
-      document.removeEventListener('touchmove', onMove);
-      document.removeEventListener('touchend', onUp);
-      if (!dragState.current.moved) handleTriggerClick();
+      if (!dragState.current.moved) {
+        mouseHandled.current = true;
+        handleTriggerClick();
+      }
     };
     document.addEventListener('mousemove', onMove);
     document.addEventListener('mouseup', onUp);
-    document.addEventListener('touchmove', onMove, { passive: false });
-    document.addEventListener('touchend', onUp);
   };
 
   useEffect(() => {
@@ -338,7 +345,7 @@ const Hero = () => {
         <button
           className={`hero-about-trigger ${bioOpen ? 'hero-about-trigger--open' : ''} ${bioPinned ? 'hero-about-trigger--pinned' : ''}`}
           onMouseDown={handleDragStart}
-          onTouchStart={handleDragStart}
+          onClick={handleButtonClick}
           aria-label="About me"
         >
           <img src="/images/me.jpg" alt="Annuai" className="hero-about-trigger-photo" draggable="false" onDragStart={(e) => e.preventDefault()} />
