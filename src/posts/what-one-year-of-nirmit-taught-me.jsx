@@ -8,7 +8,13 @@ export const metadata = {
 export default function WhatOneYearOfBuildingNirmitTaughtMe() {
     return (
         <> <p>
-            About a year ago, I started nirmit. </p>
+            About a year ago, I started <a
+                href="https://nirmit.co"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                nirmit
+            </a>. </p>
 
             <p>
                 At the time, I thought I was building a manufacturing and
