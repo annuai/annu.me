@@ -7,11 +7,17 @@ function extractMetadata(filePath) {
   // Match export const metadata = { ... }
   const match = content.match(/export const metadata\s*=\s*(\{[\s\S]*?\});/);
   if (!match) return null;
-  
+
   try {
-    // Safely evaluate the static JavaScript metadata object
-    const evalStr = `(${match[1]})`;
-    return eval(evalStr);
+    // Replace any bare identifier values (variable references like `thengaImages`)
+    // with null so eval doesn't choke on out-of-scope names.
+    // Excludes JS keywords: true, false, null, undefined.
+    const KEYWORDS = new Set(['true', 'false', 'null', 'undefined']);
+    const sanitised = match[1].replace(
+      /:\s*([a-zA-Z_$][a-zA-Z0-9_$]*)(\s*[,\n}])/g,
+      (full, name, tail) => KEYWORDS.has(name) ? full : `: null${tail}`
+    );
+    return eval(`(${sanitised})`);
   } catch (e) {
     console.error(`Error parsing metadata in ${filePath}:`, e);
     return null;
@@ -153,7 +159,78 @@ function main() {
     });
   }
 
+  // 6. Generate sitemap.xml
+  generateSitemap();
+
   console.log('Static route prerendering completed successfully!');
+}
+
+function generateSitemap() {
+  const BASE = 'https://annu.me';
+  const today = new Date().toISOString().split('T')[0];
+
+  const urls = [];
+
+  const url = (loc, priority, changefreq = 'monthly') =>
+    `  <url>\n    <loc>${BASE}${loc}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>`;
+
+  // Static routes
+  urls.push(url('/', '1.0', 'monthly'));
+  urls.push(url('/about', '0.8', 'monthly'));
+  urls.push(url('/blog', '0.8', 'weekly'));
+
+  // Projects (skip underscore-prefixed = hidden)
+  const projectsDir = path.join(__dirname, '../src/projects');
+  if (fs.existsSync(projectsDir)) {
+    fs.readdirSync(projectsDir)
+      .filter(f => f.endsWith('.jsx') && !f.startsWith('_'))
+      .forEach(file => {
+        const meta = extractMetadata(path.join(projectsDir, file));
+        if (meta && meta.slug) {
+          urls.push(url(`/work/${meta.slug}`, '0.7'));
+        }
+      });
+  }
+
+  // Blog posts
+  const postsDir = path.join(__dirname, '../src/posts');
+  if (fs.existsSync(postsDir)) {
+    fs.readdirSync(postsDir)
+      .filter(f => f.endsWith('.jsx'))
+      .forEach(file => {
+        const meta = extractMetadata(path.join(postsDir, file));
+        if (meta) {
+          const slug = meta.slug || file.replace('.jsx', '');
+          // Weekly link-list posts get slightly lower priority
+          const priority = slug.startsWith('weekly-website') ? '0.5' : '0.6';
+          urls.push(url(`/blog/${slug}`, priority));
+        }
+      });
+  }
+
+  // Tinkering pages
+  const tinkeringDir = path.join(__dirname, '../src/tinkering');
+  if (fs.existsSync(tinkeringDir)) {
+    fs.readdirSync(tinkeringDir)
+      .filter(f => f.endsWith('.jsx') && !f.startsWith('_'))
+      .forEach(file => {
+        const meta = extractMetadata(path.join(tinkeringDir, file));
+        if (meta) {
+          const slug = meta.slug || file.replace('.jsx', '');
+          urls.push(url(`/tinkering/${slug}`, '0.6'));
+        }
+      });
+  }
+
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.join('\n')}
+</urlset>
+`;
+
+  const distDir = path.join(__dirname, '../dist');
+  fs.writeFileSync(path.join(distDir, 'sitemap.xml'), xml, 'utf8');
+  console.log(`Sitemap generated: ${urls.length} URLs`);
 }
 
 main();
