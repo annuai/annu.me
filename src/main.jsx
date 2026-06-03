@@ -12,7 +12,7 @@ const posthogOptions = {
   capture_pageleave: true,
 };
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const app = (
   <React.StrictMode>
     <PostHogProvider apiKey={import.meta.env.VITE_POSTHOG_TOKEN} options={posthogOptions}>
       <BrowserRouter>
@@ -21,3 +21,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </PostHogProvider>
   </React.StrictMode>
 );
+
+const rootEl = document.getElementById('root');
+
+// data-ssr="true" is injected by the prerender script into static HTML.
+// Use hydrateRoot to attach event handlers to the existing DOM without re-rendering.
+// Fall back to createRoot in dev (no SSG content present).
+if (rootEl.dataset.ssr === 'true') {
+  ReactDOM.hydrateRoot(rootEl, app);
+} else {
+  ReactDOM.createRoot(rootEl).render(app);
+}

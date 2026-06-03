@@ -4,7 +4,9 @@ import './Header.css';
 
 const Header = () => {
   const location = useLocation();
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+  const [theme, setTheme] = useState(
+    typeof localStorage !== 'undefined' ? (localStorage.getItem('theme') || 'light') : 'light'
+  );
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
