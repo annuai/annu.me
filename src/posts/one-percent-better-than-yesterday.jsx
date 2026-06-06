@@ -1,5 +1,5 @@
 export const metadata = {
-    title: "One percent better than yesterday",
+    title: "One percent better than yesterday & taste develops faster than skill",
     excerpt:
         "A frustrating day in Blender reminded me that taste often develops faster than skill, and that progress is rarely as visible as we want it to be.",
     date: "2026-06-06",
