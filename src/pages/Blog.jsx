@@ -4,6 +4,12 @@ import useSEO from '../hooks/useSEO';
 import FadeIn from '../components/FadeIn';
 import './Blog.css';
 
+const formatDate = (dateStr) => {
+  if (!dateStr) return '';
+  const [y, m, d] = dateStr.split('-');
+  return `${d}-${m}-${y}`;
+};
+
 // Load all JSX files in the posts directory at build time
 const modules = import.meta.glob('../posts/*.jsx', { eager: true });
 
@@ -40,7 +46,7 @@ const Blog = () => {
             <FadeIn key={post.slug} delay={i * 40}>
               <Link to={`/blog/${post.slug}`} className="blog-card">
                 <div className="blog-meta">
-                  <span className="blog-date">{post.date}</span>
+                  <span className="blog-date">{formatDate(post.date)}</span>
                 </div>
                 <h2 className="blog-title">{post.title}</h2>
                 <p className="blog-excerpt">{post.excerpt}</p>

@@ -5,6 +5,12 @@ import './BlogPost.css';
 
 const modules = import.meta.glob('../posts/*.jsx', { eager: true });
 
+const formatDate = (dateStr) => {
+  if (!dateStr) return '';
+  const [y, m, d] = dateStr.split('-');
+  return `${d}-${m}-${y}`;
+};
+
 const BlogPost = () => {
   const { id } = useParams();
 
@@ -51,7 +57,7 @@ const BlogPost = () => {
         </Link>
         <header className="post-header">
           <div className="post-meta-row">
-            <span className="post-date">{post.date}</span>
+            <span className="post-date">{formatDate(post.date)}</span>
             {readingTime && <span className="post-reading-time">{readingTime} min read</span>}
           </div>
           <h1 className="post-title">{post.title}</h1>
