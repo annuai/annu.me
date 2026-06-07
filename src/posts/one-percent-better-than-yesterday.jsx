@@ -1,128 +1,101 @@
 export const metadata = {
-    title: "One percent better than yesterday & taste develops faster than skill",
+    title: "Day 3: Learning to see",
     excerpt:
-        "A frustrating day in Blender reminded me that taste often develops faster than skill, and that progress is rarely as visible as we want it to be.",
-    date: "2026-06-06",
+        "The biggest lesson from today's render wasn't about Blender. It was about realizing that learning a skill often means learning how to see problems you couldn't even notice before.",
+    date: "2026-06-07",
 };
 
 export default function Post() {
     return (
         <>
             <p>
-                Today was one of those days where Blender refused to cooperate.
+                Today I worked on a cordless drill concept.
             </p>
 
             <p>
-                I spent hours working on a fog lamp concept, tweaking materials,
-                adjusting proportions, changing details, and re-rendering the
-                same model over and over again. The render never quite became
-                what I wanted it to be. The lens looked fake. The housing felt
-                too much like a CAD model. The colors weren't helping. Every
-                time I fixed one issue, another appeared. By the end of the day,
-                I still didn't have a render I was truly happy with.
+                Not the design itself. The rendering.
             </p>
 
             <p>
-                A few years ago, I probably would have looked at the same image
-                and thought it was pretty good. That's what made today
-                interesting. The problem wasn't that I couldn't see the issues.
-                The problem was that I could see them very clearly, but didn't
-                yet know how to solve them.
+                Three days ago, I would have looked at a render and judged it
+                with a simple question: does it look good or bad?
             </p>
 
             <p>
-                I've noticed this happening more often lately. My taste is
-                developing faster than my skill.
+                Today, I spent hours noticing things I couldn't even see before.
             </p>
 
             <p>
-                I can now tell when something feels artificial. I can tell when
-                a product looks like a shell wrapped around an object instead of
-                a real product designed around engineering constraints. I can
-                tell when the materials don't feel believable or when a detail
-                exists purely for decoration. But recognizing a problem and
-                knowing how to fix it are two very different things.
+                The plastic didn't feel like plastic. The metal didn't feel like
+                metal. The logo stretched because of the UV projection. The
+                reflections weren't describing the form correctly. The lighting
+                wasn't helping the shape.
             </p>
 
             <p>
-                That gap can be frustrating.
+                The funny thing is that none of these problems existed for me a
+                few days ago. Not because they weren't there, but because I
+                didn't know how to see them.
             </p>
 
             <p>
-                You sit in front of the screen knowing something is wrong, but
-                without a clear path to making it right. It feels like you're
-                stuck. It feels like you're making no progress at all.
+                Learning a new skill isn't just about getting better at doing
+                something. It's also about getting better at noticing.
             </p>
 
             <p>
-                But I don't think that's true.
+                When you're starting out, everything looks acceptable. As your
+                eye develops, you begin spotting imperfections everywhere. What
+                once looked realistic suddenly feels artificial. What once felt
+                finished now feels unfinished.
             </p>
 
             <p>
-                Today, I didn't create a perfect render. I didn't finish the
-                design. I didn't solve every problem I encountered. What I did
-                gain was a better understanding of optics, materials,
-                proportions, assembly logic, and why some products feel real
-                while others feel like concepts.
+                That can be frustrating, but it's also a sign that something is
+                changing.
             </p>
 
             <p>
-                Those lessons don't immediately show up in the final image.
+                My ability to execute hasn't improved as quickly as my ability
+                to critique. But that's part of the process. Before you can make
+                something better, you first need to recognize what needs
+                improving.
             </p>
 
             <p>
-                They show up later.
+                Today's render isn't perfect. Far from it.
             </p>
 
             <p>
-                This is where I keep coming back to the idea from{" "}
-                <em>Atomic Habits</em>. Improvement is rarely dramatic. Most
-                days don't end with a breakthrough. Most days end with a
-                slightly better understanding than the day before.
+                But by the end of the day, I could see things that were
+                completely invisible to me on Day 1.
             </p>
 
             <p>
-                One percent better doesn't feel like much.
+                And maybe that's what progress looks like in the beginning.
             </p>
 
             <p>
-                You don't notice it after a single day.
+                Not producing better work overnight, but developing the ability
+                to see more clearly.
             </p>
 
             <p>
-                You don't notice it after a single week.
+                Modeled in Fusion. Rendered in Blender.
             </p>
 
             <p>
-                But if you keep showing up, the person making decisions tomorrow
-                is slightly better equipped than the person making them today.
+                Day 3.
             </p>
 
-            <p>
-                That's what happened today.
-            </p>
-
-            <p>
-                The render may not have turned out the way I wanted, but my eye
-                became a little sharper. My understanding became a little
-                deeper. My standards became a little higher.
-            </p>
-
-            <p>
-                And while that doesn't feel like progress in the moment, I
-                suspect that's exactly what progress looks like.
-            </p>
-
-            <iframe
-                style={{ borderRadius: "12px", marginTop: "2rem" }}
-                src="https://open.spotify.com/embed/track/35KiiILklye1JRRctaLUb4?utm_source=generator"
-                width="100%"
-                height="152"
-                frameBorder="0"
-                allowFullScreen=""
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"
-                title="Holocene by Bon Iver"
+            <img
+                src="/posts/day-3-learning-to-see/drill-render.png"
+                alt="Cordless drill concept modeled in Fusion and rendered in Blender"
+                style={{
+                    width: "100%",
+                    borderRadius: "12px",
+                    marginTop: "2rem",
+                }}
             />
         </>
     );
