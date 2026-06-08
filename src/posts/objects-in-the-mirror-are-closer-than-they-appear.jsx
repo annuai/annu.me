@@ -202,6 +202,18 @@ export default function Post() {
             </p>
 
             <p>
+                Maybe that's the lesson I've been missing. Maybe things aren't actually
+                that far away. Maybe the skills I'm trying to learn, the job I'm hoping
+                for, and the products I want to build only look distant because I'm
+                measuring them from the middle of the journey. Last week, making a
+                render like the one sitting on my screen today felt impossible. Now
+                it's real. Not perfect, but real. Maybe other things are moving toward
+                me in the same way — quietly, gradually, without announcing
+                themselves. Maybe the gap is closing even when I can't see it. Maybe
+                the objects in the mirror are closer than they appear.
+            </p>
+
+            <p>
                 I still don't know what happens next. The work question remains
                 unanswered. The money question remains unanswered. Most of the future
                 is still hidden somewhere beyond the edge of the glass.
