@@ -2,8 +2,8 @@ import React from 'react';
 
 export const metadata = {
     title: "The last person everywhere",
-    publishedAt: "2026-05-29",
-    summary:
+    date: "2026-05-29",
+    excerpt:
         "On feeling like everyone else has figured life out while you're still finding your way.",
 };
 
