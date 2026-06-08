@@ -1,0 +1,202 @@
+.pomo-page {
+  width: 100%;
+}
+
+/* ── Intro ── */
+.pomo-intro {
+  margin-bottom: 4rem;
+}
+
+.pomo-eyebrow {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent-orange);
+  margin-bottom: 1rem;
+}
+
+.pomo-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  max-width: 780px;
+}
+
+.pomo-lead {
+  font-size: 1.15rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  max-width: 680px;
+  margin-bottom: 1.5rem;
+}
+
+.pomo-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.pomo-tag {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--accent-orange);
+  background: rgba(192, 49, 42, 0.06);
+  padding: 0.2rem 0.7rem;
+  border-radius: 20px;
+  border: 1px solid rgba(192, 49, 42, 0.18);
+}
+
+/* ── Sections ── */
+.pomo-section {
+  margin-bottom: 5.5rem;
+}
+
+/* ── Hero image ── */
+.pomo-hero-img {
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.pomo-hero-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── Story ── */
+.pomo-story-section {
+  border-top: 1px solid var(--border-color);
+  padding-top: 3.5rem;
+}
+
+.pomo-story-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.pomo-story-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pomo-story-label {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-orange);
+}
+
+.pomo-story-block p {
+  font-family: var(--font-ui);
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+/* ── Spec cards ── */
+.pomo-specs-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.pomo-spec-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.25rem 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.pomo-spec-label {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+
+.pomo-spec-value {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+/* ── CTA ── */
+.pomo-cta-section {
+  border-top: 1px solid var(--border-color);
+  padding-top: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.pomo-cta-label {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-orange);
+  margin: 0;
+}
+
+.pomo-cta-link {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  transition: opacity 0.2s ease;
+}
+
+.pomo-cta-link:hover {
+  opacity: 0.6;
+}
+
+.pomo-cta-note {
+  font-family: var(--font-ui);
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 992px) {
+  .pomo-specs-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pomo-story-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .pomo-specs-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
