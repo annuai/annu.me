@@ -29,6 +29,10 @@ const ALL_IMAGES = [
   '/projects/hexa/hexa-organizer-1.jpeg',
   '/projects/display-bar/display-bar.png',
   '/projects/display-bar/display-bar-1.png',
+  '/projects/aega/cable-organizer.jpg',
+  '/projects/aega/hexa-organizer.jpg',
+  '/projects/aega/pen-vespoo.jpg',
+  '/projects/aega/powercord.jpg',
 ];
 
 const idx = (src) => ALL_IMAGES.indexOf(src);
@@ -464,17 +468,12 @@ export default function Aega() {
       {/* ── 8. Full-width gallery row ── */}
       <section className="ag-section">
         <h2 className="ag-section-title">Prototype Photography</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
           {[
-            {
-              src: '/projects/organizer/organizer-1.jpeg',
-              caption: 'Organizer prototype — bench view',
-            },
-            { src: '/projects/coin-box/coin-box-1.jpeg', caption: 'Coin Box — lid removed' },
-            {
-              src: '/projects/hexa/hexa-organizer-1.jpeg',
-              caption: 'Hexa Organizer — natural light',
-            },
+            { src: '/projects/aega/cable-organizer.jpg', caption: 'Cable organizer — prototype' },
+            { src: '/projects/aega/hexa-organizer.jpg', caption: 'Hexa organizer — prototype' },
+            { src: '/projects/aega/pen-vespoo.jpg', caption: 'Pen holder — prototype' },
+            { src: '/projects/aega/powercord.jpg', caption: 'Power cord organizer — prototype' },
           ].map(({ src, caption }) => (
             <div key={src} className="ag-image-wrapper" onClick={() => open(src)} title={caption}>
               <img src={src} alt={caption} style={{ aspectRatio: '4/3', objectFit: 'cover' }} />

@@ -9,9 +9,9 @@ export const metadata = {
   tags: ['Product Design', 'Industrial Design', 'Brand', 'Self-initiated'],
   gridSize: 'wide',
   year: '2025',
-  thumbnail: '/projects/myto-moto/all.png',
+  thumbnail: '/projects/myto-moto/trail-beam-render.png',
   description:
-    'A self-initiated motorcycle accessories brand built around one idea: self-reliance in difficult environments. Three products in development — a dedicated navigator, an auxiliary lamp, and a trail repair kit.',
+    'A self-initiated motorcycle accessories brand built around one idea: self-reliance in difficult environments. Three products in development — myto navi, Trail Beam, and Trail Kit.',
   excerpt:
     'A self-initiated motorcycle accessories brand built around one idea: self-reliance in difficult environments.',
 };
@@ -20,10 +20,11 @@ const PRODUCTS = [
   {
     num: '01',
     id: 'navigator',
-    name: 'myto-moto Navigator',
+    name: 'myto navi',
     tagline: 'The interface for the journey',
     placeholder: 'Navigator render coming soon',
-    image: '/projects/myto-moto/navigator.png',
+    images: ['/projects/myto-moto/navi-render-1.png', '/projects/myto-moto/navi-render-2.png', '/projects/myto-moto/navigator.png'],
+    imageLayout: 'side-by-side',
     body: [
       "The project didn't start as a navigation device. It started as a phone holder.",
       'Modern riders depend on smartphones for navigation, communication, weather updates, fuel planning, music, emergency contacts, and ride tracking. Yet smartphones are fundamentally designed for everyday environments, not remote mountain roads.',
@@ -37,7 +38,7 @@ const PRODUCTS = [
       { label: 'Phone', value: 'Stays in pocket or luggage' },
     ],
     detail:
-      'The Navigator is a dedicated motorcycle command center. The phone remains protected inside a jacket or waterproof storage. The rider never needs to remove it. Instead, the Navigator becomes the interface — compact, rugged, weatherproof, designed specifically around gloved interaction. Every control is physical. The screen exists only to present information that matters while riding. Nothing more.',
+      'The myto navi is a dedicated motorcycle command center. The phone remains protected inside a jacket or waterproof storage. The rider never needs to remove it. Instead, the navi becomes the interface — compact, rugged, weatherproof, designed specifically around gloved interaction. Every control is physical. The screen exists only to present information that matters while riding. Nothing more.',
   },
   {
     num: '02',
@@ -45,7 +46,7 @@ const PRODUCTS = [
     name: 'Trail Beam',
     tagline: 'The lamp that goes where you go',
     placeholder: 'Trail Beam render coming soon',
-    image: '/projects/myto-moto/trail-beam.png',
+    images: ['/projects/myto-moto/trail-beam-render.png', '/projects/myto-moto/trail-beam.png',],
     body: [
       'The second product emerged from memories of riding through darkness.',
       'One of the strongest memories from Ladakh isn\'t a destination. It\'s the experience of riding at night with only a small cone of light illuminating the road ahead. In those moments, a fog lamp stops being an accessory. It becomes a safety device.',
@@ -66,7 +67,7 @@ const PRODUCTS = [
     name: 'Trail Kit',
     tagline: 'The tools that get you moving again',
     placeholder: 'Trail Kit render coming soon',
-    image: '/projects/myto-moto/trail-kit.png',
+    images: ['/projects/myto-moto/trail-kit.png'],
     body: [
       'The third product is perhaps the simplest. And possibly the most important.',
       'Every experienced rider eventually learns the same lesson: things will go wrong. Bolts loosen. Tyres puncture. Cables fail. Mounts break. The question is not whether problems will occur. The question is whether you\'re prepared when they do.',
@@ -107,9 +108,9 @@ export default function MytoMoto() {
     <div className="mm-case-study">
 
       {/* ── Hero ── */}
-      <div className="mm-hero">
+      {/* <div className="mm-hero">
         <img src="/projects/myto-moto/all.png" alt="myto-moto — Navigator, Trail Beam, Trail Kit" />
-      </div>
+      </div> */}
 
       {/* ── Intro ── */}
       <section className="mm-intro-section">
@@ -263,10 +264,25 @@ export default function MytoMoto() {
 
           <p className="mm-product-tagline">{product.tagline}</p>
 
-          {/* Product image or placeholder */}
-          {product.image ? (
-            <div className="mm-render-image">
-              <img src={product.image} alt={product.name} />
+          {/* Product image(s) or placeholder */}
+          {product.images?.length > 0 ? (
+            <div className="mm-render-stack">
+              {product.imageLayout === 'side-by-side' ? (
+                <>
+                  <div className="mm-render-side-by-side">
+                    {product.images.slice(0, 2).map((src) => (
+                      <img key={src} src={src} alt={product.name} />
+                    ))}
+                  </div>
+                  {product.images.slice(2).map((src) => (
+                    <img key={src} src={src} alt={product.name} className="mm-render-full" />
+                  ))}
+                </>
+              ) : (
+                product.images.map((src) => (
+                  <img key={src} src={src} alt={product.name} className="mm-render-full" />
+                ))
+              )}
             </div>
           ) : (
             <div className="mm-render-placeholder">
@@ -309,7 +325,7 @@ export default function MytoMoto() {
         <div className="mm-system-card">
           <div className="mm-system-item">
             <span className="mm-system-num">01</span>
-            <h4>Navigator</h4>
+            <h4>myto navi</h4>
             <p>Helps riders stay informed</p>
           </div>
           <div className="mm-system-divider" />
