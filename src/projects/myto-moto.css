@@ -565,6 +565,39 @@
   margin: 0;
 }
 
+/* ── Website link ────────────────────────────────────── */
+.mm-website-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.mm-website-label {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-orange);
+  margin: 0;
+}
+
+.mm-website-link {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: -0.025em;
+  transition: opacity 0.2s ease;
+}
+
+.mm-website-link:hover {
+  opacity: 0.5;
+}
+
 /* ── Ongoing banner ───────────────────────────────────── */
 .mm-ongoing-banner {
   display: flex;

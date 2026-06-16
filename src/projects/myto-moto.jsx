@@ -355,6 +355,16 @@ export default function MytoMoto() {
         </div>
       </section>
 
+      {/* ── Website link ── */}
+      <section className="mm-section">
+        <div className="mm-website-block">
+          <p className="mm-website-label">Website</p>
+          <a href="https://myto-moto.com" className="mm-website-link" target="_blank" rel="noopener noreferrer">
+            myto-moto.com →
+          </a>
+        </div>
+      </section>
+
       {/* ── Ongoing banner ── */}
       <div className="mm-ongoing-banner">
         <div className="mm-ongoing-dot" />
