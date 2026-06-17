@@ -8,7 +8,7 @@ export const metadata = {
   category: 'UI/UX Design',
   tags: ['UX Design', 'Visual Design', 'Super App', 'Localization'],
   year: '2024',
-  thumbnail: '/projects/fwd+maruti_fwd.svg',
+  thumbnail: '/projects/fwd/omnebyfwd.svg',
   description:
     'UX, visual design, and feature work on a super app for FWD Insurance — spanning homescreen design, mini-games, applets, localization, and Jira-driven daily product execution.',
   excerpt:
@@ -215,6 +215,23 @@ export default function FWD() {
               </ul>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ── Flow sample ── */}
+      <section className="fw-section">
+        <h2 className="fw-section-title">A sample flow</h2>
+        <p style={{ fontFamily: 'var(--font-ui)', fontSize: '0.97rem', lineHeight: '1.75', color: 'var(--text-secondary)', marginBottom: '1.75rem', maxWidth: '680px' }}>
+          One of the flows worked on during the project — a memory game applet designed for
+          engagement within the super app. Shared here as a representative example of the
+          kind of UX wireframing and interaction design work done across the engagement.
+        </p>
+        <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border-color)', background: 'var(--bg-secondary)' }}>
+          <img
+            src="/projects/fwd/Flow-Memory-Game-03-06-2024.jpg"
+            alt="Memory game flow — OMNE by FWD"
+            style={{ width: '100%', height: 'auto', display: 'block' }}
+          />
         </div>
       </section>
 

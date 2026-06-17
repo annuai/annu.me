@@ -93,6 +93,11 @@
   filter: brightness(0.94);
 }
 
+/* Hide legacy overlay class from old build ────────────── */
+.card-meta-overlay {
+  display: none !important;
+}
+
 /* ── Card metadata — always visible below image ────────── */
 .card-meta {
   display: flex;

@@ -435,8 +435,10 @@ export default function Neero() {
         </div>
       </section>
 
+        <img src="/projects/neero/product-detail.jpeg" alt="Neero — product detail" className="nr-img nr-img-contained" style={{ marginTop: '3rem' }} />
+
       {/* ── Modular 3-in-1 ── */}
-      <section className="nr-section">
+      <section className="nr-section" style={{ paddingTop: '5rem' }}>
         <div className="nr-section-header">
           <span className="nr-section-num">07</span>
           <h2 className="nr-section-title">The Modular 3-in-1 Approach</h2>

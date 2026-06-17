@@ -8,7 +8,7 @@ export const metadata = {
   category: 'UI/UX Design',
   tags: ['UX Design', 'Visual Design', 'Design Systems', 'Automotive'],
   year: '2024',
-  thumbnail: '/projects/fwd+maruti_maruti.svg',
+  thumbnail: '/projects/maruti/maruti.svg',
   description:
     'UX, visual design, and component work on a confidential automotive super app — done at frog in 2024.',
   excerpt:
