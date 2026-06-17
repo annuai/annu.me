@@ -11,7 +11,7 @@ const thengaImages = [
 ];
 
 export const metadata = {
-  id: '10',
+  id: '11',
   slug: 'thenga',
   title: 'THENGA',
   category: 'Product Design',

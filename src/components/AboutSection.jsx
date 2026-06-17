@@ -103,7 +103,7 @@ const AboutSection = () => {
 
           <a href="mailto:hi.annuai@gmail.com" className="status-tag">
             <span className="pulse-dot"></span>
-            Currently exploring opportunities in physical product design for complex hardware systems.
+            Currently open to new opportunities.
           </a>
 
           <div className="about-body">

@@ -344,7 +344,7 @@ const Hero = () => {
           <a href="mailto:hi.annuai@gmail.com" className="hero-status-link">
             <div className="hero-status-tag">
               <span className="hero-pulse-indicator"></span>
-              Currently exploring opportunities in physical product design for complex hardware systems.
+              Currently open to new opportunities.
             </div>
           </a>
         </div>
