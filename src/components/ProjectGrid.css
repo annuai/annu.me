@@ -161,7 +161,14 @@
   .grid-container {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 2.5rem;
+    align-items: stretch;
+  }
+
+  .project-card {
+    width: 100%;
+    grid-column: unset;
+    grid-row: unset;
   }
 
   .project-card.large .img-wrapper,
