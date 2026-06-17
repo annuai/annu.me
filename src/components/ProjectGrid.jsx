@@ -48,17 +48,8 @@ const ProjectGrid = () => {
             >
               <div className="img-wrapper">
                 <img src={project.thumbnail} alt={project.title} />
-                {/* Desktop: hover overlay */}
-                <div className="card-meta-overlay">
-                  <span className="card-category">
-                    {project.category || (project.tags && project.tags[0])}
-                    {project.year && <span className="card-year"> · {project.year}</span>}
-                  </span>
-                  <h3 className="card-title">{project.title}</h3>
-                </div>
               </div>
-              {/* Mobile: static meta below image */}
-              <div className="card-meta-below">
+              <div className="card-meta">
                 <span className="card-category">
                   {project.category || (project.tags && project.tags[0])}
                   {project.year && <span className="card-year"> · {project.year}</span>}
