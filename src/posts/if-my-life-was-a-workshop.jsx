@@ -1,6 +1,6 @@
 export const metadata = {
     title: "If my life was a workshop",
-    date: "2026-06-19",
+    date: "2026-06-18",
     excerpt:
         "A reflection on building a life that feels a lot like building a workshop—full of tools, unfinished projects, and expensive bets on the future.",
 };
