@@ -225,8 +225,8 @@ export default function Post() {
 
             <p>
                 <strong>Survey:</strong>{" "}
-                <a href="YOUR_SURVEY_LINK_HERE">
-                    Share your riding experience
+                <a href="https://forms.gle/AG9y31362zQv6csS8">
+                    Share your riding experience - this is a short 10 minute survey
                 </a>
             </p>
 
