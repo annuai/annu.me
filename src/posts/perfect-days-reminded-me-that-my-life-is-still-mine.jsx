@@ -421,6 +421,23 @@ export default function Post() {
                     Maybe that is already enough.
                 </p>
             </blockquote>
+            <div
+                style={{
+                    margin: "2rem 0",
+                    borderRadius: "16px",
+                    overflow: "hidden",
+                }}
+            >
+                <iframe
+                    src="https://open.spotify.com/embed/track/7BY005dacJkbO6EPiOh2wb?utm_source=generator"
+                    width="100%"
+                    height="152"
+                    frameBorder="0"
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"
+                    style={{ borderRadius: "16px" }}
+                />
+            </div>
         </>
     );
 }
