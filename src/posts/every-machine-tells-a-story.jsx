@@ -2,7 +2,7 @@ export const metadata = {
     title: "Every machine tells a story",
     excerpt:
         "I thought I enjoyed watching generator repair videos because I liked machines. It took a job interview to realise I was actually fascinated by something else entirely.",
-    publishedAt: "2026-07-03",
+    date: "2026-07-03",
 };
 
 export default function Article() {
